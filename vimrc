@@ -112,6 +112,9 @@ set scrolloff=5                 " always 5 lines above/below cursor
 colorscheme sleepwalker
 set t_Co=256                    " set 256 colors in terminal mode
 
+" Edit VIMRC
+nmap <leader>v :e $MYVIMRC<CR>
+
 " Remove trailing white space for certain file types
 autocmd FileType c,php,css,sass,scss,html,rb autocmd BufWritePre <buffer> :%s/\s\+$//e
 
