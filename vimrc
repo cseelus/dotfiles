@@ -40,16 +40,6 @@ filetype plugin indent on       " required for vundle
 " vim config
 " ---------------------------------------------------------------------------
 
-" For starters … moving the right way
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-
 " Sane vertical moving on displayed lines
 nnoremap j gj
 nnoremap k gk
@@ -171,10 +161,6 @@ if has("gui_macvim")
   " macmenu File. Print key=<nop>
   let g:ctrlp_map = '<D-p>'
 
-  " Open Go to symbol (via tags)
-  nmap <D-r> :MyCtrlPTag<cr>
-  nmap <D-R> :CtrlPBufTagAll<cr>
-
   " Go to file
   " macm File.New\ Tab key=<nop>
   " "nmap <D-t> :CtrlP<cr>
@@ -183,40 +169,14 @@ if has("gui_macvim")
   nmap <D-M-RIGHT> gt
   nmap <D-M-LEFT> gT
 
-  " Comment lines with cmd+/
-  map <D-/> :TComment<cr>
-  vmap <D-/> :TComment<cr>gv
-
   " Indent lines with cmd+[ and cmd+]
   nmap <D-]> >>
   nmap <D-[> <<
   vmap <D-[> <gv
   vmap <D-]> >gv
 
-  "switch between tabs with cmd+1, cmd+2,..."
-  map <D-1> :tabfirst<Cr>
-  map <D-2> :tabfirst<Cr>gt
-  map <D-3> :tabfirst<Cr>3gt
-  map <D-4> :tabfirst<Cr>4gt
-  map <D-5> :tabfirst<Cr>5gt
-  map <D-6> :tabfirst<Cr>6gt
-  map <D-7> :tabfirst<Cr>7gt
-  map <D-8> :tabfirst<Cr>8gt
-  map <D-9> :tabfirst<Cr>9gt
-
-  imap <D-1> <esc>:tabfirst<Cr>
-  imap <D-2> <esc>:tabfirst<Cr>gt
-  imap <D-3> <esc>:tabfirst<Cr>3gt
-  imap <D-4> <esc>:tabfirst<Cr>4gt
-  imap <D-5> <esc>:tabfirst<Cr>5gt
-  imap <D-6> <esc>:tabfirst<Cr>6gt
-  imap <D-7> <esc>:tabfirst<Cr>7gt
-  imap <D-8> <esc>:tabfirst<Cr>8gt
-  imap <D-9> <esc>:tabfirst<Cr>9gt
-
   " Stop completion with enter, in addition to default ctrl+y
   " imap <expr> <CR> pumvisible() ? "\<c-y>" : "<Plug>delimitMateCR"
-
 endif
 
 
@@ -234,7 +194,10 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Comment lines with cmd+/
+map <D-/> :TComment<cr>
+vmap <D-/> :TComment<cr>gv
+
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplete.
@@ -244,13 +207,6 @@ let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-
-" Define dictionary.
-let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
 
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
@@ -271,7 +227,7 @@ function! s:my_cr_function()
   "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
 endfunction
 " <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
@@ -281,23 +237,11 @@ inoremap <expr><C-e>  neocomplete#cancel_popup()
 "inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
 
 " For cursor moving in insert mode(Not recommended)
-"inoremap <expr><Left>  neocomplete#close_popup() . "\<Left>"
-"inoremap <expr><Right> neocomplete#close_popup() . "\<Right>"
-"inoremap <expr><Up>    neocomplete#close_popup() . "\<Up>"
-"inoremap <expr><Down>  neocomplete#close_popup() . "\<Down>"
 " Or set this.
-"let g:neocomplete#enable_cursor_hold_i = 1
-" Or set this.
-"let g:neocomplete#enable_insert_char_pre = 1
+let g:neocomplete#enable_insert_char_pre = 1
 
 " AutoComplPop like behavior.
 "let g:neocomplete#enable_auto_select = 1
-
-" Shell like behavior(not recommended).
-"set completeopt+=longest
-"let g:neocomplete#enable_auto_select = 1
-"let g:neocomplete#disable_auto_complete = 1
-"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
