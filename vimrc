@@ -58,6 +58,7 @@ set softtabstop=2
 set expandtab
 
 set autoindent
+set smartindent
 set ruler
 " Keep unsaved files open in buffer
 set hidden
@@ -187,19 +188,22 @@ endif
 " vim plugins
 " ---------------------------------------------------------------------------
 
+" netrw
+let g:netrw_banner=0
+
 " VIM Markdown
 let g:vim_markdown_folding_disabled=1
 
 " Make ragtag globally available
-let g:ragtag_global_maps = 1
+let g:ragtag_global_maps=1
 
 " Comment lines with cmd+/
 map <D-/> :TComment<cr>
 vmap <D-/> :TComment<cr>gv
 
 " Neocomplete
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#enable_at_startup=1
+let g:neocomplete#sources#syntax#min_keyword_length=3
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
@@ -209,3 +213,7 @@ endfunction
 inoremap <expr><TAB> pumvisible() ? neocomplete#close_popup() : "\<TAB>"
 " Close popup by <Space>.
 inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() . "\<Space>" : "\<Space>"
+
+" LaTeX-Box
+let g:LatexBox_latexmk_preview_continuously=1
+let g:LatexBox_custom_indent=0
