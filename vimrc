@@ -28,6 +28,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
 Bundle 'Shougo/neocomplete.vim'
+Bundle 'tomtom/tcomment_vim'
 " vim-scripts repos
 Bundle 'AutoClose' 
 " git repos on your local machine (ie. when working on your own plugin)
