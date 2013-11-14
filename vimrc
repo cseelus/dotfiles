@@ -109,6 +109,8 @@ set ssop-=options               " do not store global and local values in a sess
 set ssop-=folds                 " do not store folds
 
 set scrolloff=5                 " always 5 lines above/below cursor
+syntax enable
+set background=dark
 colorscheme sleepwalker
 set t_Co=256                    " set 256 colors in terminal mode
 
@@ -147,7 +149,7 @@ highlight SignColumn guibg=#272822
 if has("gui_macvim")
   " No toolbars, menu or scrollbars in the GUI
   set guifont=Menlo\ for\ Powerline:h14
-  set transparency=10
+  set transparency=5
   set linespace=3
   " "set clipboard+=unnamed
   set vb t_vb=
@@ -241,7 +243,7 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplete#close_popup()
 inoremap <expr><C-e>  neocomplete#cancel_popup()
 " Close popup by <Space>.
-" inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
+inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
 
 " AutoComplPop like behavior.
 " let g:neocomplete#enable_auto_select = 1
