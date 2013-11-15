@@ -12,7 +12,104 @@ if filereadable(expand("~/.dotfiles/vim_vundles.vim"))
 endif
 
 
-" vim config
+" General
+" ---------------------------------------------------------------------------
+
+" Keep unsaved files open in buffers
+set hidden
+
+set noerrorbells                " No beeps
+set backspace=indent,eol,start  " Makes backspace key more powerful
+set showcmd                     " Show me what I'm typing
+set noshowmode                  " Show/Hide current mode
+set relativenumber              " Set relative line number
+set number                      " Enables hybrid line number mode
+
+set noswapfile                  " Dont use swapfile
+set nobackup                    " Dont create annoying backup files
+
+set splitright                  " Split vertical windows to the right
+set splitbelow                  " Split horizontal windows below
+
+set encoding=utf-8              " Set default encoding to UTF-8
+set autowrite                   " Autosave before :next, :make etc.
+set autoread                    " Autoreread changed files w/o asking
+set laststatus=2
+
+set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
+
+
+" Indentation settings
+" ---------------------------------------------------------------------------
+
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set autoindent
+set smartindent
+
+filetype plugin on
+filetype indent on
+
+" Display tabs and trailing spaces visually
+set list listchars=tab:\ \ ,trail:·
+
+set nowrap       "Dont wrap lines
+set linebreak    "Wrap lines at convenient points
+
+
+" Text wrapping
+" ---------------------------------------------------------------------------
+
+set wrap
+set linebreak
+set nolist
+set textwidth=80
+set foldcolumn=0
+set columns=85
+set formatoptions=qrn1
+
+
+" Searching
+" ---------------------------------------------------------------------------
+
+"nnoremap / /\v
+"vnoremap / /\v
+set ignorecase
+set smartcase
+set gdefault
+set incsearch
+set showmatch
+set hlsearch
+nnoremap <leader><space> :noh<cr>
+" nnoremap <tab> %
+" vnoremap <tab> %
+
+
+" Sessions
+" ---------------------------------------------------------------------------
+
+set ssop-=options               " Dont store global and local values in a session
+set ssop-=folds                 " Dont store folds
+
+set scrolloff=10                " Start scrolling X lines above/below cursor
+syntax enable
+set background=dark
+colorscheme sleepwalker
+set t_Co=256                    " Set 256 colors in terminal mode
+
+
+" Persistent undo
+" ---------------------------------------------------------------------------
+" Keep undo history across sessions, by storing in file.
+
+silent !mkdir ~/.vim/backups > /dev/null 2>&1
+set undodir=~/.vim/backups
+set undofile
+
+
+" Custom key mappings
 " ---------------------------------------------------------------------------
 
 " Sane vertical moving on displayed lines
@@ -26,69 +123,6 @@ nmap . .`[
 "command W! w !sudo tee % >/dev/null
 
 :let mapleader = ","
-
-" Tab settings
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
-
-set autoindent
-set smartindent
-set ruler
-" Keep unsaved files open in buffer
-set hidden
-
-" Text wrapping
-set wrap
-set linebreak
-set nolist
-set textwidth=80
-set foldcolumn=0
-set columns=85
-set formatoptions=qrn1
-""set cursorline                  " Highlight current line
-
-set noerrorbells                " No beeps
-set backspace=indent,eol,start  " Makes backspace key more powerful.
-set showcmd                     " Show me what I'm typing
-set noshowmode                  " Show/Hide current mode.
-set relativenumber              " Set relative line number
-set number
-
-set noswapfile                  " Don't use swapfile
-set nobackup                    " Don't create annoying backup files
-set splitright                  " Split vertical windows right to the current windows
-set splitbelow                  " Split horizontal windows below to the current windows
-set encoding=utf-8              " Set default encoding to UTF-8
-set autowrite                   " Automatically save before :next, :make etc.
-set autoread                    " Automatically reread changed files without asking me anything
-set laststatus=2
-
-set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
-
-" Searching
-"nnoremap / /\v
-"vnoremap / /\v
-set ignorecase
-set smartcase
-set gdefault
-set incsearch
-set showmatch
-set hlsearch
-nnoremap <leader><space> :noh<cr>
-" nnoremap <tab> %
-" vnoremap <tab> %
-
-" Sessions
-set ssop-=options               " do not store global and local values in a session
-set ssop-=folds                 " do not store folds
-
-set scrolloff=5                 " always 5 lines above/below cursor
-syntax enable
-set background=dark
-colorscheme sleepwalker
-set t_Co=256                    " set 256 colors in terminal mode
 
 " Edit VIMRC
 nmap <leader>v :e $MYVIMRC<CR>
@@ -117,6 +151,23 @@ set statusline+=Column\ %c,    "cursor column
 set statusline+=\ %P\          "percent through file
 
 
+" Wildmode completion
+" ---------------------------------------------------------------------------
+
+set wildmode=list:longest
+set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
+set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+set wildignore+=*vim/backups*
+set wildignore+=*sass-cache*
+set wildignore+=*DS_Store*
+set wildignore+=vendor/rails/**
+set wildignore+=vendor/cache/**
+set wildignore+=*.gem
+set wildignore+=log/**
+set wildignore+=tmp/**
+set wildignore+=*.png,*.jpg,*.gif
+
+
 " MacVim modifications (color, shortcuts, etc.. "
 " ---------------------------------------------------------------------------
 
@@ -138,10 +189,6 @@ if has("gui_macvim")
 
   set showtabline=2  "always show tabbar, so no resizing occurs
 
-  " Open ctrlp with cmd+p
-  " macmenu File. Print key=<nop>
-  let g:ctrlp_map = '<D-p>'
-
   " Go to file
   " macm File.New\ Tab key=<nop>
   " "nmap <D-t> :CtrlP<cr>
@@ -149,19 +196,10 @@ if has("gui_macvim")
   " Move  with cmd+alt
   nmap <D-M-RIGHT> gt
   nmap <D-M-LEFT> gT
-
-  " Indent lines with cmd+[ and cmd+]
-  nmap <D-]> >>
-  nmap <D-[> <<
-  vmap <D-[> <gv
-  vmap <D-]> >gv
-
-  " Stop completion with enter, in addition to default ctrl+y
-  " imap <expr> <CR> pumvisible() ? "\<c-y>" : "<Plug>delimitMateCR"
 endif
 
 
-" vim plugins
+" Plugins
 " ---------------------------------------------------------------------------
 
 " netrw
@@ -195,6 +233,7 @@ let g:LatexBox_latexmk_preview_continuously=1
 let g:LatexBox_custom_indent=0
 
 " Surround
+" --------
 " Ruby
 " Use v or # to get a variable interpolation (inside of a string)}
 " ysiw#   Wrap the token under the cursor in #{}
