@@ -14,18 +14,6 @@ Bundle 'gmarik/vundle'
 " Vundles
 " ---------------------------------------------------------------------------
 
-" yankring - effortless sanity for pasting. every time you yank something it goes into a buffer. after hitting p to paste, use ctrl-p or ctrl-n to cycle through the paste options. great for when you accidentally overwrite your yank with a delete.
-" 
-" ConqueTerm - embedded fully colorful shell inside your vim
-" 
-" html-escape - ,he and ,hu to escape and unescape html
-" 
-" Gundo - visualize your undos - pretty amazing plugin. Hit ,u with my keymappings to trigger it, very user friendly
-" 
-" vim-indent-guides - visual indent guides, off by default
-" 
-" AnsiEsc - inteprets ansi color codes inside log files. great for looking at Rails logs
-" 
 " vim-session: use :SaveSession and :OpenSession to come back to your saved window layout
 " 
 " IndexedSearch - when you do searches will show you 'Match 2 of 4' in the status line
@@ -46,6 +34,12 @@ Bundle 'tpope/vim-surround'
 Bundle 'ap/vim-css-color'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tomtom/tcomment_vim'
+" yankring - effortless sanity for pasting. every time you yank something it goes into a buffer. after hitting p to paste, use ctrl-p or ctrl-n to cycle through the paste options. great for when you accidentally overwrite your yank with a delete.
+Bundle "skwp/YankRing.vim"
+" Use :SaveSession and :OpenSession to come back to your saved window layout (vim-misc is required)
+" Bundle "xolox/vim-misc"
+" Bundle "xolox/vim-session"
+" Autocompletion (only works on vim compiled with lua support)
 Bundle 'Shougo/neocomplete.vim'
 Bundle 'tristen/vim-sparkup'
 
@@ -53,6 +47,8 @@ Bundle 'tristen/vim-sparkup'
 " ------------------------------------------
 " A set of mappings for HTML, XML, PHP, ASP, eRuby, JSP, and more
 Bundle 'tpope/vim-ragtag'
+" ,he and ,hu to escape and unescape html
+Bundle "skwp/vim-html-escape"
 " Easy navigation of the Rails directory structure, interface to rake + rails, much much more: https://github.com/tpope/vim-rails
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-haml'
