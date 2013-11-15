@@ -1,39 +1,15 @@
 " .vimrc
-" ---------------------------------------------------------------------------
+" ===========================================================================
 
 set nocompatible                " Turn off compability mode with Vi
-filetype off                    " required for vundle
 
-" Bundles
+
+" Vundle initialization
 " ---------------------------------------------------------------------------
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
-" original repos on github
-Bundle 'ap/vim-css-color'
-Bundle 'twe4ked/vim-peepopen'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'airblade/vim-rooter'
-Bundle 'tpope/vim-surround'
-Bundle 'tristen/vim-sparkup'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-ragtag'
-Bundle 'tpope/vim-haml'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'LaTeX-Box-Team/LaTeX-Box'
-Bundle 'Shougo/neocomplete.vim'
-Bundle 'tomtom/tcomment_vim'
-" vim-scripts repos
-Bundle 'AutoClose' 
-" git repos on your local machine (ie. when working on your own plugin)
-Bundle 'file:///Users/chris/Code/misc/sleepwalker-vim'
-
-filetype plugin indent on       " required for vundle
+if filereadable(expand("~/.dotfiles/vim_vundles.vim"))
+  source ~/.dotfiles/vim_vundles.vim
+endif
 
 
 " vim config
