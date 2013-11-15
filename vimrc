@@ -96,7 +96,8 @@ set ssop-=folds                 " Dont store folds
 set scrolloff=10                " Start scrolling X lines above/below cursor
 syntax enable
 set background=dark
-colorscheme sleepwalker
+colorscheme clearance
+" colorscheme h80
 set t_Co=256                    " Set 256 colors in terminal mode
 
 

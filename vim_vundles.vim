@@ -28,6 +28,7 @@ Bundle 'gmarik/vundle'
 " ------------------------
 " As soon as you type a character that could have a matching (closing) counterpart, vim automatically puts its counterpart in front of your cursor
 Bundle 'twe4ked/vim-peepopen'
+" Change the working directory to the project root when you open a file
 Bundle 'airblade/vim-rooter'
 Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-surround'
@@ -59,7 +60,7 @@ Bundle 'LaTeX-Box-Team/LaTeX-Box'
 " Colorschemes
 " ------------
 Bundle 'flazz/vim-colorschemes'
-Bundle 'file:///Users/chris/Code/misc/sleepwalker-vim'
+Bundle 'cseelus/vim-colors-clearance'
 
 
 " Filetype plugin indent on is required by vundle
