@@ -47,16 +47,33 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set autoindent
+set copyindent
 set smartindent
 
+filetype off
 filetype plugin on
 filetype indent on
 
 " Display tabs and trailing spaces visually
-set list listchars=tab:\ \ ,trail:·
+"↪ and display the next line if the line exceeds the width of the window
+if has("multi_byte")
+	set lcs=tab:\»\ ,trail:•,extends:>,precedes:<,nbsp:¤"
+	let &sbr = nr2char(8618).' '
+else
+	set lcs=tab:>\ ,extends:>,precedes:<,trail:-
+	let &sbr = '+++ '
+endif
 
-set nowrap       "Dont wrap lines
-set linebreak    "Wrap lines at convenient points
+function! UpdateLcs()
+	if (&previewwindow)
+		setlocal nolist
+	endif
+endfunction
+
+autocmd BufEnter,BufWinEnter,WinEnter,CmdwinEnter * call UpdateLcs()
+
+" Enable wrapping characters
+set conceallevel=2
 
 
 " Text wrapping
@@ -81,10 +98,8 @@ set smartcase
 set gdefault
 set incsearch
 set showmatch
-set hlsearch
-nnoremap <leader><space> :noh<cr>
-" nnoremap <tab> %
-" vnoremap <tab> %
+set hlsearch                    " Highlight search results
+set incsearch                   " Transfer the search term when writing
 
 
 " Sessions
@@ -97,7 +112,6 @@ set scrolloff=10                " Start scrolling X lines above/below cursor
 syntax enable
 set background=dark
 colorscheme clearance
-" colorscheme h80
 set t_Co=256                    " Set 256 colors in terminal mode
 
 
@@ -129,7 +143,7 @@ nmap . .`[
 nmap <leader>v :e $MYVIMRC<CR>
 
 " Remove trailing white space for certain file types
-autocmd FileType c,php,css,sass,scss,html,rb autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType c,php,css,sass,scss,html,erb,rb autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 
 " Statusline
@@ -176,7 +190,10 @@ highlight SignColumn guibg=#272822
 
 if has("gui_macvim")
   " No toolbars, menu or scrollbars in the GUI
-  set guifont=Menlo\ for\ Powerline:h14
+  set guifont=Menlo\ for\ Powerline:h15
+  " set guifont=Lekton:h18
+  " set guifont=CosmicSansNeueMono:h17
+  " set guifont=PT\ Mono:h15
   set transparency=5
   set linespace=3
   " "set clipboard+=unnamed
@@ -217,21 +234,50 @@ map <D-/> :TComment<cr>
 vmap <D-/> :TComment<cr>gv
 
 " Neocomplete
-let g:neocomplete#enable_at_startup=1
-let g:neocomplete#sources#syntax#min_keyword_length=3
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return neocomplete#close_popup() . "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><TAB> pumvisible() ? neocomplete#close_popup() : "\<TAB>"
-" Close popup by <Space>.
-inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() . "\<Space>" : "\<Space>"
+" -----------
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_enable_smart_case = 1
+
+" default # of completions is 100, that's crazy
+let g:neocomplcache_max_list = 5
+
+" words less than 3 letters long aren't worth completing
+let g:neocomplcache_auto_completion_start_length = 3
+
+" Map standard Ctrl-N completion to Cmd-Space
+inoremap <D-Space> <C-n>
+
+" This makes sure we use neocomplcache completefunc instead of 
+" the one in rails.vim, otherwise this plugin will crap out
+let g:neocomplcache_force_overwrite_completefunc = 1
+
+" Define keyword.
+if !exists('g:neocomplcache_keyword_patterns')
+  let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+" Enable heavy omni completion.
+if !exists('g:neocomplcache_omni_patterns')
+  let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+
+" Prevent hanging with python: https://github.com/skwp/dotfiles/issues/163
+let g:neocomplcache_omni_patterns['python'] = ''
 
 " LaTeX-Box
+" ---------
 let g:LatexBox_latexmk_preview_continuously=1
-let g:LatexBox_custom_indent=0
 
 " Surround
 " --------
@@ -251,3 +297,9 @@ let g:surround_61 = "<%= \r %>"   " =
 " let g:session_autosave=1
 " let g:session_autosave_periodic=1
 " let g:session_autoload=1
+
+" Yankring
+" --------
+let g:yankring_history_file = '.yankring-history'
+nnoremap ,yr :YRShow<CR>
+nnoremap C-y :YRShow<CR>

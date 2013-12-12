@@ -26,23 +26,27 @@ Bundle 'gmarik/vundle'
 
 " General vim improvements
 " ------------------------
-" As soon as you type a character that could have a matching (closing) counterpart, vim automatically puts its counterpart in front of your cursor
-Bundle 'twe4ked/vim-peepopen'
 " Change the working directory to the project root when you open a file
 Bundle 'airblade/vim-rooter'
+" As soon as you type a character that could have a matching (closing) counterpart, vim automatically puts its counterpart in front of your cursor
 Bundle 'Townk/vim-autoclose'
+Bundle 'twe4ked/vim-peepopen'
 Bundle 'tpope/vim-surround'
 Bundle 'ap/vim-css-color'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tomtom/tcomment_vim'
-" yankring - effortless sanity for pasting. every time you yank something it goes into a buffer. after hitting p to paste, use ctrl-p or ctrl-n to cycle through the paste options. great for when you accidentally overwrite your yank with a delete.
+" yankring: effortless sanity for pasting. every time you yank something it goes into a buffer. after hitting p to paste, use ctrl-p or ctrl-n to cycle through the paste options. great for when you accidentally overwrite your yank with a delete.
 Bundle "skwp/YankRing.vim"
-" Use :SaveSession and :OpenSession to come back to your saved window layout (vim-misc is required)
+" Vim-Session: Use :SaveSession and :OpenSession to come back to your saved window layout (vim-misc is required)
 " Bundle "xolox/vim-misc"
 " Bundle "xolox/vim-session"
 " Autocompletion (only works on vim compiled with lua support)
 Bundle 'Shougo/neocomplete.vim'
-Bundle 'tristen/vim-sparkup'
+" snipMate: Offers textmate-like snippet expansion + scrooloose-snippets . try hitting TAB after typing a snippet
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle "honza/vim-snippets"
 
 " Optimizations for specific languages/tools
 " ------------------------------------------
