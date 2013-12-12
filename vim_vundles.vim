@@ -40,8 +40,8 @@ Bundle "skwp/YankRing.vim"
 " Vim-Session: Use :SaveSession and :OpenSession to come back to your saved window layout (vim-misc is required)
 " Bundle "xolox/vim-misc"
 " Bundle "xolox/vim-session"
-" Autocompletion (only works on vim compiled with lua support)
-Bundle 'Shougo/neocomplete.vim'
+" Autocompletion
+Bundle 'Shougo/neocomplcache.vim'
 " snipMate: Offers textmate-like snippet expansion + scrooloose-snippets . try hitting TAB after typing a snippet
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"

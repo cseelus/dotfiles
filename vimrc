@@ -246,9 +246,6 @@ let g:neocomplcache_max_list = 5
 " words less than 3 letters long aren't worth completing
 let g:neocomplcache_auto_completion_start_length = 3
 
-" Map standard Ctrl-N completion to Cmd-Space
-inoremap <D-Space> <C-n>
-
 " This makes sure we use neocomplcache completefunc instead of 
 " the one in rails.vim, otherwise this plugin will crap out
 let g:neocomplcache_force_overwrite_completefunc = 1
