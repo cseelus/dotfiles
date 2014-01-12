@@ -21,7 +21,7 @@ set hidden
 set noerrorbells                " No beeps
 set backspace=indent,eol,start  " Makes backspace key more powerful
 set showcmd                     " Show me what I'm typing
-set noshowmode                  " Show/Hide current mode
+set showmode                    " Show/Hide current mode
 set relativenumber              " Set relative line number
 set number                      " Enables hybrid line number mode
 
@@ -108,7 +108,7 @@ set incsearch                   " Transfer the search term when writing
 set ssop-=options               " Dont store global and local values in a session
 set ssop-=folds                 " Dont store folds
 
-set scrolloff=10                " Start scrolling X lines above/below cursor
+set scrolloff=7                 " Start scrolling X lines above/below cursor
 syntax enable
 set background=dark
 colorscheme clearance
@@ -149,10 +149,7 @@ autocmd FileType c,php,css,sass,scss,html,erb,rb autocmd BufWritePre <buffer> :%
 " Statusline
 " ---------------------------------------------------------------------------
 
-hi User1 guibg=black guifg=#ececec 
-
 set statusline=
-set statusline+=%1*            "switch to User1 highlight
 "set statusline+=%t            "tail of the filename
 set statusline+=[%{strlen(&fenc)?&fenc:'none'},\  "file encoding
 set statusline+=%{&ff}]\ \     "file format
@@ -183,6 +180,43 @@ set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 
 
+" Functions
+" ----------------------------------------------------------------------------
+
+function! BufferClean()
+  " list of *all* buffer numbers
+  let l:buffers = range(1, bufnr('$'))
+
+  " what tab page are we in?
+  let l:currentTab = tabpagenr()
+  try
+    " go through all tab pages
+    let l:tab = 0
+    while l:tab < tabpagenr('$')
+      let l:tab += 1
+
+      " go through all windows
+      let l:win = 0
+      while l:win < winnr('$')
+        let l:win += 1
+        " whatever buffer is in this window in this tab, remove it from
+        " l:buffers list
+        let l:thisbuf = winbufnr(l:win)
+        call remove(l:buffers, index(l:buffers, l:thisbuf))
+      endwhile
+    endwhile
+
+    " if there are any buffers left, delete them
+    if len(l:buffers)
+      execute 'bwipeout' join(l:buffers)
+    endif
+  finally
+    " go back to our original tab page
+    execute 'tabnext' l:currentTab
+  endtry
+endfunction
+
+
 " MacVim modifications (color, shortcuts, etc.. "
 " ---------------------------------------------------------------------------
 
@@ -190,12 +224,12 @@ highlight SignColumn guibg=#272822
 
 if has("gui_macvim")
   " No toolbars, menu or scrollbars in the GUI
-  set guifont=Menlo\ for\ Powerline:h15
-  " set guifont=Lekton:h18
+  " set guifont=Menlo\ for\ Powerline:h15
+  set guifont=Lekton:h18
   " set guifont=CosmicSansNeueMono:h17
-  " set guifont=PT\ Mono:h15
-  set transparency=5
-  set linespace=3
+  " set guifont=Ubuntu\ Mono:h17
+  set transparency=3
+  set linespace=5
   " "set clipboard+=unnamed
   set vb t_vb=
   set guioptions-=m  "no menu
