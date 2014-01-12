@@ -13,3 +13,11 @@ set fish_plugins autojump bundler set git rails
 
 # Load oh-my-fish configuration.
 . $fish_path/oh-my-fish.fish
+
+# PATHs
+set default_path /usr/bin /usr/sbin /bin /sbin
+set homebrew /usr/local/bin /usr/local/sbin
+set brew_rbenv "/usr/local/var/rbenv/shims"
+set -gx PATH $homebrew $brew_rbenv $default_path
+### Ruby (rbenv) ###
+set -gx RBENV_ROOT /usr/local/var/rbenv
