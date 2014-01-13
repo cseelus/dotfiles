@@ -1,8 +1,12 @@
 # Path to your oh-my-fish.
 set fish_path $HOME/.oh-my-fish
 
-# Theme (good ones are idan, numist)
-set fish_theme idan
+# Theme (good ones are clearance, idan, numist)
+set fish_theme clearance
+
+function fish_right_prompt -d "empty"
+    # date "+%d.%m.%Y"
+end
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-fish/plugins/*)
 # Custom plugins may be added to ~/.oh-my-fish/custom/plugins/
@@ -21,3 +25,12 @@ set brew_rbenv "/usr/local/var/rbenv/shims"
 set -gx PATH $homebrew $brew_rbenv $default_path
 ### Ruby (rbenv) ###
 set -gx RBENV_ROOT /usr/local/var/rbenv
+
+# Aliasing
+alias bex="bundle exec"
+alias hostsconfig="sudo mvim /etc/hosts"
+alias vhostsconfig="sudo mvim /etc/apache2/extra/httpd-vhosts.conf"
+alias fishconfig="vi ~/.config/fish/config.fish"
+alias vi="mvim --remote-tab-silent"
+alias vib="mvim --remote-silent"
+alias virtuoso="cd /usr/local/Cellar/virtuoso/7.0.0/var/lib/virtuoso/db & virtuoso-t -f"
