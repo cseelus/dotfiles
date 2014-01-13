@@ -2,10 +2,15 @@
 set fish_path $HOME/.oh-my-fish
 
 # Theme (good ones are clearance, idan, numist)
-set fish_theme clearance
+set fish_theme clearance-fish
 
+# Right promt (usually prints working directory in short form)
 function fish_right_prompt -d "empty"
-    # date "+%d.%m.%Y"
+  # date "+%d.%m.%Y"
+end
+
+function fish_title
+	pwd
 end
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-fish/plugins/*)
