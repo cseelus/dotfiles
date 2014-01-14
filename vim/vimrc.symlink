@@ -7,8 +7,8 @@ set nocompatible                " Turn off compability mode with Vi
 " Vundle initialization
 " ---------------------------------------------------------------------------
 
-if filereadable(expand("~/.dotfiles/vim_vundles.vim"))
-  source ~/.dotfiles/vim_vundles.vim
+if filereadable(expand("~/.dotfiles/vim/vundle.vim"))
+  source ~/.dotfiles/vim/vundle.vim
 endif
 
 
@@ -40,8 +40,8 @@ set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
 
 set conceallevel=2              " See http://ithaca.arpinum.org/2010/11/06/vim-conceal-for-ruby.html
 
-if $SHELL =~ 'bin/fish' 
-  set shell=/bin/sh 
+if $SHELL =~ 'bin/fish'
+  set shell=/bin/sh
 endif
 
 
@@ -283,7 +283,7 @@ let g:neocomplcache_max_list = 5
 " words less than 3 letters long aren't worth completing
 let g:neocomplcache_auto_completion_start_length = 3
 
-" This makes sure we use neocomplcache completefunc instead of 
+" This makes sure we use neocomplcache completefunc instead of
 " the one in rails.vim, otherwise this plugin will crap out
 let g:neocomplcache_force_overwrite_completefunc = 1
 
