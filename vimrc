@@ -38,6 +38,12 @@ set laststatus=2
 
 set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
 
+set conceallevel=2              " See http://ithaca.arpinum.org/2010/11/06/vim-conceal-for-ruby.html
+
+if $SHELL =~ 'bin/fish' 
+  set shell=/bin/sh 
+endif
+
 
 " Indentation settings
 " ---------------------------------------------------------------------------
@@ -55,7 +61,7 @@ filetype plugin on
 filetype indent on
 
 " Display tabs and trailing spaces visually
-"↪ and display the next line if the line exceeds the width of the window
+" ↪ and display the next line if the line exceeds the width of the window
 if has("multi_byte")
 	set lcs=tab:\»\ ,trail:•,extends:>,precedes:<,nbsp:¤"
 	let &sbr = nr2char(8618).' '
@@ -71,9 +77,6 @@ function! UpdateLcs()
 endfunction
 
 autocmd BufEnter,BufWinEnter,WinEnter,CmdwinEnter * call UpdateLcs()
-
-" Enable wrapping characters
-set conceallevel=2
 
 
 " Text wrapping
