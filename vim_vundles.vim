@@ -60,6 +60,8 @@ Bundle 'tpope/vim-haml'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
+" Vim support for editing fish scripts
+Bundle "dag/vim-fish"
 
 " Colorschemes
 " ------------
