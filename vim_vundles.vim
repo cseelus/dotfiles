@@ -20,7 +20,6 @@ Bundle 'gmarik/vundle'
 " 
 " SearchComplete - tab completion in the / search window
 " 
-" repeat - adds . (repeat command) support for complex commands like surround.vim. i.e. if you perform a surround and hit ., it will Just Work (vim by default will only repeat the last piece of the complex command)
 " 
 " matchit - helps with matching brackets, improves other plugins
 
@@ -34,19 +33,23 @@ Bundle 'twe4ked/vim-peepopen'
 Bundle 'tpope/vim-surround'
 Bundle 'ap/vim-css-color'
 Bundle 'terryma/vim-multiple-cursors'
-Bundle 'tomtom/tcomment_vim'
+Bundle 'tpope/vim-commentary'
+" Adds . (repeat command) support for complex commands like surround.vim
+Bundle 'tpope/vim-repeat'
 " yankring: effortless sanity for pasting. every time you yank something it goes into a buffer. after hitting p to paste, use ctrl-p or ctrl-n to cycle through the paste options. great for when you accidentally overwrite your yank with a delete.
-Bundle "skwp/YankRing.vim"
+Bundle 'skwp/YankRing.vim'
 " Vim-Session: Use :SaveSession and :OpenSession to come back to your saved window layout (vim-misc is required)
 " Bundle "xolox/vim-misc"
 " Bundle "xolox/vim-session"
 " Autocompletion
 Bundle 'Shougo/neocomplcache.vim'
 " snipMate: Offers textmate-like snippet expansion + scrooloose-snippets . try hitting TAB after typing a snippet
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-Bundle "honza/vim-snippets"
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
+Bundle 'honza/vim-snippets'
+" 'end' certain keywords (like 'do', 'if') in some languages automatically
+Bundle 'tpope/vim-endwise'
 
 " Optimizations for specific languages/tools
 " ------------------------------------------
@@ -61,7 +64,8 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
 " Vim support for editing fish scripts
-Bundle "dag/vim-fish"
+Bundle 'dag/vim-fish'
+Bundle 'n3.vim'
 
 " Colorschemes
 " ------------
