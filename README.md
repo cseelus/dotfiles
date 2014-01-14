@@ -6,8 +6,7 @@ My unix dotfiles for
 - Git
 - fish
 - Pry
-- Rubydebug
-- Rubygems
+- Ruby
 - Tmux
 - Vim
 - Zsh
