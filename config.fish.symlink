@@ -15,7 +15,7 @@ end
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-fish/plugins/*)
 # Custom plugins may be added to ~/.oh-my-fish/custom/plugins/
-set fish_plugins autojump bundler set git rails vi-mode
+set fish_plugins autojump bundler set git rails
 
 # Path to your custom folder (default path is $FISH/custom)
 #set fish_custom $HOME/dotfiles/oh-my-fish
@@ -36,7 +36,7 @@ set -gx RBENV_ROOT /usr/local/var/rbenv
 alias bex="bundle exec"
 alias hostsconfig="sudo mvim /etc/hosts"
 alias vhostsconfig="sudo mvim /etc/apache2/extra/httpd-vhosts.conf"
-alias fishconfig="vi ~/.config/fish/config.fish"
+alias fishconfig="mvim ~/.dotfiles/config.fish.symlink"
 alias vi="mvim --remote-tab-silent"
 alias vib="mvim --remote-silent"
 alias virtuoso="cd /usr/local/Cellar/virtuoso/7.0.0/var/lib/virtuoso/db & virtuoso-t -f"
