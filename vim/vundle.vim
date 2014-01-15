@@ -21,7 +21,6 @@ Bundle 'gmarik/vundle'
 " SearchComplete - tab completion in the / search window
 " 
 " 
-" matchit - helps with matching brackets, improves other plugins
 
 " General vim improvements
 " ------------------------
@@ -50,6 +49,8 @@ Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
 " 'end' certain keywords (like 'do', 'if') in some languages automatically
 Bundle 'tpope/vim-endwise'
+" matchit - helps with matching brackets, improves other plugins
+Bundle 'matchit.zip'
 
 " Optimizations for specific languages/tools
 " ------------------------------------------
