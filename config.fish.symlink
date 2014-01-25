@@ -27,8 +27,11 @@ set fish_plugins autojump bundler set git rails
 set default_path /usr/bin /usr/sbin /bin /sbin
 set homebrew /usr/local/bin /usr/local/sbin
 set latex "/usr/texbin"
-set brew_rbenv "/usr/local/var/rbenv/shims"
-set -gx PATH $homebrew $latex $brew_rbenv $default_path
+set odbcsys "/etc"
+set odbc "/usr/local/etc"
+set rbenv $HOME/.rbenv/bin
+set brew_rbenv $HOME/.rbenv/shims
+set -gx PATH $homebrew $latex $odbcsys $odbc $rbenv $brew_rbenv $default_path
 ### Ruby (rbenv) ###
 set -gx RBENV_ROOT /usr/local/var/rbenv
 
