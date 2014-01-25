@@ -31,6 +31,9 @@ set nobackup                    " Dont create annoying backup files
 set splitright                  " Split vertical windows to the right
 set splitbelow                  " Split horizontal windows below
 
+set ssop-=options               " Dont store global and local values in a session
+set ssop-=folds                 " Dont store folds
+
 set encoding=utf-8              " Set default encoding to UTF-8
 set autowrite                   " Autosave before :next, :make etc.
 set autoread                    " Autoreread changed files w/o asking
@@ -105,17 +108,31 @@ set hlsearch                    " Highlight search results
 set incsearch                   " Transfer the search term when writing
 
 
-" Sessions
+" Theming
 " ---------------------------------------------------------------------------
 
-set ssop-=options               " Dont store global and local values in a session
-set ssop-=folds                 " Dont store folds
-
-set scrolloff=7                 " Start scrolling X lines above/below cursor
+set scrolloff=5                 " Start scrolling X lines above/below cursor
 syntax enable
-set background=dark
-colorscheme clearance
 set t_Co=256                    " Set 256 colors in terminal mode
+set background=dark
+
+" Some nice colorschemes
+" - dark
+" colorscheme busybee
+" colorscheme clearance
+" colorscheme codeschool
+" colorscheme darkrobot
+" colorscheme jellybeans
+" colorscheme moria
+" colorscheme molokai
+" colorscheme nature
+" colorscheme oceanblack
+" colorscheme xoria256
+" colorscheme zenburn
+" - light
+" colorscheme google
+colorscheme louver
+" colorscheme tomatosoup
 
 
 " Persistent undo
@@ -142,8 +159,8 @@ nmap . .`[
 
 :let mapleader = ","
 
-" Edit VIMRC
-nmap <leader>v :e $MYVIMRC<CR>
+nmap <leader>v :e $MYVIMRC<CR> " Edit VIMRC
+nmap <leader>c gcc " Edit VIMRC
 
 " Remove trailing white space for certain file types on save
 autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.py,*.rb,*.sass,*.scss,*.tex} :call <SID>StripTrailingWhitespaces()
@@ -245,7 +262,7 @@ if has("gui_macvim")
   " set guifont=CosmicSansNeueMono:h17
   " set guifont=Ubuntu\ Mono:h17
   set transparency=3
-  set linespace=5
+  set linespace=3
   " "set clipboard+=unnamed
   set vb t_vb=
   set guioptions-=m  "no menu
@@ -270,6 +287,6 @@ endif
 " Plugin settings
 " ---------------------------------------------------------------------------
 
-for fpath in split(globpath('~/.vim/settings', '*.vim'), '\n')
+for fpath in split(globpath('~/.dotfiles/vim/settings', '*.vim'), '\n')
   exe 'source' fpath
 endfor
