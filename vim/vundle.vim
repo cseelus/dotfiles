@@ -51,6 +51,11 @@ Bundle 'honza/vim-snippets'
 Bundle 'tpope/vim-endwise'
 " matchit - helps with matching brackets, improves other plugins
 Bundle 'matchit.zip'
+" Full path fuzzy file, buffer, mru, tag, ... finder for Vim
+Bundle 'kien/ctrlp.vim'
+" Rename a buffer on within VIM and on disk (:rename[!] {newname})
+Bundle 'danro/rename.vim'
+Bundle 'IndexedSearch'
 
 " Optimizations for specific languages/tools
 " ------------------------------------------
