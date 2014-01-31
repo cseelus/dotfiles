@@ -119,7 +119,8 @@ set background=dark
 " Some nice colorschemes
 " - dark
 " colorscheme busybee
-" colorscheme clearance
+colorscheme clearance
+" colorscheme IR_Black
 " colorscheme codeschool
 " colorscheme darkrobot
 " colorscheme jellybeans
@@ -130,8 +131,9 @@ set background=dark
 " colorscheme xoria256
 " colorscheme zenburn
 " - light
+" colorscheme github
 " colorscheme google
-colorscheme louver
+" colorscheme louver
 " colorscheme tomatosoup
 
 
@@ -144,7 +146,7 @@ set undodir=~/.vim/backups
 set undofile
 
 
-" Custom key mappings
+" Custom key mappings/shortcuts
 " ---------------------------------------------------------------------------
 
 " Sane vertical moving on displayed lines
@@ -161,6 +163,8 @@ nmap . .`[
 
 nmap <leader>v :e $MYVIMRC<CR> " Edit VIMRC
 nmap <leader>c gcc " Edit VIMRC
+
+cabbrev tn tabnew
 
 " Remove trailing white space for certain file types on save
 autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.py,*.rb,*.sass,*.scss,*.tex} :call <SID>StripTrailingWhitespaces()
@@ -276,7 +280,7 @@ if has("gui_macvim")
 
   " Go to file
   " macm File.New\ Tab key=<nop>
-  " "nmap <D-t> :CtrlP<cr>
+  nmap <D-t> :CtrlP<cr>
 
   " Move  with cmd+alt
   nmap <D-M-RIGHT> gt
