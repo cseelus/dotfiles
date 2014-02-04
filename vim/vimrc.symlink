@@ -128,6 +128,7 @@ colorscheme clearance
 " colorscheme molokai
 " colorscheme nature
 " colorscheme oceanblack
+" colorscheme solarized
 " colorscheme xoria256
 " colorscheme zenburn
 " - light
@@ -175,16 +176,17 @@ autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.py,*.rb
 
 set statusline=
 "set statusline+=%t            "tail of the filename
+" set statusline+=[%t]\ \        "file name
 set statusline+=[%{strlen(&fenc)?&fenc:'none'},\  "file encoding
 set statusline+=%{&ff}]\ \     "file format
 set statusline+=%h             "help file flag
 set statusline+=%m             "modified flag
 set statusline+=%r             "read only flag
-set statusline+=%y             "filetype
+set statusline+=%y\ \          "filetype
 set statusline+=%=             "left/right separator
+set statusline+=\ \ [%P,\       "percent through file
 set statusline+=Line\ %l/%L,\  "cursor line/total lines
-set statusline+=Column\ %c,    "cursor column
-set statusline+=\ %P\          "percent through file
+set statusline+=Column\ %c]\     "cursor column
 
 
 " Wildmode completion
@@ -265,8 +267,8 @@ if has("gui_macvim")
   set guifont=Lekton:h18
   " set guifont=CosmicSansNeueMono:h17
   " set guifont=Ubuntu\ Mono:h17
-  set transparency=3
-  set linespace=3
+  set transparency=0
+  set linespace=2
   " "set clipboard+=unnamed
   set vb t_vb=
   set guioptions-=m  "no menu

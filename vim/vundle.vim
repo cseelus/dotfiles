@@ -55,6 +55,7 @@ Bundle 'matchit.zip'
 Bundle 'kien/ctrlp.vim'
 " Rename a buffer on within VIM and on disk (:rename[!] {newname})
 Bundle 'danro/rename.vim'
+" Show 'Match X of X' for searched term
 Bundle 'IndexedSearch'
 
 " Optimizations for specific languages/tools
