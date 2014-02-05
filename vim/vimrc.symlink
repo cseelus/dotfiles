@@ -164,6 +164,7 @@ nmap . .`[
 
 nmap <leader>v :e $MYVIMRC<CR> " Edit VIMRC
 nmap <leader>c gcc " Edit VIMRC
+nmap <leader>w :echo synIDattr(synID(line("."), col("."), 1), "name")<CR>
 
 cabbrev tn tabnew
 
