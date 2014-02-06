@@ -31,7 +31,7 @@ set latex "/usr/texbin"
 set odbcsys "/etc"
 set odbc "/usr/local/etc"
 set rbenv $HOME/.rbenv/bin
-set brew_rbenv $HOME/.rbenv/shims /usr/local/var/rbenv/shims
+set brew_rbenv /usr/local/var/rbenv/shims
 set -gx PATH $homebrew $latex $odbcsys $odbc $rbenv $brew_rbenv $default_path
 ### Ruby (rbenv) ###
 set -gx RBENV_ROOT /usr/local/var/rbenv
