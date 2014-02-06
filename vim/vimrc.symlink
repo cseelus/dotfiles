@@ -165,8 +165,10 @@ nmap . .`[
 nmap <leader>v :e $MYVIMRC<CR> " Edit VIMRC
 nmap <leader>c gcc " Edit VIMRC
 nmap <leader>w :echo synIDattr(synID(line("."), col("."), 1), "name")<CR>
+imap <leader>t <C-X>/
 
 cabbrev tn tabnew
+
 
 " Remove trailing white space for certain file types on save
 autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.py,*.rb,*.sass,*.scss,*.tex} :call <SID>StripTrailingWhitespaces()
