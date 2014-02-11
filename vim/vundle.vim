@@ -15,12 +15,12 @@ Bundle 'gmarik/vundle'
 " ---------------------------------------------------------------------------
 
 " vim-session: use :SaveSession and :OpenSession to come back to your saved window layout
-" 
+"
 " IndexedSearch - when you do searches will show you 'Match 2 of 4' in the status line
-" 
+"
 " SearchComplete - tab completion in the / search window
-" 
-" 
+"
+"
 
 " General vim improvements
 " ------------------------
@@ -73,6 +73,7 @@ Bundle 'LaTeX-Box-Team/LaTeX-Box'
 " Vim support for editing fish scripts
 Bundle 'dag/vim-fish'
 Bundle 'n3.vim'
+Bundle 'webgefrickel/vim-typoscript'
 
 " Colorschemes
 " ------------
