@@ -119,11 +119,11 @@ set background=dark
 " Some nice colorschemes
 " - dark
 " colorscheme busybee
-colorscheme clearance
-" colorscheme IR_Black
+" colorscheme clearance
 " colorscheme codeschool
 " colorscheme darkrobot
 " colorscheme jellybeans
+colorscheme lanai
 " colorscheme moria
 " colorscheme molokai
 " colorscheme nature
@@ -171,7 +171,7 @@ cabbrev tn tabnew
 
 
 " Remove trailing white space for certain file types on save
-autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.py,*.rb,*.sass,*.scss,*.tex} :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.py,*.rb,*.sass,*.scss,*.tex,*.vim} :call <SID>StripTrailingWhitespaces()
 
 
 " Statusline
@@ -266,12 +266,13 @@ highlight SignColumn guibg=#272822
 
 if has("gui_macvim")
   " No toolbars, menu or scrollbars in the GUI
-  " set guifont=Menlo\ for\ Powerline:h15
-  set guifont=Lekton:h18
+  set guifont=Menlo:h15
+  " set guifont=Lekton:h18
   " set guifont=CosmicSansNeueMono:h17
   " set guifont=Ubuntu\ Mono:h17
+  " set guifont=Source\ Code\ Pro:h15
   set transparency=0
-  set linespace=2
+  set linespace=3
   " "set clipboard+=unnamed
   set vb t_vb=
   set guioptions-=m  "no menu
