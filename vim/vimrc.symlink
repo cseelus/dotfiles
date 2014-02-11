@@ -22,7 +22,7 @@ set noerrorbells                " No beeps
 set backspace=indent,eol,start  " Makes backspace key more powerful
 set showcmd                     " Show me what I'm typing
 set showmode                    " Show/Hide current mode
-set relativenumber              " Set relative line number
+" set relativenumber              " Set relative line number
 set number                      " Enables hybrid line number mode
 
 set noswapfile                  " Dont use swapfile
@@ -166,7 +166,7 @@ nmap <leader>v :e $MYVIMRC<CR> " Edit VIMRC
 nmap <leader>c gcc " Edit VIMRC
 nmap <leader>w :echo synIDattr(synID(line("."), col("."), 1), "name")<CR>
 imap <leader>t <C-X>/
-
+"
 cabbrev tn tabnew
 
 
