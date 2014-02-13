@@ -57,6 +57,8 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'danro/rename.vim'
 " Show 'Match X of X' for searched term
 Bundle 'IndexedSearch'
+" Vim plugin for accelerated smooth scroll
+Bundle 'yonchu/accelerated-smooth-scroll'
 
 " Optimizations for specific languages/tools
 " ------------------------------------------
