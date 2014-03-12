@@ -69,6 +69,7 @@ Bundle "skwp/vim-html-escape"
 " Easy navigation of the Rails directory structure, interface to rake + rails, much much more: https://github.com/tpope/vim-rails
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-haml'
+Bundle 'othree/html5.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
