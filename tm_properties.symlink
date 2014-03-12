@@ -34,7 +34,7 @@ TM_GIT = "/usr/local/bin/git"
 # Default editing configuration
 #
 softWrap         = true
-wrapColumn       = "Use Window Frame"
+wrapColumn       = 78
 softTabs         = true
 tabSize          = 2
 
