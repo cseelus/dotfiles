@@ -26,21 +26,10 @@ set fish_plugins set autojump git rails set vi-mode
 
 # PATHs
 set default_path /usr/bin /usr/sbin /bin /sbin
-set homebrew /usr/local/bin /usr/local/sbin
-set latex "/usr/texbin"
-set odbcsys "/etc"
-set odbc "/usr/local/etc"
-set rbenv $HOME/.rbenv/bin
-set brew_rbenv /usr/local/var/rbenv/shims
-set -gx PATH $homebrew $latex $odbcsys $odbc $rbenv $brew_rbenv $default_path
-### Ruby (rbenv) ###
-set -gx RBENV_ROOT /usr/local/var/rbenv
+set -gx PATH $default_path
 
 # Aliasing
 alias bex="bundle exec"
-alias hostsconfig="sudo mvim /etc/hosts"
-alias vhostsconfig="sudo mvim /etc/apache2/extra/httpd-vhosts.conf"
-alias fishconfig="mvim ~/.dotfiles/config.fish.symlink"
-alias vi="mvim --remote-tab-silent"
-alias vib="mvim --remote-silent"
-alias virtuoso="cd /usr/local/Cellar/virtuoso/7.0.0/var/lib/virtuoso/db & virtuoso-t -f"
+alias hostsconfig="sudo vim /etc/hosts"
+alias vhostsconfig="sudo vim /etc/apache2/extra/httpd-vhosts.conf"
+alias fishconfig="vim ~/.dotfiles/config.fish.symlink"
