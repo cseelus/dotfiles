@@ -69,7 +69,7 @@ filetype indent on
 " Display tabs and trailing spaces visually
 " ↪ and display the next line if the line exceeds the width of the window
 if has("multi_byte")
-	set lcs=tab:\»\ ,trail:•,extends:>,precedes:<,nbsp:¤"
+	set listchars=tab:▸\ ,eol:¬,extends:>,precedes:<,trail:•
 	let &sbr = nr2char(8618).' '
 else
 	set lcs=tab:>\ ,extends:>,precedes:<,trail:-
@@ -134,6 +134,7 @@ colorscheme lanai
 " colorscheme xoria256
 " colorscheme zenburn
 " - light
+" colorscheme lanai-light
 " colorscheme github
 " colorscheme google
 " colorscheme louver
@@ -164,13 +165,13 @@ nmap . .`[
 
 :let mapleader = ","
 
+nmap <leader>e :e.<CR>         " Show netrw
 nmap <leader>v :e $MYVIMRC<CR> " Edit VIMRC
-nmap <leader>c gcc " Edit VIMRC
-nmap <leader>w :echo synIDattr(synID(line("."), col("."), 1), "name")<CR>
+nmap <leader>c gcc             " Toggle comment line
 imap <leader>t <C-X>/
 "
 " Show syntax highlighting groups for word under cursor
-nmap <leader>e :call <SID>SynStack()<CR>
+nmap <leader>w :call <SID>SynStack()<CR>
 function! <SID>SynStack()
   if !exists("*synstack")
     return
