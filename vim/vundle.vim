@@ -81,6 +81,7 @@ Bundle 'webgefrickel/vim-typoscript'
 " ------------
 Bundle 'flazz/vim-colorschemes'
 Bundle 'cseelus/vim-colors-clearance'
+Bundle 'cseelus/vim-colors-lanai'
 
 
 " Filetype plugin indent on is required by vundle
