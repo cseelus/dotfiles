@@ -5,6 +5,7 @@
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
+set nolist nolist nolist nolist nolist nolist nolist nolist
 call vundle#rc()
 
 " let Vundle manage Vundle (required)
@@ -28,7 +29,6 @@ Bundle 'gmarik/vundle'
 Bundle 'airblade/vim-rooter'
 " As soon as you type a character that could have a matching (closing) counterpart, vim automatically puts its counterpart in front of your cursor
 Bundle 'jiangmiao/auto-pairs'
-Bundle 'twe4ked/vim-peepopen'
 Bundle 'tpope/vim-surround'
 Bundle 'ap/vim-css-color'
 Bundle 'terryma/vim-multiple-cursors'
@@ -68,6 +68,7 @@ Bundle 'tpope/vim-ragtag'
 Bundle "skwp/vim-html-escape"
 " Easy navigation of the Rails directory structure, interface to rake + rails, much much more: https://github.com/tpope/vim-rails
 Bundle 'tpope/vim-rails'
+Bundle 'depuracao/vim-rdoc'
 Bundle 'tpope/vim-haml'
 Bundle 'othree/html5.vim'
 Bundle 'kchmck/vim-coffee-script'
