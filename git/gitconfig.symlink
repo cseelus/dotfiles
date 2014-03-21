@@ -99,7 +99,7 @@
 [merge]
   summary = true
   verbosity = 1
-	tool = Kaleidoscope
+	tool = vimdiff
 [apply]
   whitespace = nowarn
 [branch]
@@ -119,7 +119,7 @@
   # instead of a/b/c/d as prefixes for patches
   mnemonicprefix = true
 	algorithm = patience
-	tool = Kaleidoscope
+	tool = vimdiff
 [rerere]
   # Remember my merges
   # http://gitfu.wordpress.com/2008/04/20/git-rerere-rereremember-what-you-did-last-time/
