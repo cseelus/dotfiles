@@ -59,6 +59,9 @@ Bundle 'danro/rename.vim'
 Bundle 'IndexedSearch'
 " Vim plugin for accelerated smooth scroll
 Bundle 'yonchu/accelerated-smooth-scroll'
+" Make gui-only colorschemes work transparently in terminal vim with 16/256
+" colors
+Bundle 'CSApprox'
 
 " Optimizations for specific languages/tools
 " ------------------------------------------
