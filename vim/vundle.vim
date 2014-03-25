@@ -5,7 +5,6 @@
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
-set nolist nolist nolist nolist nolist nolist nolist nolist
 call vundle#rc()
 
 " let Vundle manage Vundle (required)
@@ -59,6 +58,9 @@ Bundle 'danro/rename.vim'
 Bundle 'IndexedSearch'
 " Vim plugin for accelerated smooth scroll
 Bundle 'yonchu/accelerated-smooth-scroll'
+" Make gui-only colorschemes work transparently in terminal vim with 16/256
+" colors
+Bundle 'CSApprox'
 
 " Optimizations for specific languages/tools
 " ------------------------------------------
@@ -83,7 +85,8 @@ Bundle 'webgefrickel/vim-typoscript'
 " ------------
 Bundle 'flazz/vim-colorschemes'
 Bundle 'cseelus/vim-colors-clearance'
+Bundle 'file:///Users/chris/.vim/bundle/vim-colors-lanai'
 
 
 " Filetype plugin indent on is required by vundle
-filetype plugin indent on       " required for vundle
+filetype plugin indent on
