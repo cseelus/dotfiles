@@ -165,9 +165,10 @@ nmap . .`[
 
 :let mapleader = ","
 
-nmap <leader>e :e.<CR>         " Show netrw
-nmap <leader>v :e $MYVIMRC<CR> " Edit VIMRC
-nmap <leader>c gcc             " Toggle comment line
+nmap <leader>e :e.<CR>          " Show netrw
+nmap <leader>v :e $MYVIMRC<CR>  " Edit VIMRC
+nmap <leader>s :so $MYVIMRC<CR> " Reload VIMRC
+nmap <leader>c gcc              " Toggle comment line
 imap <leader>t <C-X>/
 "
 " Show syntax highlighting groups for word under cursor
@@ -208,7 +209,8 @@ set statusline+=Column\ %c]\     "cursor column
 
 set wildmode=list:longest
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
-set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+" stuff to ignore when tab completing, for ctrlp, etc.
+set wildignore=*.o,*.obj,*~ 
 set wildignore+=*vim/backups*
 set wildignore+=*sass-cache*
 set wildignore+=*DS_Store*
