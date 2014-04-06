@@ -56,11 +56,15 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'danro/rename.vim'
 " Show 'Match X of X' for searched term
 Bundle 'IndexedSearch'
+" The Silver Searcher
+Bundle 'rking/ag.vim'
 " Vim plugin for accelerated smooth scroll
 Bundle 'yonchu/accelerated-smooth-scroll'
 " Make gui-only colorschemes work transparently in terminal vim with 16/256
 " colors
 Bundle 'CSApprox'
+" Make Vim play nicely with iTerm 2 and tmux
+Bundle 'sjl/vitality.vim'
 
 " Optimizations for specific languages/tools
 " ------------------------------------------
