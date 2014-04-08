@@ -60,6 +60,8 @@ Bundle 'IndexedSearch'
 Bundle 'rking/ag.vim'
 " Vim plugin for accelerated smooth scroll
 Bundle 'yonchu/accelerated-smooth-scroll'
+" Display the indention levels with thin vertical lines
+Bundle 'Yggdroot/indentLine'
 " Make gui-only colorschemes work transparently in terminal vim with 16/256
 " colors
 Bundle 'CSApprox'
