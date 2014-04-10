@@ -15,9 +15,6 @@ Bundle 'gmarik/vundle'
 " ---------------------------------------------------------------------------
 
 " vim-session: use :SaveSession and :OpenSession to come back to your saved window layout
-"
-" IndexedSearch - when you do searches will show you 'Match 2 of 4' in the status line
-"
 " SearchComplete - tab completion in the / search window
 "
 "
@@ -26,7 +23,8 @@ Bundle 'gmarik/vundle'
 " ------------------------
 " Change the working directory to the project root when you open a file
 Bundle 'airblade/vim-rooter'
-" As soon as you type a character that could have a matching (closing) counterpart, vim automatically puts its counterpart in front of your cursor
+" As soon as you type a character that could have a matching (closing)
+" counterpart, vim automatically puts its counterpart in front of your cursor
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'tpope/vim-surround'
 Bundle 'ap/vim-css-color'
@@ -34,14 +32,19 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tpope/vim-commentary'
 " Adds . (repeat command) support for complex commands like surround.vim
 Bundle 'tpope/vim-repeat'
-" yankring: effortless sanity for pasting. every time you yank something it goes into a buffer. after hitting p to paste, use ctrl-p or ctrl-n to cycle through the paste options. great for when you accidentally overwrite your yank with a delete.
+" yankring: effortless sanity for pasting. every time you yank something
+" it goes into a buffer. after hitting p to paste, use ctrl-p or ctrl-n
+" to cycle through the paste options. great for when you accidentally
+" overwrite your yank with a delete.
 Bundle 'skwp/YankRing.vim'
-" Vim-Session: Use :SaveSession and :OpenSession to come back to your saved window layout (vim-misc is required)
+" Vim-Session: Use :SaveSession and :OpenSession to come back to your
+" saved window layout (vim-misc is required)
 " Bundle "xolox/vim-misc"
 " Bundle "xolox/vim-session"
 " Autocompletion
 Bundle 'Shougo/neocomplcache.vim'
-" snipMate: Offers textmate-like snippet expansion + scrooloose-snippets . try hitting TAB after typing a snippet
+" snipMate: Offers textmate-like snippet expansion + scrooloose-snippets
+" . try hitting TAB after typing a snippet
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
@@ -60,8 +63,6 @@ Bundle 'IndexedSearch'
 Bundle 'rking/ag.vim'
 " Vim plugin for accelerated smooth scroll
 Bundle 'yonchu/accelerated-smooth-scroll'
-" Display the indention levels with thin vertical lines
-Bundle 'Yggdroot/indentLine'
 " Make gui-only colorschemes work transparently in terminal vim with 16/256
 " colors
 Bundle 'CSApprox'
@@ -74,7 +75,8 @@ Bundle 'sjl/vitality.vim'
 Bundle 'tpope/vim-ragtag'
 " ,he and ,hu to escape and unescape html
 Bundle "skwp/vim-html-escape"
-" Easy navigation of the Rails directory structure, interface to rake + rails, much much more: https://github.com/tpope/vim-rails
+" Easy navigation of the Rails directory structure, interface to rake +
+" rails, much much more: https://github.com/tpope/vim-rails
 Bundle 'tpope/vim-rails'
 Bundle 'depuracao/vim-rdoc'
 Bundle 'tpope/vim-haml'
@@ -91,6 +93,7 @@ Bundle 'webgefrickel/vim-typoscript'
 " ------------
 Bundle 'flazz/vim-colorschemes'
 Bundle 'cseelus/vim-colors-clearance'
+Bundle 'imeos/vim-colors-solstice'
 Bundle 'file:///Users/chris/.vim/bundle/vim-colors-lanai'
 
 
