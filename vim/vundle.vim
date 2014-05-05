@@ -14,7 +14,8 @@ Bundle 'gmarik/vundle'
 " Vundles
 " ---------------------------------------------------------------------------
 
-" vim-session: use :SaveSession and :OpenSession to come back to your saved window layout
+" vim-session: use :SaveSession and :OpenSession to come back to your saved
+" window layout
 " SearchComplete - tab completion in the / search window
 "
 "

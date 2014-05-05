@@ -280,7 +280,7 @@ highlight SignColumn guibg=#272822
 
 if has("gui_macvim")
   " No toolbars, menu or scrollbars in the GUI
-  set guifont=Menlo:h15
+  set guifont=Menlo\ for\ Powerline:h14
   " set guifont=Lekton:h18
   " set guifont=CosmicSansNeueMono:h17
   " set guifont=Ubuntu\ Mono:h17
