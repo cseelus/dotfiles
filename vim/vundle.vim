@@ -89,6 +89,7 @@ Bundle 'LaTeX-Box-Team/LaTeX-Box'
 Bundle 'dag/vim-fish'
 Bundle 'n3.vim'
 Bundle 'webgefrickel/vim-typoscript'
+Bundle 'elentok/plaintasks.vim'
 
 " Colorschemes
 " ------------
