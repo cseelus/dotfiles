@@ -69,6 +69,13 @@ Bundle 'yonchu/accelerated-smooth-scroll'
 Bundle 'CSApprox'
 " Make Vim play nicely with iTerm 2 and tmux
 Bundle 'sjl/vitality.vim'
+" Type :e this/does/not/exist/file.txt, then save and smile that VIM created a
+" non existend directory for you
+Bundle 'pbrisbin/vim-mkdir'
+" Checks your syntax
+Bundle 'scrooloose/syntastic'
+" Exuberant Ctags
+Bundle 'vim-scripts/ctags.vim'
 
 " Optimizations for specific languages/tools
 " ------------------------------------------

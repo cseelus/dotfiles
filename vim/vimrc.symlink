@@ -24,6 +24,7 @@ set showcmd                     " Show me what I'm typing
 set showmode                    " Show/Hide current mode
 " set relativenumber              " Set relative line number
 set number                      " Enables hybrid line number mode
+set numberwidth=5               " Enables hybrid line number mode
 
 set noswapfile                  " Dont use swapfile
 set nobackup                    " Dont create annoying backup files
@@ -45,6 +46,8 @@ set conceallevel=2              " See http://ithaca.arpinum.org/2010/11/06/vim-c
 
 set scroll=9                    " Set # lines CTRL-D and CTRL-U jumps
 set scrolloff=5                 " Start scrolling X lines above/below cursor
+
+set history=10000               " A long long time ago …
 
 if $SHELL =~ 'bin/fish'
   set shell=/bin/sh
@@ -83,6 +86,9 @@ function! UpdateLcs()
 endfunction
 
 autocmd BufEnter,BufWinEnter,WinEnter,CmdwinEnter * call UpdateLcs()
+
+" Remove trailing white space for certain file types on save
+autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.py,*.rb,*.sass,*.scss,*.tex,*.vim} :call <SID>StripTrailingWhitespaces()
 
 
 " Text wrapping
@@ -183,8 +189,8 @@ endfunc
 
 cabbrev tn tabnew
 
-" Remove trailing white space for certain file types on save
-autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.py,*.rb,*.sass,*.scss,*.tex,*.vim} :call <SID>StripTrailingWhitespaces()
+" Switch between the last two files with double leader
+nnoremap <leader><leader> <c-^>
 
 
 " Statusline
@@ -324,3 +330,9 @@ endif
 for fpath in split(globpath('~/.dotfiles/vim/settings', '*.vim'), '\n')
   exe 'source' fpath
 endfor
+
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+endif
