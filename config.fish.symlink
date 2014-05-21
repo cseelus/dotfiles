@@ -38,6 +38,7 @@ set -gx RBENV_ROOT /usr/local/var/rbenv
 
 # Aliasing
 alias bex="bundle exec"
+alias cpwd="pwd | tr -d '\n' | pbcopy"
 alias hostsconfig="sudo mvim /etc/hosts"
 alias vhostsconfig="sudo mvim /etc/apache2/extra/httpd-vhosts.conf"
 alias fishconfig="mvim ~/.dotfiles/config.fish.symlink"
