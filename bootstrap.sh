@@ -49,7 +49,10 @@ fi
 install_fish
 
 # Install vundle
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
+if [[ ! -d ~/.vim/bundle/vundle ]]
+then
+  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
+fi
 
 # OSX only
 if [ "$(uname -s)" == "Darwin" ]
@@ -58,17 +61,17 @@ then
   ln -s $dir/keyremap4macbook/private.xml ~/Library/Application Support/KeyRemap4MacBook/private.xml
 fi
 
-# # create dotfiles_old in homedir
+# create olddir in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
 mkdir -p $olddir
 echo "...done"
 
-# # change to the dotfiles directory
+# change to the dotfiles directory
 echo "Changing to the $dir directory"
 cd $dir
 echo "...done"
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
+# move any existing dotfiles in homedir to olddir directory, then create symlinks 
 for symlink in $symlinks
 do
   # Get just the basename without .symlink extension
@@ -79,7 +82,7 @@ do
   if [ -f $HOME/.$target ]
     then
       echo "Moving existing .$target from ~ to $olddir"
-      mv $HOME/.$target $dotfiles_old/
+      mv $HOME/.$target $olddir/
       rm -rf $HOME/.$target
   fi
   ln -s $symlink $HOME/.$target
