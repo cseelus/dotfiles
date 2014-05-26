@@ -39,9 +39,9 @@ set -gx RBENV_ROOT /usr/local/var/rbenv
 # Aliasing
 alias bex="bundle exec"
 alias cpwd="pwd | tr -d '\n' | pbcopy"
-alias hostsconfig="sudo mvim /etc/hosts"
-alias vhostsconfig="sudo mvim /etc/apache2/extra/httpd-vhosts.conf"
-alias fishconfig="mvim ~/.dotfiles/config.fish.symlink"
+alias hostsconfig="sudo vim /etc/hosts"
+alias vhostsconfig="sudo vim /etc/apache2/extra/httpd-vhosts.conf"
+alias fishconfig="vim ~/.dotfiles/config.fish.symlink"
 alias vi="mvim --remote-tab-silent"
 alias vib="mvim --remote-silent"
 alias virtuoso="cd /usr/local/Cellar/virtuoso/7.0.0/var/lib/virtuoso/db & virtuoso-t -f"
