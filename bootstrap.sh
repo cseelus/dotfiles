@@ -25,9 +25,9 @@ install_fish () {
 if [ -f /bin/fish -o -f /usr/bin/fish ]
 then
   # Clone oh-my-fish repository from GitHub only if it isn't already present
-  if [[ ! -d $HOME/.oh-my-fish ]]
+  if [[ ! -d ~/.oh-my-fish ]]
   then
-    git clone https://github.com/bpinto/oh-my-fish.git
+    git clone https://github.com/bpinto/oh-my-fish.git ~/.oh-my-fish
   fi
   # Set the default shell to fish if it isn't currently set to fish
   if [[ ! $(echo $SHELL) == $(which fish) ]]
