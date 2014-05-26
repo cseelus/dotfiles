@@ -49,7 +49,7 @@ fi
 install_fish
 
 # Install vundle
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
 
 # OSX only
 if [ "$(uname -s)" == "Darwin" ]
