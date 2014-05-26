@@ -103,7 +103,8 @@ Bundle 'elentok/plaintasks.vim'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'cseelus/vim-colors-clearance'
 Bundle 'imeos/vim-colors-solstice'
-Bundle 'file:///Users/chris/.vim/bundle/vim-colors-lanai'
+" Bundle 'file:///Users/chris/.vim/bundle/vim-colors-lanai'
+Bundle 'cseelus/vim-colors-lanai'
 
 
 " Filetype plugin indent on is required by vundle
