@@ -48,6 +48,9 @@ fi
 # Install fish shell and oh-my-fish
 install_fish
 
+# Install vundle
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 # OSX only
 if [ "$(uname -s)" == "Darwin" ]
 then
