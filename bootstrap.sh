@@ -22,13 +22,16 @@ symlinks=$(find $dir -maxdepth 2 -name \*.symlink)
 
 install_fish () {
 # Test to see if fish is installed.  If it is:
-if [ -f /bin/fish -o -f /usr/bin/fish ]; then
+if [ -f /bin/fish -o -f /usr/bin/fish ]
+then
   # Clone oh-my-fish repository from GitHub only if it isn't already present
-  if [[ ! -d $HOME/.oh-my-fish/ ]]; then
+  if [[ ! -d $HOME/.oh-my-fish ]]
+  then
     git clone https://github.com/bpinto/oh-my-fish.git
   fi
   # Set the default shell to fish if it isn't currently set to fish
-  if [[ ! $(echo $SHELL) == $(which fish) ]]; then
+  if [[ ! $(echo $SHELL) == $(which fish) ]]
+  then
     chsh -s $(which fish)
   fi
 else
@@ -73,7 +76,8 @@ do
   if [ -f $HOME/.$target ]
     then
       echo "Moving existing .$target from ~ to $olddir"
-      mv .$target $dotfiles_old/
+      mv $HOME/.$target $dotfiles_old/
+      rm -rf $HOME/.$target
   fi
   ln -s $symlink $HOME/.$target
 done
