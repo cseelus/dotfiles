@@ -14,12 +14,6 @@ Bundle 'gmarik/vundle'
 " Vundles
 " ---------------------------------------------------------------------------
 
-" vim-session: use :SaveSession and :OpenSession to come back to your saved
-" window layout
-" SearchComplete - tab completion in the / search window
-"
-"
-
 " General vim improvements
 " ------------------------
 " Change the working directory to the project root when you open a file
@@ -30,7 +24,7 @@ Bundle 'jiangmiao/auto-pairs'
 Bundle 'tpope/vim-surround'
 Bundle 'ap/vim-css-color'
 Bundle 'terryma/vim-multiple-cursors'
-Bundle 'tpope/vim-commentary'
+Bundle 'tomtom/tcomment_vim'
 " Adds . (repeat command) support for complex commands like surround.vim
 Bundle 'tpope/vim-repeat'
 " yankring: effortless sanity for pasting. every time you yank something
@@ -40,8 +34,8 @@ Bundle 'tpope/vim-repeat'
 Bundle 'skwp/YankRing.vim'
 " Vim-Session: Use :SaveSession and :OpenSession to come back to your
 " saved window layout (vim-misc is required)
-" Bundle "xolox/vim-misc"
-" Bundle "xolox/vim-session"
+Bundle "xolox/vim-misc"
+Bundle "xolox/vim-session"
 " Autocompletion
 Bundle 'Shougo/neocomplcache.vim'
 " snipMate: Offers textmate-like snippet expansion + scrooloose-snippets
@@ -76,6 +70,7 @@ Bundle 'pbrisbin/vim-mkdir'
 Bundle 'scrooloose/syntastic'
 " Exuberant Ctags
 Bundle 'vim-scripts/ctags.vim'
+Bundle 'scrooloose/nerdtree'
 
 " Optimizations for specific languages/tools
 " ------------------------------------------
@@ -97,14 +92,16 @@ Bundle 'dag/vim-fish'
 Bundle 'n3.vim'
 Bundle 'webgefrickel/vim-typoscript'
 Bundle 'elentok/plaintasks.vim'
+" Git wrapper
+Bundle 'tpope/vim-fugitive'
 
 " Colorschemes
 " ------------
 Bundle 'flazz/vim-colorschemes'
 Bundle 'cseelus/vim-colors-clearance'
 Bundle 'imeos/vim-colors-solstice'
-" Bundle 'file:///Users/chris/.vim/bundle/vim-colors-lanai'
-Bundle 'cseelus/vim-colors-lanai'
+Bundle 'file:///Users/chris/.vim/bundle/vim-colors-lanai'
+" Bundle 'cseelus/vim-colors-lanai'
 
 
 " Filetype plugin indent on is required by vundle

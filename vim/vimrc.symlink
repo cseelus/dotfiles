@@ -53,6 +53,9 @@ if $SHELL =~ 'bin/fish'
   set shell=/bin/sh
 endif
 
+" Source the vimrc file after saving it
+autocmd bufwritepost .vimrc source $MYVIMRC
+
 
 " Indentation settings
 " ---------------------------------------------------------------------------
@@ -136,6 +139,7 @@ colorscheme lanai
 " colorscheme molokai
 " colorscheme nature
 " colorscheme oceanblack
+" colorscheme pencil
 " colorscheme solarized
 " colorscheme solstice
 " colorscheme xoria256
@@ -170,14 +174,15 @@ nmap . .`[
 " Allow saving of files as sudo
 "command W! w !sudo tee % >/dev/null
 
-:let mapleader = ","
+:let mapleader=","
 
-nmap <leader>e :e.<CR>          " Show netrw
-nmap <leader>v :e $MYVIMRC<CR>  " Edit VIMRC
-nmap <leader>s :so $MYVIMRC<CR> " Reload VIMRC
-nmap <leader>c gcc              " Toggle comment line
-imap <leader>t <C-X>/
-"
+nmap <leader>e :e.<CR>                    " Show netrw
+nmap <silent> <leader>v :e $MYVIMRC<CR>
+nmap <silent> <leader>vs :so $MYVIMRC<CR>
+imap <leader>t <C-X>/                     " Close tag
+" Switch between the last two files with double leader
+nnoremap <leader><leader> <c-^>
+
 " Show syntax highlighting groups for word under cursor
 nmap <leader>w :call <SID>SynStack()<CR>
 function! <SID>SynStack()
@@ -188,9 +193,6 @@ function! <SID>SynStack()
 endfunc
 
 cabbrev tn tabnew
-
-" Switch between the last two files with double leader
-nnoremap <leader><leader> <c-^>
 
 
 " Statusline
@@ -288,7 +290,7 @@ if has("gui_macvim")
   " No toolbars, menu or scrollbars in the GUI
   set guifont=Menlo\ for\ Powerline:h14
   " set guifont=Lekton:h18
-  " set guifont=CosmicSansNeueMono:h17
+  " set guifont=Cousine:h14
   " set guifont=Ubuntu\ Mono:h17
   " set guifont=Source\ Code\ Pro:h15
   set transparency=0
@@ -327,9 +329,9 @@ endif
 " Plugin settings
 " ---------------------------------------------------------------------------
 
-for fpath in split(globpath('~/.dotfiles/vim/settings', '*.vim'), '\n')
-  exe 'source' fpath
-endfor
+if filereadable(expand("~/.dotfiles/vim/settings.vim"))
+  source ~/.dotfiles/vim/settings.vim
+endif
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
