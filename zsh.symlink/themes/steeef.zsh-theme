@@ -24,7 +24,7 @@ turquoise="$fg[cyan]"
 orange="$fg[yellow]"
 purple="$fg_bold[blue]"
 hotpink="$fg[red]"
-limegreen="$fg[green]"
+limegreen="$fg_bold[green]"
 
 # enable VCS systems you use
 zstyle ':vcs_info:*' enable git svn
