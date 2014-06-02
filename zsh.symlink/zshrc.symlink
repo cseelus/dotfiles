@@ -63,3 +63,17 @@ function serve {
   port="${1:-3333}"
   ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => $port, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start"
 }
+
+# Fish shell like syntax highlighting for Zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Setup zsh-autosuggestions
+source ~/.zsh/zsh-autosuggestions/autosuggestions.zsh
+# Enable autosuggestions automatically
+zle-line-init() {
+    zle autosuggest-start
+}
+zle -N zle-line-init
+# use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
+# zsh-autosuggestions is designed to be unobtrusive)
+bindkey '^T' autosuggest-toggle
