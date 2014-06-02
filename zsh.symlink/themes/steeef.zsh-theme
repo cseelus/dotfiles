@@ -22,7 +22,7 @@ autoload -Uz vcs_info
 # colors
 turquoise="$fg[cyan]"
 orange="$fg[yellow]"
-purple="$fg[blue]"
+purple="$fg_bold[blue]"
 hotpink="$fg[red]"
 limegreen="$fg[green]"
 
