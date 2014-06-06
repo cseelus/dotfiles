@@ -94,6 +94,7 @@ Bundle 'webgefrickel/vim-typoscript'
 Bundle 'elentok/plaintasks.vim'
 " Git wrapper
 Bundle 'tpope/vim-fugitive'
+Bundle 'toyamarinyon/vim-swift'
 
 " Colorschemes
 " ------------

@@ -14,6 +14,9 @@ endif
 " controller
 let g:ctrlp_by_filename = 1
 
+" Height
+let g:ctrlp_max_height = 12
+
 " Remap CtrlP as it clashes with YankRing
 " with CMD+T
 " if has("gui_macvim")
@@ -25,9 +28,6 @@ let g:ctrlp_by_filename = 1
 " With leader+T
 let g:ctrlp_map = ',t'
 nnoremap <silent> ,t :CtrlP<CR>
-
-" Height
-let g:ctrlp_max_height = 12
 
 " Mappings for buffer search
 nnoremap <silent> ,b :CtrlPBuffer<cr>

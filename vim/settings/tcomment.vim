@@ -1,3 +1,3 @@
-" Comment lines with cmd+/
-map <D-#> :TComment<cr>
-vmap <D-#> :TComment<cr>gv
+" Comment lines
+nmap <silent> <leader>c :TComment<cr>
+vmap <silent> <leader>c :TComment<cr>gv

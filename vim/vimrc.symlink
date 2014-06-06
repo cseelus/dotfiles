@@ -49,6 +49,8 @@ set scrolloff=5                 " Start scrolling X lines above/below cursor
 
 set history=10000               " A long long time ago …
 
+set timeoutlen=500
+
 if $SHELL =~ 'bin/fish'
   set shell=/bin/sh
 endif
@@ -132,18 +134,13 @@ set background=dark
 " colorscheme busybee
 " colorscheme clearance
 " colorscheme codeschool
-" colorscheme darkrobot
 " colorscheme jellybeans
 colorscheme lanai
-" colorscheme moria
 " colorscheme molokai
-" colorscheme nature
 " colorscheme oceanblack
 " colorscheme pencil
 " colorscheme solarized
 " colorscheme solstice
-" colorscheme xoria256
-" colorscheme zenburn
 " - light
 " colorscheme lanai-light
 " colorscheme github
@@ -176,15 +173,15 @@ nmap . .`[
 
 :let mapleader=","
 
-nmap <leader>e :e.<CR>                    " Show netrw
-nmap <silent> <leader>v :e $MYVIMRC<CR>
-nmap <silent> <leader>vs :so $MYVIMRC<CR>
+nmap <leader>e :e.<cr>                    " Show netrw
+nmap <silent> <leader>v :tabnew $MYVIMRC<cr>
+nmap <silent> <leader>vs :so $MYVIMRC<cr>
 imap <leader>t <C-X>/                     " Close tag
 " Switch between the last two files with double leader
 nnoremap <leader><leader> <c-^>
 
 " Show syntax highlighting groups for word under cursor
-nmap <leader>w :call <SID>SynStack()<CR>
+nmap <leader>w :call <SID>SynStack()<cr>
 function! <SID>SynStack()
   if !exists("*synstack")
     return
@@ -288,11 +285,11 @@ highlight SignColumn guibg=#272822
 
 if has("gui_macvim")
   " No toolbars, menu or scrollbars in the GUI
-  set guifont=Menlo\ for\ Powerline:h14
+  " set guifont=Menlo\ for\ Powerline:h14
   " set guifont=Lekton:h18
-  " set guifont=Cousine:h14
+  set guifont=Cousine:h14
   " set guifont=Ubuntu\ Mono:h17
-  " set guifont=Source\ Code\ Pro:h15
+  " set guifont=Source\ Code\ Pro:h14
   set transparency=0
   set linespace=3
   " "set clipboard+=unnamed
@@ -322,7 +319,7 @@ if has("gui_macvim")
   map <D-7> 7gt
   map <D-8> 8gt
   map <D-9> 9gt
-  map <D-0> :tablast<CR>
+  map <D-0> :tablast<cr>
 endif
 
 
