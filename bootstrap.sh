@@ -41,12 +41,17 @@ else
 fi
 }
 
+init_git_submodules() {
+  git submodule init
+  git submodule update
+}
+
 
 # Working it out
 # ----------------------------------------------------------------------
 
-# Install fish shell and oh-my-fish
 install_fish
+init_git_submodules
 
 # Install vundle
 if [[ ! -d ~/.vim/bundle/vundle ]]
