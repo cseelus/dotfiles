@@ -50,6 +50,8 @@ Bundle 'tpope/vim-endwise'
 Bundle 'matchit.zip'
 " Full path fuzzy file, buffer, mru, tag, ... finder for Vim
 Bundle 'kien/ctrlp.vim'
+" Close buffers
+Bundle 'd11wtq/ctrlp_bdelete.vim'
 " Rename a buffer on within VIM and on disk (:rename[!] {newname})
 Bundle 'danro/rename.vim'
 " Show 'Match X of X' for searched term
@@ -99,7 +101,9 @@ Bundle 'toyamarinyon/vim-swift'
 " Colorschemes
 " ------------
 Bundle 'flazz/vim-colorschemes'
+Bundle 'chriskempson/base16-vim'
 Bundle 'cseelus/vim-colors-clearance'
+Bundle 'john2x/flatui.vim'
 Bundle 'imeos/vim-colors-solstice'
 Bundle 'file:///Users/chris/.vim/bundle/vim-colors-lanai'
 " Bundle 'cseelus/vim-colors-lanai'

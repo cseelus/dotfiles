@@ -131,17 +131,19 @@ set background=dark
 
 " Some nice colorschemes
 " - dark
+" colorscheme base16-default
 " colorscheme busybee
 " colorscheme clearance
 " colorscheme codeschool
 " colorscheme jellybeans
 colorscheme lanai
-" colorscheme molokai
+" " colorscheme molokai
 " colorscheme oceanblack
 " colorscheme pencil
 " colorscheme solarized
 " colorscheme solstice
 " - light
+" colorscheme flatui
 " colorscheme lanai-light
 " colorscheme github
 " colorscheme google
@@ -335,3 +337,5 @@ if executable('ag')
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
 endif
+
+call ctrlp_bdelete#init()
