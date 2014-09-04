@@ -30,11 +30,11 @@ set homebrew /usr/local/bin /usr/local/sbin
 set latex "/usr/texbin"
 set odbcsys "/etc"
 set odbc "/usr/local/etc"
-set brew_rbenv /usr/local/var/rbenv/shims
 # PATH ($default should be last)
-set -gx PATH $homebrew $latex $odbcsys $odbc $brew_rbenv $default_path
-# RBENV_ROOT
-set -gx RBENV_ROOT /usr/local/var/rbenv
+set -gx PATH $homebrew $latex $odbcsys $odbc $default_path
+# No more bundle exec
+set -gx  RUBYGEMS_GEMDEPS -
+
 
 # Aliasing
 alias bex="bundle exec"
