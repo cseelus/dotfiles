@@ -34,8 +34,8 @@ Bundle 'tpope/vim-repeat'
 Bundle 'skwp/YankRing.vim'
 " Vim-Session: Use :SaveSession and :OpenSession to come back to your
 " saved window layout (vim-misc is required)
-Bundle "xolox/vim-misc"
-Bundle "xolox/vim-session"
+" Bundle "xolox/vim-misc"
+" Bundle "xolox/vim-session"
 " Autocompletion
 Bundle 'Shougo/neocomplcache.vim'
 " snipMate: Offers textmate-like snippet expansion + scrooloose-snippets

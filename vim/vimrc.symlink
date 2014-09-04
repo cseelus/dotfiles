@@ -24,7 +24,8 @@ set showcmd                     " Show me what I'm typing
 set showmode                    " Show/Hide current mode
 " set relativenumber              " Set relative line number
 set number                      " Enables hybrid line number mode
-set numberwidth=5               " Enables hybrid line number mode
+set numberwidth=5               " Line numbers width (leading whitespace)
+set cursorline                  " Highlight the current line
 
 set noswapfile                  " Dont use swapfile
 set nobackup                    " Dont create annoying backup files
@@ -56,7 +57,7 @@ if $SHELL =~ 'bin/fish'
 endif
 
 " Source the vimrc file after saving it
-autocmd bufwritepost .vimrc source $MYVIMRC
+" autocmd bufwritepost .vimrc source $MYVIMRC
 
 
 " Indentation settings
@@ -99,14 +100,15 @@ autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.py,*.rb
 " Text wrapping
 " ---------------------------------------------------------------------------
 
-set wrap
-set linebreak
 set breakindent
 set nolist
-set textwidth=80
+set textwidth=72
+set wrap
+set wrapmargin=0
+set linebreak
 set foldcolumn=0
 set columns=85
-set formatoptions=qrn1
+set formatoptions=cqn1j        " see ':h fo-table'
 
 
 " Searching
@@ -138,7 +140,7 @@ set background=dark
 " colorscheme codeschool
 " colorscheme jellybeans
 colorscheme lanai
-" " colorscheme molokai
+" colorscheme molokai
 " colorscheme oceanblack
 " colorscheme pencil
 " colorscheme solarized
@@ -177,7 +179,7 @@ nmap . .`[
 :let mapleader=","
 
 nmap <leader>e :e.<cr>                    " Show netrw
-nmap <silent> <leader>v :tabnew $MYVIMRC<cr>
+nmap <silent> <leader>v :e $MYVIMRC<cr>
 nmap <silent> <leader>vs :so $MYVIMRC<cr>
 imap <leader>t <C-X>/                     " Close tag
 " Switch between the last two files with double leader
@@ -288,7 +290,7 @@ highlight SignColumn guibg=#272822
 
 if has("gui_macvim")
   " No toolbars, menu or scrollbars in the GUI
-  set guifont=Menlo:h14
+  set guifont=Menlo\ for\ Powerline:h14
   " set guifont=Lekton:h18
   " set guifont=Cousine:h14
   " set guifont=Ubuntu\ Mono:h17
@@ -304,7 +306,7 @@ if has("gui_macvim")
   set guioptions-=r  "no scrollbar
   set guioptions-=R
 
-  set showtabline=2  "always show tabbar, so no resizing occurs
+  set showtabline=1  "always show tabbar, so no resizing occurs
 
   " Move  with cmd+alt
   nmap <D-M-RIGHT> gt
