@@ -338,13 +338,3 @@ if executable('ag')
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
 endif
-
-call ctrlp_bdelete#init()
-
-" autocmd VimEnter * NERDTree
-autocmd VimEnter *
-              \ if !argc() |
-              \   Startify |
-              \   NERDTree |
-              \   execute "normal \<c-w>w" |
-              \ endif
