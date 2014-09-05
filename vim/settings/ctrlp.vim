@@ -1,3 +1,5 @@
+call ctrlp_bdelete#init()
+
 if executable('ag')
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"'
@@ -12,7 +14,7 @@ endif
 
 " Default to filename searches - so that appctrl will find application
 " controller
-let g:ctrlp_by_filename = 1
+let g:ctrlp_by_filename = 0
 
 " Height
 let g:ctrlp_max_height = 12
