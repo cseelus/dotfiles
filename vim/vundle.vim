@@ -20,6 +20,7 @@ Bundle 'gmarik/vundle'
 Bundle 'airblade/vim-rooter'
 " As soon as you type a character that could have a matching (closing)
 " counterpart, vim automatically puts its counterpart in front of your cursor
+" Bundle 'airblade/vim-gitgutter'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'tpope/vim-surround'
 Bundle 'ap/vim-css-color'
@@ -73,6 +74,7 @@ Bundle 'scrooloose/syntastic'
 " Exuberant Ctags
 Bundle 'vim-scripts/ctags.vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'mhinz/vim-startify'
 
 " Optimizations for specific languages/tools
 " ------------------------------------------

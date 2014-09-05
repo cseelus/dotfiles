@@ -84,14 +84,12 @@ filetype indent on
 " 	set lcs=tab:>\ ,extends:>,precedes:<,trail:-
 " 	let &sbr = '+++ '
 " endif
-
-function! UpdateLcs()
-	if (&previewwindow)
-		setlocal nolist
-	endif
-endfunction
-
-autocmd BufEnter,BufWinEnter,WinEnter,CmdwinEnter * call UpdateLcs()
+" function! UpdateLcs()
+" 	if (&previewwindow)
+" 		setlocal nolist
+" 	endif
+" endfunction
+" autocmd BufEnter,BufWinEnter,WinEnter,CmdwinEnter * call UpdateLcs()
 
 " Remove trailing white space for certain file types on save
 autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.py,*.rb,*.sass,*.scss,*.tex,*.vim} :call <SID>StripTrailingWhitespaces()
@@ -107,7 +105,7 @@ set wrap
 set wrapmargin=0
 set linebreak
 set foldcolumn=0
-set columns=85
+" set columns=85
 set formatoptions=cqn1j        " see ':h fo-table'
 
 
@@ -342,3 +340,11 @@ if executable('ag')
 endif
 
 call ctrlp_bdelete#init()
+
+" autocmd VimEnter * NERDTree
+autocmd VimEnter *
+              \ if !argc() |
+              \   Startify |
+              \   NERDTree |
+              \   execute "normal \<c-w>w" |
+              \ endif
