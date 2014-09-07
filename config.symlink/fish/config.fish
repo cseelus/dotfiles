@@ -4,15 +4,6 @@ set fish_path $HOME/.oh-my-fish
 # Theme (good ones are clearance, idan, numist)
 set fish_theme lanai
 
-# Right promt (usually prints working directory in short form)
-function fish_right_prompt -d "empty"
-  # date "+%d.%m.%Y"
-end
-
-function fish_title
-	pwd
-end
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-fish/plugins/*)
 # Custom plugins may be added to ~/.oh-my-fish/custom/plugins/
 # set fish_plugins autojump bundler set git rails
@@ -23,6 +14,9 @@ set fish_plugins set autojump git rails set vi-mode
 
 # Load oh-my-fish configuration.
 . $fish_path/oh-my-fish.fish
+
+# Universal variables
+set -U EDITOR vim
 
 # PATHs
 set default_path /usr/bin /usr/sbin /bin /sbin
@@ -36,7 +30,7 @@ set -gx PATH $homebrew $latex $odbcsys $odbc $default_path
 set -gx  RUBYGEMS_GEMDEPS -
 
 
-# Aliasing
+# Aliases
 alias bex="bundle exec"
 alias cpwd="pwd | tr -d '\n' | pbcopy"
 alias hostsconfig="sudo vim /etc/hosts"
@@ -45,3 +39,14 @@ alias fishconfig="vim ~/.config/fish/config.fish"
 alias vi="mvim --remote-tab-silent"
 alias vib="mvim --remote-silent"
 alias virtuoso="cd /usr/local/Cellar/virtuoso/7.0.0/var/lib/virtuoso/db & virtuoso-t -f"
+
+
+# Functions
+# alias generate_random='env LC_CTYPE=C tr -dc "a-zA-Z0-9-_\$\?" < /dev/urandom | head -c 10'
+function generate_random
+  if test -e $argv
+    echo "Usage generate_random [LENGTH]"
+  else
+    env LC_CTYPE=C tr -dc "a-zA-Z0-9-_\$\?" < /dev/urandom | head -c $argv
+  end
+end
