@@ -33,12 +33,10 @@ Bundle 'tpope/vim-repeat'
 " to cycle through the paste options. great for when you accidentally
 " overwrite your yank with a delete.
 Bundle 'skwp/YankRing.vim'
-" Vim-Session: Use :SaveSession and :OpenSession to come back to your
-" saved window layout (vim-misc is required)
-" Bundle "xolox/vim-misc"
-" Bundle "xolox/vim-session"
 " Autocompletion
 Bundle 'Shougo/neocomplcache.vim'
+" The name says it all …
+Bundle 'SudoEdit.vim'
 " snipMate: Offers textmate-like snippet expansion + scrooloose-snippets
 " . try hitting TAB after typing a snippet
 Bundle 'MarcWeber/vim-addon-mw-utils'
