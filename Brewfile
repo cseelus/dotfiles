@@ -2,15 +2,14 @@
 install fish
 install git
 install imagemagick
-install macvim --override-system-vim
+install macvim 
 install mariadb
 install openssl
 install php55
-install rbenv
-install rbenv-rehash
-install ruby-build
+install ruby
 install the_silver_searcher
 install tmux
+install vim
 install wget
 install zsh
 
