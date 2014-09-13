@@ -25,8 +25,8 @@ let g:startify_skiplist = [
 
 let g:startify_bookmarks = [
             \ '~/.vim/vimrc',
-            \ '~/.dotfiles/vim/vundle.vim',
-            \ '~/.vim/bundle/vim-colors-lanai/colors/lanai.vim',
+            \ '~/.dotfiles/vim/vim-plug.vim',
+            \ '~/Code/misc/vim-colors-lanai/colors/lanai.vim',
             \ ]
 
 hi link StartifyNumber  Statement

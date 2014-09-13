@@ -3,12 +3,9 @@
 
 set nocompatible                " Turn off compability mode with Vi
 
-
-" Vundle initialization
-" ---------------------------------------------------------------------------
-
-if filereadable(expand("~/.dotfiles/vim/vundle.vim"))
-  source ~/.dotfiles/vim/vundle.vim
+" Load plugins
+if filereadable(expand("~/.dotfiles/vim/vim-plug.vim"))
+  source ~/.dotfiles/vim/vim-plug.vim
 endif
 
 
