@@ -85,6 +85,7 @@ Bundle "skwp/vim-html-escape"
 Bundle 'tpope/vim-rails'
 Bundle 'depuracao/vim-rdoc'
 Bundle 'tpope/vim-haml'
+Bundle 'slim-template/vim-slim'
 Bundle 'othree/html5.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'plasticboy/vim-markdown'
