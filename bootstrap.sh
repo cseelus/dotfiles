@@ -12,7 +12,7 @@
 # dotfiles directory
 dir=~/.dotfiles
 # old dotfiles backup directory
-olddir=~/dotfiles_old
+olddir=~/.dotfiles_old
 # list of files to symlink into homedir
 symlinks=$(find $dir -maxdepth 2 -name \*.symlink)
 
@@ -94,3 +94,26 @@ do
   fi
   ln -s $symlink $HOME/.$target
 done
+
+# Symlink vim/settings and vim/ftplugin separately
+vimftplugin=.dotfiles/vim/ftplugin
+vimftplugintarget=.vim/ftplugin
+echo "Symlinking: $HOME/$vimftplugin to $HOME/$vimftplugintarget"
+if [ -f $HOME/$vimftplugintarget ]
+  then
+    echo "Moving existing $vimftplugintarget from ~ to $olddir"
+    mv $HOME/$vimftplugintarget $olddir/
+    rm -rf $HOME/.$vimftplugintarget
+fi
+ln -s $HOME/$vimftplugin $HOME/$vimftplugintarget
+
+vimsettings=.dotfiles/vim/settings
+vimsettingstarget=.vim/settings
+echo "Symlinking: $HOME/$vimsettings to $HOME/$vimsettingstarget"
+if [ -f $HOME/$vimsettingstarget ]
+  then
+    echo "Moving existing $vimsettingstarget from ~ to $olddir"
+    mv $HOME/$vimsettingstarget $olddir/
+    rm -rf $HOME/.$vimsettingstarget
+fi
+ln -s $HOME/$vimsettings $HOME/$vimsettingstarget
