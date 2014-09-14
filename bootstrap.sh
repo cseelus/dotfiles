@@ -53,10 +53,12 @@ init_git_submodules() {
 install_fish
 init_git_submodules
 
-# Install vundle
-if [[ ! -d ~/.vim/bundle/vundle ]]
+# vim-plug
+if [[ ! -d ~/.vim/plugged ]]
 then
-  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
+  mkdir -p ~/.vim/autoload
+  curl -fLo ~/.vim/autoload/plug.vim \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
 # OSX only
