@@ -100,6 +100,7 @@ set nolist
 set textwidth=72
 set wrap
 set wrapmargin=0
+set columns=85                 " window width
 set linebreak
 set foldcolumn=0
 " set columns=85

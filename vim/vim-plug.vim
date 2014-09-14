@@ -1,15 +1,17 @@
+let g:plug_window = 'botright new'
 call plug#begin('~/.vim/plugged')
 
 " General vim improvements
 " ------------------------
 " Change the working directory to the project root when you open a file
 Plug 'airblade/vim-rooter'
-" As soon as you type a character that could have a matching (closing)
-" counterpart, vim automatically puts its counterpart in front of your cursor
-" Plug 'airblade/vim-gitgutter'
+" Make gui-only colorschemes work transparently in terminal vim with 16/256
+" colors
+Plug 'godlygeek/csapprox'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'ap/vim-css-color'
+Plug 'hexHighlight.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tomtom/tcomment_vim'
 " Adds . (repeat command) support for complex commands like surround.vim
@@ -67,17 +69,17 @@ Plug 'skwp/vim-html-escape'
 " rails, much much more: https://github.com/tpope/vim-rails
 Plug 'tpope/vim-rails'
 Plug 'depuracao/vim-rdoc'
-Plug 'tpope/vim-haml', { 'for': 'haml' }
-Plug 'slim-template/vim-slim', { 'for': 'slim' }
+Plug 'tpope/vim-haml'
+Plug 'slim-template/vim-slim'
 Plug 'othree/html5.vim'
-Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+Plug 'kchmck/vim-coffee-script'
 Plug 'plasticboy/vim-markdown'
-Plug 'LaTeX-Box-Team/LaTeX-Box', { 'for': 'latex' }
+Plug 'LaTeX-Box-Team/LaTeX-Box'
 " Vim support for editing fish scripts
-Plug 'dag/vim-fish', { 'for': 'conf' }
+Plug 'dag/vim-fish'
 Plug 'n3.vim'
 Plug 'webgefrickel/vim-typoscript'
-Plug 'elentok/plaintasks.vim', { 'for': 'todo' }
+Plug 'elentok/plaintasks.vim'
 " Git wrapper
 Plug 'tpope/vim-fugitive'
 Plug 'toyamarinyon/vim-swift'
