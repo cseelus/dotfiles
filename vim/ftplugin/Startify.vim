@@ -1,2 +1,2 @@
-nnoremap j j
-nnoremap k k
+" nnoremap j j
+" nnoremap k k

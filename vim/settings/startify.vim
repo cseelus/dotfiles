@@ -31,7 +31,7 @@ let g:startify_bookmarks = [
 
 hi link StartifyNumber  Statement
 hi link StartifyBracket Statement
-hi link StartifySection PreProc
+hi link StartifySection Title
 hi link StartifyPath    TextDarker
 hi link StartifySlash   TextDarker
 "    StartifyFile     |  the actual file         |  <none>
