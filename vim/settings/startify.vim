@@ -6,14 +6,14 @@ let g:startify_enable_special      = 0
 nmap <silent> <leader>s :Startify<cr>
 
 let g:startify_list_order = [
+      \ ['   Bookmarks'],
+      \ 'bookmarks',
       \ ['   Recently opened:'],
       \ 'files',
       \ ['   Recently opened in current directory:'],
       \ 'dir',
       \ ['   Sessions'],
       \ 'sessions',
-      \ ['   Bookmarks'],
-      \ 'bookmarks',
       \ ]
 
 let g:startify_skiplist = [
@@ -32,9 +32,9 @@ let g:startify_bookmarks = [
 hi link StartifyNumber  Statement
 hi link StartifyBracket Statement
 hi link StartifySection Title
-hi link StartifyPath    TextDarker
-hi link StartifySlash   TextDarker
-"    StartifyFile     |  the actual file         |  <none>
+hi link StartifyPath    SpecialKey
+hi link StartifySlash   SpecialKey
+hi link StartifyFile    StorageClass
 "    StartifyFooter   |  the custom footer       |  linked to Normal
 "    StartifyHeader   |  the custom header       |  linked to Normal
 "    StartifyNumber   |  the numbers between []  |  linked to Number
