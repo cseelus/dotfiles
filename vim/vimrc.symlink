@@ -75,16 +75,16 @@ filetype indent on
 " Display tabs and trailing spaces visually
 " ↪ and display the next line if the line exceeds the width of the window
 if has("multi_byte")
-	set listchars=tab:▸\ ,eol:¬,extends:>,precedes:<,trail:•
-	let &sbr = nr2char(8618).' '
+  set listchars=nbsp:█,tab:▸\ ,eol:¬,extends:>,precedes:<,trail:·
+  let &sbr = nr2char(8618).' '
 else
-	set lcs=tab:>\ ,extends:>,precedes:<,trail:-
-	let &sbr = '+++ '
+  set lcs=tab:>\ ,extends:>,precedes:<,trail:-
+  let &sbr = '+++ '
 endif
 function! UpdateLcs()
-	if (&previewwindow)
-		setlocal nolist
-	endif
+  if (&previewwindow)
+    setlocal nolist
+  endif
 endfunction
 autocmd BufEnter,BufWinEnter,WinEnter,CmdwinEnter * call UpdateLcs()
 
@@ -96,7 +96,7 @@ autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.py,*.rb
 " ---------------------------------------------------------------------------
 
 set breakindent
-set nolist
+set list
 set textwidth=72
 set wrap
 set wrapmargin=0
