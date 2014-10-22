@@ -7,7 +7,7 @@ set fish_theme lanai
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-fish/plugins/*)
 # Custom plugins may be added to ~/.oh-my-fish/custom/plugins/
 # set fish_plugins autojump bundler set git rails
-set fish_plugins set autojump git rails set vi-mode
+set fish_plugins set autojump git rails vi-mode
 
 # Path to your custom folder (default path is $FISH/custom)
 #set fish_custom $HOME/dotfiles/oh-my-fish
