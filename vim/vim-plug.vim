@@ -37,7 +37,6 @@ Plug 'tpope/vim-endwise'
 Plug 'matchit.zip'
 " Full path fuzzy file, buffer, mru, tag, ... finder for Vim
 Plug 'kien/ctrlp.vim'
-Plug 'Shougo/unite.vim' " Better than CtrlP, but needs diff. package manager
 " Close buffers
 Plug 'd11wtq/ctrlp_bdelete.vim'
 " Rename a buffer on within VIM and on disk (:rename[!] {newname})
@@ -92,7 +91,6 @@ Plug 'chriskempson/base16-vim'
 Plug 'csexton/spacemanspiff.vim'
 Plug '~/Code/misc/vim-colors-clearance'
 " Plug 'cseelus/vim-colors-clearance'
-Plug 'john2x/flatui.vim'
 Plug 'imeos/vim-colors-solstice'
 Plug '~/Code/misc/vim-colors-lanai'
 " Plug 'cseelus/vim-colors-lanai'
