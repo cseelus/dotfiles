@@ -13,17 +13,12 @@ nnoremap <silent> <C-b> :CtrlPBuffer<cr>
 "Ctrl-m is not good - it overrides behavior of Enter
 nnoremap <silent> <D-M> :CtrlPBufTag<CR>
 
+" Switch to the file if it's already open
+" let g:ctrlp_switch_buffer = '<leader><leader>'
+
 " Use the silver searcher if possible
 if executable('ag')
-  let g:ctrlp_user_command =
-    \ 'ag %s -i --nocolor --nogroup --hidden
-      \ --ignore .git
-      \ --ignore .svn
-      \ --ignore .hg
-      \ --ignore .DS_Store
-      \ --ignore "tmp/*"
-      \ --ignore "**/*.pyc"
-      \ -g ""'
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
