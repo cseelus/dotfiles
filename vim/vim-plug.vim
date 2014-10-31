@@ -83,16 +83,17 @@ Plug 'elentok/plaintasks.vim'
 " Git wrapper
 Plug 'tpope/vim-fugitive'
 Plug 'toyamarinyon/vim-swift'
+Plug 'digitaltoad/vim-jade'
 
 " Colorschemes
 " ------------
-Plug 'flazz/vim-colorschemes'
-Plug 'chriskempson/base16-vim'
-Plug 'csexton/spacemanspiff.vim'
 Plug '~/Code/misc/vim-colors-clearance'
 " Plug 'cseelus/vim-colors-clearance'
 Plug 'imeos/vim-colors-solstice'
 Plug '~/Code/misc/vim-colors-lanai'
 " Plug 'cseelus/vim-colors-lanai'
+Plug 'flazz/vim-colorschemes'
+Plug 'chriskempson/base16-vim'
+Plug 'csexton/spacemanspiff.vim'
 
 call plug#end()
