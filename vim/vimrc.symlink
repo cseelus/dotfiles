@@ -197,18 +197,18 @@ cabbrev tn tabnew
 " ---------------------------------------------------------------------------
 
 set statusline=
-"set statusline+=%t            "tail of the filename
-" set statusline+=[%t]\ \        "file name
-set statusline+=[%{strlen(&fenc)?&fenc:'none'},\  "file encoding
-set statusline+=%{&ff}]\ \     "file format
-set statusline+=%h             "help file flag
-set statusline+=%m             "modified flag
-set statusline+=%r             "read only flag
-set statusline+=%y\ \          "filetype
-set statusline+=%=             "left/right separator
-set statusline+=\ \ [%P,\       "percent through file
-set statusline+=Line\ %l/%L,\  "cursor line/total lines
-set statusline+=Column\ %c]\     "cursor column
+"set statusline+=%t                               "tail of the filename
+" set statusline+=[%t]\ \                         "file name
+set statusline+=\ Line\ %l/%L,\                   "cursor line/total lines
+set statusline+=Column\ %c\ \                     "cursor column
+set statusline+=\|\ \ %P                          "percent through file
+set statusline+=%=                                "left/right separator
+set statusline+=\ \ %{strlen(&fenc)?&fenc:'none'} "file encoding
+set statusline+=\ \ \|\ \ %{&ff}\ \ \|\ \         "file format
+set statusline+=%h                                "help file flag
+set statusline+=%r                                "read only flag
+set statusline+=%y                                "filetype
+set statusline+=%m\                               "modified flag
 
 
 " Wildmode completion
@@ -282,11 +282,10 @@ endfunction
 " MacVim modifications (color, shortcuts, etc.. "
 " ---------------------------------------------------------------------------
 
-highlight SignColumn guibg=#272822
-
 if has("gui_macvim")
   " No toolbars, menu or scrollbars in the GUI
   set guifont=Menlo\ for\ Powerline:h13
+  " set guifont=Consolas:h14
   " set guifont=Lekton:h18
   " set guifont=Cousine:h14
   " set guifont=Ubuntu\ Mono:h17
