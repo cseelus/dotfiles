@@ -199,9 +199,8 @@ cabbrev tn tabnew
 set statusline=
 "set statusline+=%t                               "tail of the filename
 " set statusline+=[%t]\ \                         "file name
-set statusline+=\ Line\ %l/%L,\                   "cursor line/total lines
+set statusline+=\ Line\ %l/%L\ (%P),\             "cursor line/total lines (Percent)
 set statusline+=Column\ %c\ \                     "cursor column
-set statusline+=\|\ \ %P                          "percent through file
 set statusline+=%=                                "left/right separator
 set statusline+=\ \ %{strlen(&fenc)?&fenc:'none'} "file encoding
 set statusline+=\ \ \|\ \ %{&ff}\ \ \|\ \         "file format
