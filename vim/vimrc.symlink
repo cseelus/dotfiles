@@ -47,6 +47,8 @@ set scrolloff=5                 " Start scrolling X lines above/below cursor
 
 set history=10000               " A long long time ago …
 
+" set clipboard+=unnamed          " Use System Clipboard"
+
 set timeoutlen=500
 
 if $SHELL =~ 'bin/fish'
@@ -283,15 +285,14 @@ endfunction
 
 if has("gui_macvim")
   " No toolbars, menu or scrollbars in the GUI
-  set guifont=Menlo\ for\ Powerline:h13
-  " set guifont=Consolas:h14
+  " set guifont=Menlo\ for\ Powerline:h13
+  set guifont=Consolas:h15
   " set guifont=Lekton:h18
   " set guifont=Cousine:h14
   " set guifont=Ubuntu\ Mono:h17
   " set guifont=Source\ Code\ Pro:h14
   set transparency=0
-  set linespace=3
-  " "set clipboard+=unnamed
+  set linespace=2
   set vb t_vb=
   set guioptions-=m  "no menu
   set guioptions-=T  "no toolbar

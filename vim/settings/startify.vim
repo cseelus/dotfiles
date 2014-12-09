@@ -29,6 +29,7 @@ let g:startify_bookmarks = [
             \ '~/.vim/settings/startify.vim',
             \ '~/Code/misc/vim-colors-lanai/colors/lanai.vim',
             \ '~/Code/misc/vim-colors-clearance/colors/clearance.vim',
+            \ '~/Code/ruby/syntax-highlight-example.rb',
             \ ]
 
 hi link StartifyNumber  Statement
