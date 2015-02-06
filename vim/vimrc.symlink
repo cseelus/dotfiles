@@ -97,7 +97,7 @@ autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.py,*.rb
 " Text wrapping
 " ---------------------------------------------------------------------------
 
-set breakindent
+" se breakindent
 set list
 set textwidth=72
 set wrap

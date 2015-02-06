@@ -33,10 +33,10 @@ let g:ctrlp_prompt_mappings = {
   \ }
 
 " Ignore some folders and files for CtrlP indexing
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$',
-  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
-  \ }
+" let g:ctrlp_custom_ignore = {
+"   \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$',
+"   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+"   \ }
 
 " Default to filename searches - so that appctrl will find application
 " controller
