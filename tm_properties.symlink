@@ -1,7 +1,7 @@
 # Basic Settings
 #
-fontName         = "Menlo"
-fontSize         = 15
+fontName         = "Menlo for Powerline"
+fontSize         = 13
 
 # show the path to the current tab's file in the window title 
 # (replace the 2 instances of 'username' in the string below 

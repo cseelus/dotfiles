@@ -8,22 +8,15 @@
 .Trashes
 
 # Windows   
-# taken from: https://github.com/github/gitignore/blob/master/Global/Windows.gitignore
+# from: https://github.com/github/gitignore/blob/master/Global/Windows.gitignore
 # ----------------------------------------------------------------------------
 # Windows image file caches
 Thumbs.db
 # Folder config file
 Desktop.ini
 
-# Tags      
-# taken from: https://github.com/github/gitignore/blob/master/Global/Tags.gitignore
-# ----------------------------------------------------------------------------
-# Ignore tags created by etags and ctags
-TAGS
-tags
-
 # Vim       
-# taken from: https://github.com/github/gitignore/blob/master/Global/vim.gitignore
+# from: https://github.com/github/gitignore/blob/master/Global/vim.gitignore
 # ----------------------------------------------------------------------------
 .*.sw[a-z]
 *.un~
@@ -35,3 +28,8 @@ Session.vim
 # ----------------------------------------------------------------------------
 *.sass-cache
 *.cache
+
+
+# Ruby, Rails, Middleman
+# ----------------------------------------------------------------------------
+secrets.rb

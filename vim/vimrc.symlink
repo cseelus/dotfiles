@@ -3,12 +3,9 @@
 
 set nocompatible                " Turn off compability mode with Vi
 
-
-" Vundle initialization
-" ---------------------------------------------------------------------------
-
-if filereadable(expand("~/.dotfiles/vim/vundle.vim"))
-  source ~/.dotfiles/vim/vundle.vim
+" Load plugins
+if filereadable(expand("~/.dotfiles/vim/vim-plug.vim"))
+  source ~/.dotfiles/vim/vim-plug.vim
 endif
 
 
@@ -24,6 +21,8 @@ set showcmd                     " Show me what I'm typing
 set showmode                    " Show/Hide current mode
 " set relativenumber              " Set relative line number
 set number                      " Enables hybrid line number mode
+set numberwidth=5               " Line numbers width (leading whitespace)
+set nocursorline                " Don't Highlight the current line
 
 set noswapfile                  " Dont use swapfile
 set nobackup                    " Dont create annoying backup files
@@ -46,9 +45,18 @@ set conceallevel=2              " See http://ithaca.arpinum.org/2010/11/06/vim-c
 set scroll=9                    " Set # lines CTRL-D and CTRL-U jumps
 set scrolloff=5                 " Start scrolling X lines above/below cursor
 
+set history=10000               " A long long time ago …
+
+" set clipboard+=unnamed          " Use System Clipboard"
+
+set timeoutlen=500
+
 if $SHELL =~ 'bin/fish'
   set shell=/bin/sh
 endif
+
+" Source the vimrc file after saving it
+" autocmd bufwritepost .vimrc source $MYVIMRC
 
 
 " Indentation settings
@@ -69,32 +77,36 @@ filetype indent on
 " Display tabs and trailing spaces visually
 " ↪ and display the next line if the line exceeds the width of the window
 if has("multi_byte")
-	set listchars=tab:▸\ ,eol:¬,extends:>,precedes:<,trail:•
-	let &sbr = nr2char(8618).' '
+  set listchars=nbsp:█,tab:▸\ ,eol:¬,extends:>,precedes:<,trail:·
+  let &sbr = nr2char(8618).' '
 else
-	set lcs=tab:>\ ,extends:>,precedes:<,trail:-
-	let &sbr = '+++ '
+  set lcs=tab:>\ ,extends:>,precedes:<,trail:-
+  let &sbr = '+++ '
 endif
-
 function! UpdateLcs()
-	if (&previewwindow)
-		setlocal nolist
-	endif
+  if (&previewwindow)
+    setlocal nolist
+  endif
 endfunction
-
 autocmd BufEnter,BufWinEnter,WinEnter,CmdwinEnter * call UpdateLcs()
+
+" Remove trailing white space for certain file types on save
+autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.py,*.rb,*.sass,*.scss,*.slim,*.tex,*.vim,*.xml} :call <SID>StripTrailingWhitespaces()
 
 
 " Text wrapping
 " ---------------------------------------------------------------------------
 
+set breakindent
+set list
+set textwidth=72
 set wrap
+set wrapmargin=0
+set columns=85                 " window width
 set linebreak
-set nolist
-set textwidth=80
 set foldcolumn=0
-set columns=85
-set formatoptions=qrn1
+" set columns=85
+set formatoptions=cqn1j        " see ':h fo-table'
 
 
 " Searching
@@ -120,20 +132,19 @@ set background=dark
 
 " Some nice colorschemes
 " - dark
+" colorscheme base16-default
 " colorscheme busybee
 " colorscheme clearance
-" colorscheme codeschool
-" colorscheme darkrobot
+" colorscheme flatcolor
 " colorscheme jellybeans
 colorscheme lanai
-" colorscheme moria
-" colorscheme molokai
-" colorscheme nature
+" colorscheme spacemanspiff
 " colorscheme oceanblack
+" colorscheme pencil
 " colorscheme solarized
-" colorscheme xoria256
-" colorscheme zenburn
+" colorscheme solstice
 " - light
+" colorscheme flatui
 " colorscheme lanai-light
 " colorscheme github
 " colorscheme google
@@ -163,15 +174,17 @@ nmap . .`[
 " Allow saving of files as sudo
 "command W! w !sudo tee % >/dev/null
 
-:let mapleader = ","
+:let mapleader=","
 
-nmap <leader>e :e.<CR>         " Show netrw
-nmap <leader>v :e $MYVIMRC<CR> " Edit VIMRC
-nmap <leader>c gcc             " Toggle comment line
-imap <leader>t <C-X>/
-"
+nmap <leader>e :e.<cr>                    " Show netrw
+nmap <silent> <leader>v :e $MYVIMRC<cr>
+nmap <silent> <leader>vs :so $MYVIMRC<cr>
+imap <leader>t <C-X>/                     " Close tag
+" Switch between the last two files with double leader
+nnoremap <leader><leader> <c-^>
+
 " Show syntax highlighting groups for word under cursor
-nmap <leader>w :call <SID>SynStack()<CR>
+nmap <leader>w :call <SID>SynStack()<cr>
 function! <SID>SynStack()
   if !exists("*synstack")
     return
@@ -181,26 +194,22 @@ endfunc
 
 cabbrev tn tabnew
 
-" Remove trailing white space for certain file types on save
-autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.py,*.rb,*.sass,*.scss,*.tex,*.vim} :call <SID>StripTrailingWhitespaces()
-
 
 " Statusline
 " ---------------------------------------------------------------------------
 
 set statusline=
-"set statusline+=%t            "tail of the filename
-" set statusline+=[%t]\ \        "file name
-set statusline+=[%{strlen(&fenc)?&fenc:'none'},\  "file encoding
-set statusline+=%{&ff}]\ \     "file format
-set statusline+=%h             "help file flag
-set statusline+=%m             "modified flag
-set statusline+=%r             "read only flag
-set statusline+=%y\ \          "filetype
-set statusline+=%=             "left/right separator
-set statusline+=\ \ [%P,\       "percent through file
-set statusline+=Line\ %l/%L,\  "cursor line/total lines
-set statusline+=Column\ %c]\     "cursor column
+"set statusline+=%t                               "tail of the filename
+" set statusline+=[%t]\ \                         "file name
+set statusline+=\ Line\ %l/%L\ (%P),\             "cursor line/total lines (Percent)
+set statusline+=Column\ %c\ \                     "cursor column
+set statusline+=%=                                "left/right separator
+set statusline+=\ \ %{strlen(&fenc)?&fenc:'none'} "file encoding
+set statusline+=\ \ \|\ \ %{&ff}\ \ \|\ \         "file format
+set statusline+=%h                                "help file flag
+set statusline+=%r                                "read only flag
+set statusline+=%y                                "filetype
+set statusline+=%m\                               "modified flag
 
 
 " Wildmode completion
@@ -208,7 +217,8 @@ set statusline+=Column\ %c]\     "cursor column
 
 set wildmode=list:longest
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
-set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+" stuff to ignore when tab completing, for ctrlp, etc.
+set wildignore=*.o,*.obj,*~ 
 set wildignore+=*vim/backups*
 set wildignore+=*sass-cache*
 set wildignore+=*DS_Store*
@@ -273,18 +283,16 @@ endfunction
 " MacVim modifications (color, shortcuts, etc.. "
 " ---------------------------------------------------------------------------
 
-highlight SignColumn guibg=#272822
-
 if has("gui_macvim")
   " No toolbars, menu or scrollbars in the GUI
-  set guifont=Menlo:h15
+  " set guifont=Menlo\ for\ Powerline:h13
+  set guifont=Consolas:h15
   " set guifont=Lekton:h18
-  " set guifont=CosmicSansNeueMono:h17
+  " set guifont=Cousine:h14
   " set guifont=Ubuntu\ Mono:h17
-  " set guifont=Source\ Code\ Pro:h15
+  " set guifont=Source\ Code\ Pro:h14
   set transparency=0
-  set linespace=3
-  " "set clipboard+=unnamed
+  set linespace=2
   set vb t_vb=
   set guioptions-=m  "no menu
   set guioptions-=T  "no toolbar
@@ -293,7 +301,7 @@ if has("gui_macvim")
   set guioptions-=r  "no scrollbar
   set guioptions-=R
 
-  set showtabline=2  "always show tabbar, so no resizing occurs
+  set showtabline=1  "always show tabbar, so no resizing occurs
 
   " Move  with cmd+alt
   nmap <D-M-RIGHT> gt
@@ -311,13 +319,19 @@ if has("gui_macvim")
   map <D-7> 7gt
   map <D-8> 8gt
   map <D-9> 9gt
-  map <D-0> :tablast<CR>
+  map <D-0> :tablast<cr>
 endif
 
 
 " Plugin settings
 " ---------------------------------------------------------------------------
 
-for fpath in split(globpath('~/.dotfiles/vim/settings', '*.vim'), '\n')
-  exe 'source' fpath
-endfor
+if filereadable(expand("~/.dotfiles/vim/settings.vim"))
+  source ~/.dotfiles/vim/settings.vim
+endif
+
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+endif

@@ -1,0 +1,22 @@
+'core':
+  'excludeVcsIgnoredPaths': true
+  'projectHome': '/Users/chris/Sites'
+  'themes': [
+    'lanai-dark-ui'
+    'lanai-dark-syntax'
+  ]
+'editor':
+  'fontFamily': 'Menlo for Powerline'
+  'normalizeIndentOnPaste': true
+  'preferredLineLength': 78
+  'showInvisibles': true
+  'softWrap': true
+  'softWrapAtPreferredLineLength': true
+  'fontSize': 14
+'whitespace':
+  'ensureSingleTrailingNewline': true
+'welcome':
+  'showOnStartup': false
+'tree-view':
+  'showOnRightSide': false
+  'hideIgnoredNames': true
