@@ -6,8 +6,8 @@ set fish_theme lanai
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-fish/plugins/*)
 # Custom plugins may be added to ~/.oh-my-fish/custom/plugins/
-# set fish_plugins autojump bundler set git rails
-set fish_plugins set autojump git rails vi-mode
+# set fish_plugins autojump bundler git rails vi-mode
+set fish_plugins autojump bundler git rails vi-mode
 
 # Path to your custom folder (default path is $FISH/custom)
 #set fish_custom $HOME/dotfiles/oh-my-fish
@@ -26,9 +26,6 @@ set odbcsys "/etc"
 set odbc "/usr/local/etc"
 # PATH ($default should be last)
 set -gx PATH $homebrew $latex $odbcsys $odbc $default_path
-# No more bundle exec
-set -gx  RUBYGEMS_GEMDEPS -
-
 
 # Aliases
 alias bex="bundle exec"
