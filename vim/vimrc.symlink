@@ -285,10 +285,10 @@ endfunction
 
 if has("gui_macvim")
   " No toolbars, menu or scrollbars in the GUI
-  " set guifont=Menlo\ for\ Powerline:h13
-  set guifont=Consolas:h15
+  set guifont=Menlo\ for\ Powerline:h14
+  " set guifont=Consolas:h15
   " set guifont=Lekton:h18
-  " set guifont=Cousine:h14
+  " set guifont=Cousine:h15
   " set guifont=Ubuntu\ Mono:h17
   " set guifont=Source\ Code\ Pro:h14
   set transparency=0
@@ -300,6 +300,8 @@ if has("gui_macvim")
   set guioptions-=L
   set guioptions-=r  "no scrollbar
   set guioptions-=R
+
+  set guicursor=a:blinkon0 " No blinking cursor
 
   set showtabline=1  "always show tabbar, so no resizing occurs
 
