@@ -3,7 +3,7 @@ call ctrlp_bdelete#init()
 " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
 " Remap CtrlP as it clashes with YankRing
 let g:ctrlp_map = ',t'
-nnoremap <silent> ,t :CtrlPDir<CR>
+nnoremap <silent> ,t :CtrlPCurWD<CR>
 
 " Mappings for buffer search
 nnoremap <silent> ,b :CtrlPBuffer<cr>
@@ -24,13 +24,14 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 else
   " Fall back to using git ls-files if Ag is not available
-  let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+  let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\tmp$|\.svn$'
   let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 endif
 
 let g:ctrlp_prompt_mappings = {
-  \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
+  \ 'AcceptSelection("e")': ['<cr>', '<2-LeftMouse>'],
   \ }
+let g:ctrlp_reuse_window = 'startify\|NERDTree'
 
 " Ignore some folders and files for CtrlP indexing
 let g:ctrlp_custom_ignore = {
