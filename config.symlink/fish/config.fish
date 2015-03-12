@@ -1,7 +1,7 @@
 # Path to your oh-my-fish.
 set fish_path $HOME/.oh-my-fish
 
-# Theme (good ones are clearance, idan, numist)
+# Theme (good ones are clearance, idan, lanai, numist)
 set fish_theme lanai
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-fish/plugins/*)
@@ -26,10 +26,13 @@ set odbcsys "/etc"
 set odbc "/usr/local/etc"
 # PATH ($default should be last)
 set -gx PATH $homebrew $latex $odbcsys $odbc $default_path
+# No more bundle exec
+# set -gx  RUBYGEMS_GEMDEPS -
 
 # Aliases
 alias bex="bundle exec"
 alias cpwd="pwd | tr -d '\n' | pbcopy"
+alias folder_size='du -sh */'
 alias hostsconfig="sudo vim /etc/hosts"
 alias vhostsconfig="sudo vim /etc/apache2/extra/httpd-vhosts.conf"
 alias fishconfig="vim ~/.config/fish/config.fish"
