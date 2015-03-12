@@ -24,7 +24,7 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 else
   " Fall back to using git ls-files if Ag is not available
-  let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\tmp$|\.svn$'
+  let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\cache$|\.svn$'
   let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 endif
 
@@ -35,8 +35,8 @@ let g:ctrlp_reuse_window = 'startify\|NERDTree'
 
 " Ignore some folders and files for CtrlP indexing
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$',
-  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ 'dir':  '\.git$\|\.yardoc\|public$|cache\|tmp$',
+  \ 'file': '\.so$\|\.dat$|\.sassc|\.DS_Store$'
   \ }
 
 " Default to filename searches - so that appctrl will find application

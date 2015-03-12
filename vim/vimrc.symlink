@@ -49,7 +49,16 @@ set history=10000               " A long long time ago …
 
 " set clipboard+=unnamed          " Use System Clipboard"
 
-set timeoutlen=500
+set timeoutlen=500              " Timeout for leader key
+
+set nostartofline               " Dont jump to start of line e.g. when switching buffers
+" Return to last edit position when opening files (You want this!)
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
+
+set shortmess+=c                " Hide the 'Back at original' and 'Match X of Y' when autocompleting
 
 if $SHELL =~ 'bin/fish'
   set shell=/bin/sh
@@ -106,7 +115,8 @@ set columns=85                 " window width
 set linebreak
 set foldcolumn=0
 " set columns=85
-set formatoptions=cqn1j        " see ':h fo-table'
+autocmd BufNewFile,BufRead * setlocal formatoptions=qn1j        " see ':h fo-table' and http://stackoverflow.com/questions/6076592/vim-set-formatoptions-being-lost
+autocmd BufNewFile,BufRead * setlocal formatoptions-=cro        " Comments: Don't continue on new line, etc.
 
 
 " Searching
@@ -178,7 +188,7 @@ nmap . .`[
 
 nmap <leader>e :e.<cr>                    " Show netrw
 nmap <silent> <leader>v :e $MYVIMRC<cr>
-nmap <silent> <leader>vs :so $MYVIMRC<cr>
+nmap <silent> <leader>r :so $MYVIMRC<cr>
 imap <leader>t <C-X>/                     " Close tag
 " Switch between the last two files with double leader
 nnoremap <leader><leader> <c-^>
@@ -285,11 +295,11 @@ endfunction
 
 if has("gui_macvim")
   " No toolbars, menu or scrollbars in the GUI
-  set guifont=Menlo\ for\ Powerline:h14
+  " set guifont=Menlo\ for\ Powerline:h14
   " set guifont=Consolas:h15
   " set guifont=Lekton:h18
   " set guifont=Cousine:h15
-  " set guifont=Ubuntu\ Mono:h17
+  set guifont=Ubuntu\ Mono:h16
   " set guifont=Source\ Code\ Pro:h14
   set transparency=0
   set linespace=2

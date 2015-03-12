@@ -10,7 +10,8 @@ Plug 'airblade/vim-rooter'
 Plug 'godlygeek/csapprox'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
-Plug 'ap/vim-css-color'
+" Plug 'gorodinskiy/vim-coloresque'
+Plug 'chrisbra/Colorizer' " Newer alternative colorizer
 Plug 'hexHighlight.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tomtom/tcomment_vim'
@@ -58,9 +59,14 @@ Plug 'scrooloose/syntastic'
 Plug 'vim-scripts/ctags.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'mhinz/vim-startify'
+Plug 'airblade/vim-gitgutter'
 
 " Optimizations for specific languages/tools
 " ------------------------------------------
+" Vim syntax highlighting for C, Bison, Flex
+Plug 'justinmk/vim-syntax-extra'
+" Ships with VIM already, but most recent version here
+Plug 'vim-ruby/vim-ruby'
 " A set of mappings for HTML, XML, PHP, ASP, eRuby, JSP, and more
 Plug 'tpope/vim-ragtag'
 " ,he and ,hu to escape and unescape html
@@ -94,6 +100,17 @@ Plug '~/Code/misc/vim-colors-lanai'
 " Plug 'cseelus/vim-colors-lanai'
 Plug 'flazz/vim-colorschemes'
 Plug 'chriskempson/base16-vim'
-Plug 'csexton/spacemanspiff.vim'
+Plug 'morhetz/gruvbox'
+
+" Not usable
+" ------------------------------------------
+
+" Move lines up and down
+" Plug 'matze/vim-move' " 'ciw' not realiable
+" Works also for snake case
+" Plug 'bkad/CamelCaseMotion' 'ce' on line end not reliable
+" Vim plugin for previewing markdown files in a browser.
+" Plug 'JamshedVesuna/vim-markdown-preview' " Shows emptpy preview
+
 
 call plug#end()
