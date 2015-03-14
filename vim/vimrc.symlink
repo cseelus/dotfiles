@@ -148,6 +148,7 @@ set background=dark
 " colorscheme flatcolor
 " colorscheme jellybeans
 colorscheme lanai
+" colorscheme kauai
 " colorscheme spacemanspiff
 " colorscheme oceanblack
 " colorscheme pencil
@@ -296,7 +297,7 @@ endfunction
 if has("gui_macvim")
   " No toolbars, menu or scrollbars in the GUI
   " set guifont=Menlo\ for\ Powerline:h14
-  " set guifont=Consolas:h15
+  " set guifont=Consolas:h14
   " set guifont=Lekton:h18
   " set guifont=Cousine:h15
   set guifont=Ubuntu\ Mono:h16
