@@ -28,17 +28,18 @@ let g:startify_bookmarks = [
             \ '~/.dotfiles/vim/vim-plug.vim',
             \ '~/.vim/settings/startify.vim',
             \ '~/Code/misc/vim-colors-lanai/colors/lanai.vim',
+            \ '~/Code/misc/vim-colors-icicle/colors/icicle.vim',
             \ '~/Code/misc/vim-colors-kauai/colors/kauai.vim',
             \ '~/Code/misc/vim-colors-clearance/colors/clearance.vim',
             \ '~/Code/ruby/syntax-highlight-example.rb',
             \ ]
 
-hi link StartifyNumber  Statement
-hi link StartifyBracket Statement
-hi link StartifySection Title
-hi link StartifyPath    Comment
-hi link StartifySlash   Comment
-hi link StartifyFile    StorageClass
+" hi link StartifyNumber  Statement
+" hi link StartifyBracket Statement
+" hi link StartifySection Title
+" hi link StartifyPath    Comment
+" hi link StartifySlash   Comment
+" hi link StartifyFile    StorageClass
 "    StartifyFooter   |  the custom footer       |  linked to Normal
 "    StartifyHeader   |  the custom header       |  linked to Normal
 "    StartifyNumber   |  the numbers between []  |  linked to Number
