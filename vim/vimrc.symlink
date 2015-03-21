@@ -18,6 +18,7 @@ set hidden
 set noerrorbells                " No beeps
 set backspace=indent,eol,start  " Makes backspace key more powerful
 set showcmd                     " Show me what I'm typing
+set cmdheight=2                 " Height of the command prompt
 set showmode                    " Show/Hide current mode
 " set relativenumber              " Set relative line number
 set number                      " Enables hybrid line number mode
@@ -36,7 +37,7 @@ set ssop-=folds                 " Dont store folds
 set encoding=utf-8              " Set default encoding to UTF-8
 set autowrite                   " Autosave before :next, :make etc.
 set autoread                    " Autoreread changed files w/o asking
-set laststatus=2
+set laststatus=2                " Always show status line
 
 set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
 
@@ -49,7 +50,7 @@ set history=10000               " A long long time ago …
 
 " set clipboard+=unnamed          " Use System Clipboard"
 
-set timeoutlen=500              " Timeout for leader key
+set timeoutlen=1500              " Timeout for leader key
 
 set nostartofline               " Dont jump to start of line e.g. when switching buffers
 " Return to last edit position when opening files (You want this!)
@@ -80,7 +81,7 @@ set copyindent
 set smartindent
 
 filetype off
-filetype plugin on
+filetype plugin on              " Turn on file type detection.
 filetype indent on
 
 " Display tabs and trailing spaces visually
@@ -108,14 +109,14 @@ autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.py,*.rb
 
 set breakindent
 set list
-set textwidth=72
+set columns=87                 " window width
 set wrap
-set wrapmargin=0
-set columns=85                 " window width
 set linebreak
-set foldcolumn=0
-" set columns=85
-autocmd BufNewFile,BufRead * setlocal formatoptions=qn1j        " see ':h fo-table' and http://stackoverflow.com/questions/6076592/vim-set-formatoptions-being-lost
+set textwidth=0
+set wrapmargin=0
+set formatoptions+=l           " no automatic linebreaks"
+" set foldcolumn=0
+" autocmd BufNewFile,BufRead * setlocal formatoptions=qn1j        " see ':h fo-table' and http://stackoverflow.com/questions/6076592/vim-set-formatoptions-being-lost
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro        " Comments: Don't continue on new line, etc.
 
 
@@ -142,12 +143,17 @@ set background=dark
 
 " Some nice colorschemes
 " - dark
-" colorscheme base16-default
+" colorscheme grayvim
+" colorscheme base16-default  " base16- all work in dark and light
+" colorscheme base16-eighties
+colorscheme base16-ocean
+" colorscheme base16-tomorrow
 " colorscheme busybee
 " colorscheme clearance
 " colorscheme flatcolor
+" colorscheme icicle
 " colorscheme jellybeans
-colorscheme lanai
+" colorscheme lanai
 " colorscheme kauai
 " colorscheme spacemanspiff
 " colorscheme oceanblack
@@ -290,18 +296,32 @@ function! BufferClean()
   endtry
 endfunction
 
+function! ProfileVimStart()
+  profile start profile.log
+  profile func *
+  profile file *
+" At this point do slow actions
+endfunction
+
+function! ProfileVimEnd()
+  profile pause
+  noautocmd qall!
+endfunction
+
 
 " MacVim modifications (color, shortcuts, etc.. "
 " ---------------------------------------------------------------------------
 
 if has("gui_macvim")
   " No toolbars, menu or scrollbars in the GUI
-  " set guifont=Menlo\ for\ Powerline:h14
-  " set guifont=Consolas:h14
-  " set guifont=Lekton:h18
-  " set guifont=Cousine:h15
-  set guifont=Ubuntu\ Mono:h16
-  " set guifont=Source\ Code\ Pro:h14
+  " set guifont=Bitstream\ Vera\ Sans\ Mono:h13
+  " set guifont=Cousine:h14
+  " set guifont=Fantasque\ Sans\ Mono:h16
+  " set guifont=Inconsolata\ LGC:h14
+  " set guifont=Menlo:h14
+  set guifont=Monego:h13
+  " set guifont=Lekton:h16
+  " set guifont=Source\ Code\ Pro:h13
   set transparency=0
   set linespace=2
   set vb t_vb=
