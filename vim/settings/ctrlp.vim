@@ -2,11 +2,11 @@ call ctrlp_bdelete#init()
 
 " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
 " Remap CtrlP as it clashes with YankRing
-let g:ctrlp_map = ',t'
-nnoremap <silent> ,t :CtrlPCurWD<CR>
+let g:ctrlp_map = '<leader>t'
+nnoremap <silent> <leader>t :CtrlPCurWD<CR>
 
 " Mappings for buffer search
-nnoremap <silent> ,b :CtrlPBuffer<cr>
+nnoremap <silent> <leader>b :CtrlPBuffer<cr>
 nnoremap <silent> <C-b> :CtrlPBuffer<cr>
 
 "Cmd-Shift-(M)ethod - jump to a method (tag in current file)
@@ -15,6 +15,10 @@ nnoremap <silent> <D-M> :CtrlPBufTag<CR>
 
 " Switch to the file if it's already open
 " let g:ctrlp_switch_buffer = '<leader><leader>'
+
+" Drop down from top instead up from bottom
+" let g:ctrlp_match_window_bottom = 0
+" let g:ctrlp_match_window_reversed = 0
 
 " Use the silver searcher if possible
 if executable('ag')
@@ -33,12 +37,6 @@ let g:ctrlp_prompt_mappings = {
   \ }
 let g:ctrlp_reuse_window = 'startify\|NERDTree'
 
-" Ignore some folders and files for CtrlP indexing
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.yardoc\|public$|cache\|tmp$',
-  \ 'file': '\.so$\|\.dat$|\.sassc|\.DS_Store$'
-  \ }
-
 " Default to filename searches - so that appctrl will find application
 " controller
 let g:ctrlp_by_filename = 1
@@ -49,3 +47,8 @@ let g:ctrlp_max_height = 12
 " Do not retain cache between sessions
 let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_extensions = ['tag']
+
+" Really respect my ignores
+if exists("g:ctrl_user_command")
+  unlet g:ctrlp_user_command
+endif
