@@ -1,11 +1,9 @@
-" .vimrc
+" NeoVim Configuration
 " ===========================================================================
 
-set nocompatible                " Turn off compability mode with Vi
-
 " Load plugins
-if filereadable(expand("~/.dotfiles/vim/vim-plug.vim"))
-  source ~/.dotfiles/vim/vim-plug.vim
+if filereadable(expand("~/.dotfiles/neovim/vim-plug.vim"))
+  source ~/.dotfiles/neovim/vim-plug.vim
 endif
 
 
@@ -18,7 +16,6 @@ set hidden
 set noerrorbells                " No beeps
 set backspace=indent,eol,start  " Makes backspace key more powerful
 set showcmd                     " Show me what I'm typing
-set cmdheight=2                 " Height of the command prompt
 set showmode                    " Show/Hide current mode
 " set relativenumber              " Set relative line number
 set number                      " Enables hybrid line number mode
@@ -37,7 +34,7 @@ set ssop-=folds                 " Dont store folds
 set encoding=utf-8              " Set default encoding to UTF-8
 set autowrite                   " Autosave before :next, :make etc.
 set autoread                    " Autoreread changed files w/o asking
-set laststatus=2                " Always show status line
+set laststatus=2
 
 set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
 
@@ -46,11 +43,11 @@ set conceallevel=2              " See http://ithaca.arpinum.org/2010/11/06/vim-c
 set scroll=9                    " Set # lines CTRL-D and CTRL-U jumps
 set scrolloff=5                 " Start scrolling X lines above/below cursor
 
-set history=10000               " A long long time ago …
+set history=10000               " A long long time ago ...
 
 " set clipboard+=unnamed          " Use System Clipboard"
 
-set timeoutlen=1500              " Timeout for leader key
+set timeoutlen=500              " Timeout for leader key
 
 set nostartofline               " Dont jump to start of line e.g. when switching buffers
 " Return to last edit position when opening files (You want this!)
@@ -59,14 +56,11 @@ autocmd BufReadPost *
      \   exe "normal! g`\"" |
      \ endif
 
-" set shortmess+=c                " Hide the 'Back at original' and 'Match X of Y' when autocompleting
+set shortmess+=c                " Hide the 'Back at original' and 'Match X of Y' when autocompleting
 
 if $SHELL =~ 'bin/fish'
   set shell=/bin/sh
 endif
-
-" Source the vimrc file after saving it
-" autocmd bufwritepost .vimrc source $MYVIMRC
 
 
 " Indentation settings
@@ -81,11 +75,11 @@ set copyindent
 set smartindent
 
 filetype off
-filetype plugin on              " Turn on file type detection.
+filetype plugin on
 filetype indent on
 
 " Display tabs and trailing spaces visually
-" ↪ and display the next line if the line exceeds the width of the window
+" �� and display the next line if the line exceeds the width of the window
 if has("multi_byte")
   set listchars=nbsp:█,tab:▸\ ,eol:¬,extends:>,precedes:<,trail:·
   let &sbr = nr2char(8618).' '
@@ -107,24 +101,19 @@ autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.py,*.rb
 " Text wrapping
 " ---------------------------------------------------------------------------
 
-" se breakindent
-set list
-set columns=87                 " window width
-set wrap
-set linebreak
-set textwidth=0
-set wrapmargin=0
-set formatoptions+=l           " no automatic linebreaks"
-" set foldcolumn=0
-" autocmd BufNewFile,BufRead * setlocal formatoptions=qn1j        " see ':h fo-table' and http://stackoverflow.com/questions/6076592/vim-set-formatoptions-being-lost
-autocmd BufNewFile,BufRead * setlocal formatoptions-=cro        " Comments: Don't continue on new line, etc.
 
+set breakindent
+set list
+set textwidth=72
+set wrap
+set wrapmargin=0
+set columns=85                 " window width
+set linebreak
+set foldcolumn=0
 
 " Searching
 " ---------------------------------------------------------------------------
 
-"nnoremap / /\v
-"vnoremap / /\v
 set ignorecase
 set smartcase
 set gdefault
@@ -138,20 +127,15 @@ set incsearch                   " Transfer the search term when writing
 " ---------------------------------------------------------------------------
 
 syntax enable
-set t_Co=256                    " Set 256 colors in terminal mode
+" set t_Co=256                    " Set 256 colors in terminal mode
 set background=dark
-
 " Some nice colorschemes
 " - dark
-" colorscheme grayvim
-" colorscheme base16-default  " base16- all work in dark and light
-" colorscheme base16-eighties
-" colorscheme base16-ocean
-" colorscheme base16-tomorrow
+colorscheme 256-grayvim
+" colorscheme base16-default
 " colorscheme busybee
 " colorscheme clearance
 " colorscheme flatcolor
-colorscheme icicle
 " colorscheme jellybeans
 " colorscheme lanai
 " colorscheme kauai
@@ -229,24 +213,6 @@ set statusline+=%y                                "filetype
 set statusline+=%m\                               "modified flag
 
 
-" Wildmode completion
-" ---------------------------------------------------------------------------
-
-set wildmode=list:longest
-set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
-" stuff to ignore when tab completing, for ctrlp, etc.
-set wildignore=*.o,*.obj,*~ 
-set wildignore+=*vim/backups*
-set wildignore+=*sass-cache*
-set wildignore+=*DS_Store*
-set wildignore+=vendor/rails/**
-set wildignore+=vendor/cache/**
-set wildignore+=*.gem
-set wildignore+=log/**
-set wildignore+=tmp/**
-set wildignore+=*.png,*.jpg,*.gif
-
-
 " Functions
 " ----------------------------------------------------------------------------
 
@@ -296,71 +262,12 @@ function! BufferClean()
   endtry
 endfunction
 
-function! ProfileVimStart()
-  profile start profile.log
-  profile func *
-  profile file *
-" At this point do slow actions
-endfunction
-
-function! ProfileVimEnd()
-  profile pause
-  noautocmd qall!
-endfunction
-
-
-" MacVim modifications (color, shortcuts, etc.. "
-" ---------------------------------------------------------------------------
-
-if has("gui_macvim")
-  " No toolbars, menu or scrollbars in the GUI
-  " set guifont=Bitstream\ Vera\ Sans\ Mono:h13
-  " set guifont=Cousine:h14
-  " set guifont=Fantasque\ Sans\ Mono:h16
-  " set guifont=Inconsolata\ LGC:h14
-  " set guifont=Menlo:h14
-  set guifont=Monego:h13
-  " set guifont=Lekton:h16
-  " set guifont=Source\ Code\ Pro:h13
-  set transparency=0
-  set linespace=2
-  set vb t_vb=
-  set guioptions-=m  "no menu
-  set guioptions-=T  "no toolbar
-  set guioptions-=l
-  set guioptions-=L
-  set guioptions-=r  "no scrollbar
-  set guioptions-=R
-
-  set guicursor=a:blinkon0 " No blinking cursor
-
-  set showtabline=1  "always show tabbar, so no resizing occurs
-
-  " Move  with cmd+alt
-  nmap <D-M-RIGHT> gt
-  nmap <D-M-LEFT> gT
-
-  " Move to tabs with CMD + tab#
-  map <D-S-]> gt
-  map <D-S-[> gT
-  map <D-1> 1gt
-  map <D-2> 2gt
-  map <D-3> 3gt
-  map <D-4> 4gt
-  map <D-5> 5gt
-  map <D-6> 6gt
-  map <D-7> 7gt
-  map <D-8> 8gt
-  map <D-9> 9gt
-  map <D-0> :tablast<cr>
-endif
-
 
 " Plugin settings
 " ---------------------------------------------------------------------------
 
-if filereadable(expand("~/.dotfiles/vim/settings.vim"))
-  source ~/.dotfiles/vim/settings.vim
+if filereadable(expand("~/.dotfiles/neovim/settings.vim"))
+  source ~/.dotfiles/neovim/settings.vim
 endif
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher

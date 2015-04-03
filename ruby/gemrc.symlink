@@ -8,6 +8,5 @@
 :verbose: true
 gem: --no-ri --no-rdoc
 # Prerequisites:
-# rbenv, ruby-build, rbenv-gem-rehash
 # Default gems:
 # bundler, rails, middleman, rubygems-bundler, mailcatcher
