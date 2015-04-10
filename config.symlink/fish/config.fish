@@ -2,7 +2,7 @@
 set fish_path $HOME/.oh-my-fish
 
 # Theme (good ones are clearance, idan, lanai, numist)
-set fish_theme lanai
+set fish_theme clearance
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-fish/plugins/*)
 # Custom plugins may be added to ~/.oh-my-fish/custom/plugins/
