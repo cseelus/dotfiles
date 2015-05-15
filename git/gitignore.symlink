@@ -7,15 +7,19 @@
 .Spotlight-V100
 .Trashes
 
-# Windows   
-# from: https://github.com/github/gitignore/blob/master/Global/Windows.gitignore
+# Windows
+# https://github.com/github/gitignore/blob/master/Global/Windows.gitignore
 # ----------------------------------------------------------------------------
 # Windows image file caches
 Thumbs.db
 # Folder config file
 Desktop.ini
 
-# Vim       
+# Google Drive
+# ----------------------------------------------------------------------------
+Icon
+
+# Vim
 # from: https://github.com/github/gitignore/blob/master/Global/vim.gitignore
 # ----------------------------------------------------------------------------
 .*.sw[a-z]
