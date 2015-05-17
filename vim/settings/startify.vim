@@ -1,7 +1,7 @@
 let g:startify_files_number        = 12
 let g:startify_session_persistence = 1
 let g:startify_session_autoload    = 1
-let g:startify_enable_special      = 0
+let g:startify_enable_special      = 1
 
 nmap <silent> <leader>s :Startify<cr>
 

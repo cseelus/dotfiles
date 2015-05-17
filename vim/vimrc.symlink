@@ -87,7 +87,7 @@ filetype indent on
 " Display tabs and trailing spaces visually
 " ↪ and display the next line if the line exceeds the width of the window
 if has("multi_byte")
-  set listchars=nbsp:█,tab:▸\ ,eol:¬,extends:>,precedes:<,trail:·
+  set listchars=nbsp:░,tab:▸\ ,eol:¬,extends:>,precedes:<,trail:·
   let &sbr = nr2char(8618).' '
 else
   set lcs=tab:>\ ,extends:>,precedes:<,trail:-
@@ -146,12 +146,12 @@ set background=dark
 " colorscheme grayvim
 " colorscheme base16-default  " base16- all work in dark and light
 " colorscheme base16-eighties
-colorscheme base16-ocean
+" colorscheme base16-ocean
 " colorscheme base16-tomorrow
 " colorscheme busybee
 " colorscheme clearance
 " colorscheme flatcolor
-" colorscheme icicle
+colorscheme icicle
 " colorscheme jellybeans
 " colorscheme lanai
 " colorscheme kauai
@@ -245,6 +245,9 @@ set wildignore+=*.gem
 set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
+set wildignore+=Icon
+set wildignore+=Icon^M^M
+set wildignore+="Icon\r"
 
 
 " Functions
@@ -314,12 +317,12 @@ endfunction
 
 if has("gui_macvim")
   " No toolbars, menu or scrollbars in the GUI
-  " set guifont=Bitstream\ Vera\ Sans\ Mono:h13
+  set guifont=Bitstream\ Vera\ Sans\ Mono:h13
   " set guifont=Cousine:h14
   " set guifont=Fantasque\ Sans\ Mono:h16
   " set guifont=Inconsolata\ LGC:h14
-  " set guifont=Menlo:h14
-  set guifont=Monego:h13
+  " set guifont=Menlo:h13
+  " set guifont=Monego:h13
   " set guifont=Lekton:h16
   " set guifont=Source\ Code\ Pro:h13
   set transparency=0

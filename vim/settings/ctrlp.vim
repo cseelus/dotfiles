@@ -49,6 +49,7 @@ let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_extensions = ['tag']
 
 " Really respect my ignores
+let b:ctrlp_user_command = ['.git', 'git --git-dir=/tmp/repo/.git/modules/submodule ls-files -oc --exclude-standard']
 if exists("g:ctrl_user_command")
   unlet g:ctrlp_user_command
 endif
