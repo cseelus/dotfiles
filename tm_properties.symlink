@@ -1,6 +1,6 @@
 # Basic Settings
 #
-fontName         = "Menlo for Powerline"
+fontName         = "Office Code Pro"
 fontSize         = 13
 
 # show the path to the current tab's file in the window title 
