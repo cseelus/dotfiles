@@ -151,9 +151,9 @@ set background=dark
 " colorscheme busybee
 " colorscheme clearance
 " colorscheme flatcolor
-colorscheme icicle
+" colorscheme icicle
 " colorscheme jellybeans
-" colorscheme lanai
+colorscheme lanai
 " colorscheme kauai
 " colorscheme spacemanspiff
 " colorscheme oceanblack
