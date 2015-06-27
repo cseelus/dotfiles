@@ -72,6 +72,7 @@ Plug 'othree/html5.vim'
 " Easy navigation of the Rails directory structure, interface to rake +
 " rails, much much more: https://github.com/tpope/vim-rails
 Plug 'tpope/vim-rails'
+Plug 'sunaku/vim-ruby-shoulda-context'
 Plug 'keith/rspec.vim'
 Plug 'tpope/vim-liquid'
 Plug 'depuracao/vim-rdoc'
