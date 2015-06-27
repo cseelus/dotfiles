@@ -126,10 +126,11 @@ set incsearch                   " Transfer the search term when writing
 " Theming
 " ---------------------------------------------------------------------------
 
-set guifont=Bitstream\ Vera\ Sans\ Mono:h13
+set guifont=Office\ Code\ Pro:h13
 syntax enable
 " set t_Co=256                    " Set 256 colors in terminal mode
 set background=dark
+set linespace=2
 " Some nice colorschemes
 " - dark
 " colorscheme 256-grayvim
