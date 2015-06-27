@@ -39,8 +39,7 @@ alias fishconfig="vim ~/.config/fish/config.fish"
 alias vi="mvim --remote-tab-silent"
 alias vib="mvim --remote-silent"
 alias start_mongodb="mongod --config /usr/local/etc/mongod.conf"
-alias start_postgres="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
-alias stop_postgres="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop"
+alias start_postgres="postgres -D /usr/local/var/postgres"
 alias start_virtuoso="cd /usr/local/Cellar/virtuoso/7.0.0/var/lib/virtuoso/db & virtuoso-t -f"
 
 
