@@ -149,15 +149,15 @@ set background=dark
 " colorscheme base16-tomorrow
 " colorscheme clearance
 " colorscheme flatcolor
+" colorscheme gruvbox
 " colorscheme icicle
-" colorscheme jellybeans
-" colorscheme lanai
-" colorscheme kauai
-" colorscheme oceanblack
+colorscheme lanai
+" colorscheme muon
 " colorscheme pencil
 " colorscheme solarized
 " colorscheme solstice
-colorscheme spacegray
+" colorscheme spacegray
+" colorscheme wolfpack
 " - light
 " colorscheme flatui
 " colorscheme lanai-light
@@ -201,8 +201,7 @@ function! ToggleColorschemeBackground()
     set background=light
   endif
 endfunc
-nmap <silent> <leader>r :so $MYVIMRC<cr>
-imap <leader>t <C-X>/                     " Close tag
+nmap <silent> <leader>vr :so $MYVIMRC<cr>
 " Switch between the last two files with double leader
 nnoremap <leader><leader> <c-^>
 

@@ -63,6 +63,8 @@ Plug 'mattn/emmet-vim'
 Plug 'justinmk/vim-syntax-extra'
 " Ships with VIM already, but most recent version here
 Plug 'vim-ruby/vim-ruby'
+" Run ruby test (including vanilla test, rspec, shoulda etc.) in vim
+Plug 'janko-m/vim-test'
 " A set of mappings for HTML, XML, PHP, ASP, eRuby, JSP, and more
 Plug 'tpope/vim-ragtag'
 " ,he and ,hu to escape and unescape html
@@ -83,11 +85,11 @@ Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'groenewege/vim-markdown-preview'
 Plug 'LaTeX-Box-Team/LaTeX-Box'
 " Vim support for editing fish scripts
 Plug 'dag/vim-fish'
 Plug 'n3.vim'
-Plug 'webgefrickel/vim-typoscript'
 Plug 'elentok/plaintasks.vim'
 Plug 'toyamarinyon/vim-swift'
 Plug 'digitaltoad/vim-jade'
@@ -109,6 +111,8 @@ Plug 'flazz/vim-colorschemes'
 Plug 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
 Plug 'ajh17/Spacegray.vim'
+Plug 'carlson-erik/wolfpack'
+Plug 'gregsexton/Muon'
 
 " Not needed atm
 " ------------------------------------------
