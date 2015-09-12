@@ -85,7 +85,7 @@ Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-Plug 'groenewege/vim-markdown-preview'
+Plug 'shime/vim-livedown'
 Plug 'LaTeX-Box-Team/LaTeX-Box'
 " Vim support for editing fish scripts
 Plug 'dag/vim-fish'
@@ -113,6 +113,7 @@ Plug 'morhetz/gruvbox'
 Plug 'ajh17/Spacegray.vim'
 Plug 'carlson-erik/wolfpack'
 Plug 'gregsexton/Muon'
+Plug 'nicholasc/vim-seti'
 
 " Not needed atm
 " ------------------------------------------
