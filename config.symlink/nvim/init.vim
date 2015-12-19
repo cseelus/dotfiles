@@ -1,40 +1,30 @@
-" NeoVim Configuration
+" Neovim configuration
 " ===========================================================================
 
 " Load plugins
-if filereadable(expand("~/.dotfiles/neovim/vim-plug.vim"))
-  source ~/.dotfiles/neovim/vim-plug.vim
-endif
+source $HOME/.config/nvim/vim-plug.vim
 
 
 " General
 " ---------------------------------------------------------------------------
 
-" Keep unsaved files open in buffers
-set hidden
+set hidden                      " Keep unsaved files open in buffers w/o the need to write
 
 set noerrorbells                " No beeps
-set backspace=indent,eol,start  " Makes backspace key more powerful
 set showcmd                     " Show me what I'm typing
+set showmatch                   " Show matching brackets
 set showmode                    " Show/Hide current mode
 " set relativenumber              " Set relative line number
-set number                      " Enables hybrid line number mode
+set number                      " Show line number
 set numberwidth=5               " Line numbers width (leading whitespace)
 set nocursorline                " Don't Highlight the current line
 
 set noswapfile                  " Dont use swapfile
-set nobackup                    " Dont create annoying backup files
 
 set splitright                  " Split vertical windows to the right
 set splitbelow                  " Split horizontal windows below
 
-set ssop-=options               " Dont store global and local values in a session
-set ssop-=folds                 " Dont store folds
-
-set encoding=utf-8              " Set default encoding to UTF-8
 set autowrite                   " Autosave before :next, :make etc.
-set autoread                    " Autoreread changed files w/o asking
-set laststatus=2
 
 set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
 
@@ -43,14 +33,12 @@ set conceallevel=2              " See http://ithaca.arpinum.org/2010/11/06/vim-c
 set scroll=9                    " Set # lines CTRL-D and CTRL-U jumps
 set scrolloff=5                 " Start scrolling X lines above/below cursor
 
-set history=10000               " A long long time ago ...
-
 " set clipboard+=unnamed          " Use System Clipboard"
 
 set timeoutlen=500              " Timeout for leader key
 
 set nostartofline               " Dont jump to start of line e.g. when switching buffers
-" Return to last edit position when opening files (You want this!)
+" Return to last edit position when opening files
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
@@ -62,6 +50,9 @@ if $SHELL =~ 'bin/fish'
   set shell=/bin/sh
 endif
 
+" Source nvim config file after editing
+" autocmd bufwritepost init.vim source <afile>
+
 
 " Indentation settings
 " ---------------------------------------------------------------------------
@@ -70,21 +61,20 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-set autoindent
 set copyindent
 set smartindent
 
-filetype off
-filetype plugin on
-filetype indent on
+"filetype off
+"filetype plugin on
+"filetype indent on
 
 " Display tabs and trailing spaces visually
-" �� and display the next line if the line exceeds the width of the window
+" ↪ and display the next line if the line exceeds the width of the window
 if has("multi_byte")
-  set listchars=nbsp:█,tab:▸\ ,eol:¬,extends:>,precedes:<,trail:·
+  set listchars=nbsp:░,tab:▸\ ,eol:¬,extends:>,precedes:<,trail:·
   let &sbr = nr2char(8618).' '
 else
-  set lcs=tab:>\ ,extends:>,precedes:<,trail:-
+  set listchars=nbsp:+,=tab:>\ ,extends:>,precedes:<,trail:-
   let &sbr = '+++ '
 endif
 function! UpdateLcs()
@@ -101,36 +91,36 @@ autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.py,*.rb
 " Text wrapping
 " ---------------------------------------------------------------------------
 
-
 set breakindent
 set list
-set textwidth=72
+"set columns=89                 " window width
 set wrap
-set wrapmargin=0
-set columns=85                 " window width
 set linebreak
+set textwidth=0
+set wrapmargin=0
 set foldcolumn=0
+set formatoptions+=l           " no automatic linebreaks"
+
 
 " Searching
 " ---------------------------------------------------------------------------
 
 set ignorecase
 set smartcase
-set gdefault
-set incsearch
-set showmatch
-set hlsearch                    " Highlight search results
-set incsearch                   " Transfer the search term when writing
+set gdefault                   " Use 'g' flag by default with :s/foo/bar/.
+" Enter cleans the search highlight
+:nnoremap <CR> :nohlsearch<cr>
 
 
 " Theming
 " ---------------------------------------------------------------------------
 
-set guifont=Office\ Code\ Pro:h13
+" set guifont=Office\ Code\ Pro:h13
+set guifont=InputMono\ Light:h12
 syntax enable
-" set t_Co=256                    " Set 256 colors in terminal mode
+set t_Co=256                    " Set 256 colors in terminal mode
 set background=dark
-set linespace=2
+set linespace=5
 " Some nice colorschemes
 " - dark
 " colorscheme 256-grayvim
@@ -158,11 +148,10 @@ colorscheme lanai
 
 " Persistent undo
 " ---------------------------------------------------------------------------
-" Keep undo history across sessions, by storing in file.
 
-silent !mkdir ~/.vim/backups > /dev/null 2>&1
-set undodir=~/.vim/backups
+" Keep undo history across sessions
 set undofile
+set undodir=$HOME/.config/nvim-undo
 
 
 " Custom key mappings/shortcuts
@@ -178,7 +167,7 @@ nmap . .`[
 " Allow saving of files as sudo
 "command W! w !sudo tee % >/dev/null
 
-:let mapleader=","
+let mapleader=","
 
 nmap <leader>e :e.<cr>                    " Show netrw
 nmap <silent> <leader>v :e $MYVIMRC<cr>
@@ -232,45 +221,12 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
-function! BufferClean()
-  " list of *all* buffer numbers
-  let l:buffers = range(1, bufnr('$'))
-
-  " what tab page are we in?
-  let l:currentTab = tabpagenr()
-  try
-    " go through all tab pages
-    let l:tab = 0
-    while l:tab < tabpagenr('$')
-      let l:tab += 1
-
-      " go through all windows
-      let l:win = 0
-      while l:win < winnr('$')
-        let l:win += 1
-        " whatever buffer is in this window in this tab, remove it from
-        " l:buffers list
-        let l:thisbuf = winbufnr(l:win)
-        call remove(l:buffers, index(l:buffers, l:thisbuf))
-      endwhile
-    endwhile
-
-    " if there are any buffers left, delete them
-    if len(l:buffers)
-      execute 'bwipeout' join(l:buffers)
-    endif
-  finally
-    " go back to our original tab page
-    execute 'tabnext' l:currentTab
-  endtry
-endfunction
-
 
 " Plugin settings
 " ---------------------------------------------------------------------------
 
-if filereadable(expand("~/.dotfiles/neovim/settings.vim"))
-  source ~/.dotfiles/neovim/settings.vim
+if filereadable(expand("~/.dotfiles/config.symlink/nvim/settings.vim"))
+  source ~/.dotfiles/config.symlink/nvim/settings.vim
 endif
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher

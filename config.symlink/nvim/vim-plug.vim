@@ -1,5 +1,5 @@
 let g:plug_window = 'botright new'
-call plug#begin('~/.nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 " General vim improvements
 " ------------------------
@@ -56,7 +56,6 @@ Plug 'LaTeX-Box-Team/LaTeX-Box'
 " Vim support for editing fish scripts
 Plug 'dag/vim-fish'
 Plug 'n3.vim'
-Plug 'webgefrickel/vim-typoscript'
 Plug 'elentok/plaintasks.vim'
 Plug 'toyamarinyon/vim-swift'
 Plug 'digitaltoad/vim-jade'
@@ -70,9 +69,9 @@ Plug 'Slava/vim-spacebars'
 Plug '~/Code/misc/vim-colors-clearance'
 " Plug 'cseelus/vim-colors-clearance'
 Plug 'imeos/vim-colors-solstice'
-"Plug '~/Code/misc/vim-colors-lanai'
+Plug '~/Code/misc/vim-colors-lanai'
 "Plug '~/Code/misc/vim-colors-kauai'
-Plug 'cseelus/vim-colors-lanai'
+" Plug 'cseelus/vim-colors-lanai'
 Plug 'cseelus/vim-colors-icicle'
 Plug 'flazz/vim-colorschemes'
 Plug 'chriskempson/base16-vim'
