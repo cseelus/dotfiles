@@ -43,8 +43,9 @@ set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
 
 set conceallevel=2              " See http://ithaca.arpinum.org/2010/11/06/vim-conceal-for-ruby.html
 
-set scroll=9                    " Set # lines CTRL-D and CTRL-U jumps
-set scrolloff=5                 " Start scrolling X lines above/below cursor
+set scroll=5                    " Set # lines CTRL-D and CTRL-U jumps
+" noremap <C-u> 5<C-u>            " Needed to have scroll option applied even after windows resize
+set scrolloff=5                 " Start scrolling X lines above/below window end
 
 set history=10000               " A long long time ago …
 
@@ -101,7 +102,7 @@ endfunction
 autocmd BufEnter,BufWinEnter,WinEnter,CmdwinEnter * call UpdateLcs()
 
 " Remove trailing white space for certain file types on save
-autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.py,*.rb,*.sass,*.scss,*.slim,*.tex,*.vim,*.xml,*.yml} :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.py,*.rb,*.sass,*.scss,*.slim,*.tex,*.vim,*.hxtml,*.xml,*.yml} :call <SID>StripTrailingWhitespaces()
 
 
 " Text wrapping
@@ -109,7 +110,7 @@ autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.py,*.rb
 
 set breakindent
 set list
-set columns=88                 " window width
+set columns=89                 " window width
 set wrap
 set linebreak
 set textwidth=0
@@ -144,17 +145,14 @@ set background=dark
 " Some nice colorschemes
 " - dark
 " colorscheme base16-default  " base16- all work in dark and light
-" colorscheme base16-eighties
 " colorscheme base16-ocean
-" colorscheme base16-tomorrow
 " colorscheme clearance
 " colorscheme flatcolor
-" colorscheme gruvbox
 " colorscheme icicle
-colorscheme lanai
+" colorscheme lanai
+colorscheme lucid
 " colorscheme muon
 " colorscheme pencil
-" colorscheme solarized
 " colorscheme solstice
 " colorscheme spacegray
 " colorscheme wolfpack
@@ -322,21 +320,23 @@ endfunction
 
 if has("gui_macvim")
   " set guifont=Anka\/Coder:h13
+  " set guifont=Anonymous\ Pro:h14
   " set guifont=Bitstream\ Vera\ Sans\ Mono:h13
   " set guifont=Cousine:h13
   " set guifont=Fira\ Mono:h13
   " set guifont=Hack:h13
   " set guifont=Inconsolata\ LGC:h12
-  set guifont=Input\ Mono:h12
+  " set guifont=Input\ Mono:h13
   " set guifont=InputMono\ Light:h12
-  " set guifont=Lekton:h14
+  set guifont=InputMono\ ExLight:h13
+  " set guifont=Lekton:h16
   " set guifont=Menlo:h13
   " set guifont=Monego:h12
   " set guifont=Office\ Code\ Pro:h13
   " set guifont=OpenDyslexicMono:h13
   " set guifont=Source\ Code\ Pro:h12
   set transparency=0
-  set linespace=5
+  set linespace=2
   " No toolbars, menu or scrollbars in the GUI
   set vb t_vb=
   set guioptions-=m  "no menu

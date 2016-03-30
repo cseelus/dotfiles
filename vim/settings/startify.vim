@@ -28,7 +28,7 @@ let g:startify_bookmarks = [
             \ '~/.dotfiles/vim/vim-plug.vim',
             \ '~/.vim/settings/startify.vim',
             \ '~/Code/misc/vim-colors-lanai/colors/lanai.vim',
-            \ '~/Code/misc/vim-colors-icicle/colors/icicle.vim',
+            \ '~/Code/misc/vim-colors-lucid/colors/lucid.vim',
             \ '~/Code/misc/vim-colors-kauai/colors/kauai.vim',
             \ '~/Code/misc/vim-colors-clearance/colors/clearance.vim',
             \ '~/Code/ruby/syntax-highlight-example.rb',
