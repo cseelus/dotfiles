@@ -1,19 +1,8 @@
-# Path to your oh-my-fish.
-set fish_path $HOME/.oh-my-fish
-
-# Theme (good ones are clearance, idan, lanai, numist, zen)
-set fish_theme zen
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-fish/plugins/*)
-# Custom plugins may be added to ~/.oh-my-fish/custom/plugins/
-# set fish_plugins autojump bundler git rails vi-mode
-set fish_plugins autojump git rails rake
-
-# Path to your custom folder (default path is $FISH/custom)
-#set fish_custom $HOME/dotfiles/oh-my-fish
-
-# Load oh-my-fish configuration.
-. $fish_path/oh-my-fish.fish
+# Fisherman
+set fisher_home ~/.local/share/fisherman
+set fisher_config ~/.config/fisherman
+source $fisher_home/config.fish
+set -g fisher_file ~/.dotfiles/config.symlink/fisherman/fishfile
 
 # Universal variables
 set -U EDITOR vim
@@ -38,6 +27,7 @@ alias bex="bundle exec"
 alias cpwd="pwd | tr -d '\n' | pbcopy"
 alias folder_size='du -sh */'
 alias hostsconfig="sudo vim /etc/hosts"
+alias neovim="sh /Users/chris/Sites/open_neovim_dot_app.sh"
 alias vhostsconfig="sudo vim /etc/apache2/extra/httpd-vhosts.conf"
 alias fishconfig="vim ~/.config/fish/config.fish"
 alias vi="mvim --remote-tab-silent"
