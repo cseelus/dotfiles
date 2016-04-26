@@ -130,7 +130,8 @@ set linespace=5
 " colorscheme flatcolor
 " colorscheme icicle
 " colorscheme jellybeans
-colorscheme lanai
+" colorscheme lanai
+colorscheme lucid
 " colorscheme kauai
 " colorscheme spacemanspiff
 " colorscheme oceanblack
