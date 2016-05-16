@@ -93,11 +93,14 @@ Plug 'dag/vim-fish'
 Plug 'n3.vim'
 Plug 'elentok/plaintasks.vim'
 Plug 'toyamarinyon/vim-swift'
-Plug 'digitaltoad/vim-jade'
+" Pug template engine (formerly Jade)
+Plug 'digitaltoad/vim-pug'
 " Mustache common
 Plug 'mustache/vim-mustache-handlebars'
 " Meteor
 Plug 'Slava/vim-spacebars'
+" React
+Plug 'mxw/vim-jsx'
 
 " Colorschemes
 " ------------
@@ -116,7 +119,6 @@ Plug 'morhetz/gruvbox'
 Plug 'ajh17/Spacegray.vim'
 Plug 'carlson-erik/wolfpack'
 Plug 'gregsexton/Muon'
-Plug 'nicholasc/vim-seti'
 Plug 'robertmeta/nofrils'
 
 " Not needed atm
