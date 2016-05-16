@@ -102,7 +102,7 @@ endfunction
 autocmd BufEnter,BufWinEnter,WinEnter,CmdwinEnter * call UpdateLcs()
 
 " Remove trailing white space for certain file types on save
-autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.py,*.rb,*.sass,*.scss,*.slim,*.tex,*.vim,*.hxtml,*.xml,*.yml} :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.jsx,*.py,*.rb,*.sass,*.scss,*.slim,*.tex,*.vim,*.hxtml,*.xml,*.yml} :call <SID>StripTrailingWhitespaces()
 
 
 " Text wrapping
@@ -326,15 +326,13 @@ if has("gui_macvim")
   " set guifont=Fira\ Mono:h13
   " set guifont=Hack:h13
   " set guifont=Inconsolata\ LGC:h12
-  " set guifont=Input\ Mono:h13
-  " set guifont=InputMono\ Light:h12
-  set guifont=InputMono\ ExLight:h13
+  " set guifont=Input:h12
   " set guifont=Lekton:h16
   " set guifont=Menlo:h13
   " set guifont=Monego:h12
-  " set guifont=Office\ Code\ Pro:h13
+  set guifont=Office\ Code\ Pro:h13
   " set guifont=OpenDyslexicMono:h13
-  " set guifont=Source\ Code\ Pro:h12
+  " set guifont=Source\ Code\ Pro:h13
   set transparency=0
   set linespace=2
   " No toolbars, menu or scrollbars in the GUI
