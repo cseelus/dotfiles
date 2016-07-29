@@ -24,10 +24,14 @@ let g:startify_skiplist = [
             \ ]
 
 let g:startify_bookmarks = [
-            \ '~/.config/nvim/init.vim',
-            \ '~/.config/nvim/vim-plug.vim',
-            \ '~/.config/nvim/settings/startify.vim',
+            \ '~/Documents/Misc/ToDo.todo',
+            \ '~/Documents/Misc/Journal.yml',
+            \ '~/.dotfiles/config.symlink/nvim/init.vim',
+            \ '~/.dotfiles/config.symlink/nvim/vim-plug.vim',
+            \ '~/.dotfiles/config.symlink/nvim/settings/startify.vim',
             \ '~/Code/misc/vim-colors-lanai/colors/lanai.vim',
+            \ '~/Code/misc/vim-colors-lucid/colors/lucid.vim',
+            \ '~/Code/misc/vim-colors-kauai/colors/kauai.vim',
             \ '~/Code/misc/vim-colors-clearance/colors/clearance.vim',
             \ '~/Code/ruby/syntax-highlight-example.rb',
             \ ]

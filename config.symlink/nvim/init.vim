@@ -25,6 +25,7 @@ set splitright                  " Split vertical windows to the right
 set splitbelow                  " Split horizontal windows below
 
 set autowrite                   " Autosave before :next, :make etc.
+set laststatus=2                " Always show status line
 
 set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
 
@@ -33,9 +34,11 @@ set conceallevel=2              " See http://ithaca.arpinum.org/2010/11/06/vim-c
 set scroll=9                    " Set # lines CTRL-D and CTRL-U jumps
 set scrolloff=5                 " Start scrolling X lines above/below cursor
 
-" set clipboard+=unnamed          " Use System Clipboard"
+set clipboard+=unnamed          " Use System Clipboard"
 
 set timeoutlen=500              " Timeout for leader key
+
+set mouse=nicr                  " Enable mouse scrolling inside terminals
 
 set nostartofline               " Dont jump to start of line e.g. when switching buffers
 " Return to last edit position when opening files
@@ -58,9 +61,10 @@ endif
 " ---------------------------------------------------------------------------
 
 set tabstop=2
-set shiftwidth=2
 set softtabstop=2
+set shiftwidth=2
 set expandtab
+set smarttab
 set copyindent
 set smartindent
 
@@ -69,7 +73,7 @@ set smartindent
 "filetype indent on
 
 " Display tabs and trailing spaces visually
-" ↪ and display the next line if the line exceeds the width of the window
+" show ↪ and display the next line if the line exceeds the width of the window
 if has("multi_byte")
   set listchars=nbsp:░,tab:▸\ ,eol:¬,extends:>,precedes:<,trail:·
   let &sbr = nr2char(8618).' '
@@ -85,7 +89,7 @@ endfunction
 autocmd BufEnter,BufWinEnter,WinEnter,CmdwinEnter * call UpdateLcs()
 
 " Remove trailing white space for certain file types on save
-autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.py,*.rb,*.sass,*.scss,*.slim,*.tex,*.vim,*.xml} :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.py,*.rb,*.sass,*.scss,*.slim,*.swift,*.tex,*.vim,*.xml,*.yml} :call <SID>StripTrailingWhitespaces()
 
 
 " Text wrapping
@@ -135,6 +139,7 @@ colorscheme lucid
 " colorscheme kauai
 " colorscheme spacemanspiff
 " colorscheme oceanblack
+" colorscheme onedark
 " colorscheme pencil
 " colorscheme solarized
 " colorscheme solstice
@@ -145,6 +150,12 @@ colorscheme lucid
 " colorscheme google
 " colorscheme louver
 " colorscheme tomatosoup
+
+if has("nvim")
+  " set termguicolors
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+endif
 
 
 " Persistent undo
@@ -173,12 +184,19 @@ let mapleader=","
 nmap <leader>e :e.<cr>                    " Show netrw
 nmap <silent> <leader>v :e $MYVIMRC<cr>
 nmap <silent> <leader>r :so $MYVIMRC<cr>
+nmap <silent> <leader>w :w<cr>
 imap <leader>t <C-X>/                     " Close tag
+:tnoremap <Esc> <C-\><C-n>                " Escape the Terminal
+" Source VIMRC
+nmap <silent> <leader>vr :so $MYVIMRC<cr>
 " Switch between the last two files with double leader
 nnoremap <leader><leader> <c-^>
+" copy/paste
+vmap <C-x> :!pbcopy<CR>
+vmap <C-c> :w !pbcopy<CR><CR>
 
 " Show syntax highlighting groups for word under cursor
-nmap <leader>w :call <SID>SynStack()<cr>
+nmap <leader>i :call <SID>SynStack()<cr>
 function! <SID>SynStack()
   if !exists("*synstack")
     return
@@ -193,7 +211,7 @@ cabbrev tn tabnew
 " ---------------------------------------------------------------------------
 
 set statusline=
-"set statusline+=%t                               "tail of the filename
+" set statusline+=\ %t,                             "tail of the filename
 " set statusline+=[%t]\ \                         "file name
 set statusline+=\ Line\ %l/%L\ (%P),\             "cursor line/total lines (Percent)
 set statusline+=Column\ %c\ \                     "cursor column
