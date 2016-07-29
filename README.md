@@ -1,11 +1,13 @@
-# dotfiles
+# dotfiles affe
 
+affe
 My unix dotfiles for 
 
 - Atom
 - Ctags
 - Git
 - Fish
+- NeoVIM
 - Pry
 - Ruby
 - Tmux
