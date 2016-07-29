@@ -1,7 +1,7 @@
 let g:plug_window = 'botright new'
 call plug#begin('~/.config/nvim/plugged')
 
-" General vim improvements
+" General NeoVIM improvements
 " ------------------------
 " Change the working directory to the project root when you open a file
 Plug 'airblade/vim-rooter'
@@ -30,6 +30,28 @@ Plug 'skwp/YankRing.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'mhinz/vim-startify'
 Plug 'airblade/vim-gitgutter'
+" The missing motion for Vim
+Plug 'justinmk/vim-sneak'
+" Make Vim play nicely with iTerm 2 and tmux
+Plug 'sjl/vitality.vim'
+" Autocompletion
+Plug 'Shougo/deoplete.nvim'
+" Run ruby test (including vanilla test, rspec, shoulda etc.) in vim¬
+Plug 'janko-m/vim-test'
+" The Silver Searcher
+Plug 'rking/ag.vim'
+" snipMate: Offers textmate-like snippet expansion + scrooloose-snippets
+" . try hitting TAB after typing a snippet
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+" 'end' certain keywords (like 'do', 'if') in some languages automatically
+Plug 'tpope/vim-endwise'
+" Wrapper of some neovim's :terminal functions
+Plug 'kassio/neoterm'
+" Distraction-free writing in Vim.
+Plug 'junegunn/goyo.vim'
 
 " Optimizations for specific languages/tools
 " ------------------------------------------
@@ -63,6 +85,7 @@ Plug 'digitaltoad/vim-jade'
 Plug 'mustache/vim-mustache-handlebars'
 " Meteor
 Plug 'Slava/vim-spacebars'
+Plug 'etaoins/vim-volt-syntax'
 
 " Colorschemes
 " ------------
@@ -71,10 +94,13 @@ Plug '~/Code/misc/vim-colors-clearance'
 Plug 'imeos/vim-colors-solstice'
 Plug '~/Code/misc/vim-colors-lanai'
 Plug '~/Code/misc/vim-colors-lucid'
+" Plug '~/Code/misc/vim-colors-wwdc16'
+Plug 'lifepillar/vim-wwdc16-theme'
 "Plug '~/Code/misc/vim-colors-kauai'
 " Plug 'cseelus/vim-colors-lanai'
 Plug 'cseelus/vim-colors-icicle'
 Plug 'flazz/vim-colorschemes'
 Plug 'chriskempson/base16-vim'
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
