@@ -323,18 +323,21 @@ if has("gui_macvim")
   " set guifont=Anonymous\ Pro:h14
   " set guifont=Bitstream\ Vera\ Sans\ Mono:h13
   " set guifont=Cousine:h13
-  " set guifont=Fira\ Mono:h13
+  " set guifont=Fira\ Code:h13 | set linespace=6
   " set guifont=Hack:h13
-  " set guifont=Inconsolata\ LGC:h12
-  " set guifont=Input:h12
+  " set guifont=Hasklig:h14 | set linespace=1
+  " set guifont=Input:h12 | set linespace=5
   " set guifont=Lekton:h16
   " set guifont=Menlo:h13
-  " set guifont=Monego:h12
-  set guifont=Office\ Code\ Pro:h13
+  " set guifont=Monego:h13 | set linespace=4
+  " set guifont=Monoid:h13 | set linespace=3
+  " set guifont=mononoki:h16 | set linespace=4
+  " set guifont=Office\ Code\ Pro:h14 | set linespace=2
   " set guifont=OpenDyslexicMono:h13
   " set guifont=Source\ Code\ Pro:h13
+  set guifont=SF\ Mono\ Regular:h13 | set linespace=2
+  set macligatures " Enables ligatures (MacOS) some fonts like Hasklig provide
   set transparency=0
-  set linespace=2
   " No toolbars, menu or scrollbars in the GUI
   set vb t_vb=
   set guioptions-=m  "no menu

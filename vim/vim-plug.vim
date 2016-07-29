@@ -56,6 +56,8 @@ Plug 'mhinz/vim-startify'
 Plug 'airblade/vim-gitgutter'
 " HTML and CSS hi-speed coding
 Plug 'mattn/emmet-vim'
+" The missing motion for Vim
+Plug 'justinmk/vim-sneak'
 
 " Optimizations for specific languages/tools
 " ------------------------------------------
@@ -101,6 +103,8 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'Slava/vim-spacebars'
 " React
 Plug 'mxw/vim-jsx'
+" Ruby Volt templating engine
+Plug 'etaoins/vim-volt-syntax'
 
 " Colorschemes
 " ------------
