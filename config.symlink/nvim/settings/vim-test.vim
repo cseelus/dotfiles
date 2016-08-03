@@ -3,7 +3,7 @@ nmap <silent> <leader>rT :TestFile<CR>
 nmap <silent> <leader>ra :TestSuite<CR>
 nmap <silent> <leader>rl :TestLast<CR>
 
-let test#strategy = "terminal"
+let test#strategy = "neoterm"
 
 " Output in Terminal
 " let g:rubytest_in_quickfix = 0

@@ -1,6 +1,5 @@
-# dotfiles affe
+# dotfiles
 
-affe
 My unix dotfiles for 
 
 - Atom
