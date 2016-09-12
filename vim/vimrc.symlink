@@ -139,7 +139,8 @@ set incsearch                   " Transfer the search term when writing
 " ---------------------------------------------------------------------------
 
 syntax enable
-set t_Co=256                    " Set 256 colors in terminal mode
+" set t_Co=256                    " Set 256 colors in terminal mode
+set termguicolors               " Set true colors in terminal mode
 set background=dark
 
 " Some nice colorschemes
@@ -325,7 +326,7 @@ if has("gui_macvim")
   " set guifont=Cousine:h13
   " set guifont=Fira\ Code:h13 | set linespace=6
   " set guifont=Hack:h13
-  " set guifont=Hasklig:h14 | set linespace=1
+  set guifont=Hasklig:h14 | set linespace=1
   " set guifont=Input:h12 | set linespace=5
   " set guifont=Lekton:h16
   " set guifont=Menlo:h13
@@ -335,7 +336,7 @@ if has("gui_macvim")
   " set guifont=Office\ Code\ Pro:h14 | set linespace=2
   " set guifont=OpenDyslexicMono:h13
   " set guifont=Source\ Code\ Pro:h13
-  set guifont=SF\ Mono\ Regular:h13 | set linespace=2
+  " set guifont=SF\ Mono\ Regular:h13 | set linespace=2
   set macligatures " Enables ligatures (MacOS) some fonts like Hasklig provide
   set transparency=0
   " No toolbars, menu or scrollbars in the GUI
