@@ -39,7 +39,7 @@ let g:startify_bookmarks = [
 " hi link StartifyNumber  Statement
 " hi link StartifyBracket Statement
 " hi link StartifySection Title
-" hi link StartifyPath    Comment
+hi link StartifyPath    Darker
 " hi link StartifySlash   Comment
 " hi link StartifyFile    StorageClass
 "    StartifyFooter   |  the custom footer       |  linked to Normal
