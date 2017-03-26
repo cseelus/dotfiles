@@ -1,8 +1,18 @@
 " Neovim configuration
 " ======================================================================
 
+
+" Extract the Neovim config directory from $MYVIMRC
+let g:rc_dir = strpart($MYVIMRC, 0, strridx($MYVIMRC, '/'))
+
+
 " Load plugins
-source $HOME/.config/nvim/vim-plug.vim
+" ----------------------------------------------------------------------
+
+" Load plugin file …
+exec 'source '.g:rc_dir.'/vim-plug.vim'
+" … and execute
+call VimrcLoadPlugins()
 
 
 " General
@@ -10,7 +20,7 @@ source $HOME/.config/nvim/vim-plug.vim
 
 set hidden                      " Keep unsaved files open in buffers w/o the need to write
 
-set showmode                    " Show/Hide current mode
+set cmdheight=2                 " Number of lines for command prompt
 " set relativenumber              " Set relative line number
 set number                      " Show line number
 set numberwidth=5               " Line numbers width (leading whitespace)
@@ -35,6 +45,9 @@ autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
      \ endif
+
+" Disable line numbers for certain filetypes
+autocmd FileType text :set nonumber
 
 set shortmess+=c                " Hide the 'Back at original' and 'Match X of Y' when autocompleting
 
@@ -164,13 +177,13 @@ nmap <leader>i :call <SID>SynStack()<cr>
 " ----------------------------------------------------------------------
 
 set statusline=
-" set statusline+=\ %t,                             "tail of the filename
+set statusline+=\ %t\ \ \·                        "tail of the filename
 " set statusline+=[%t]\ \                         "file name
-set statusline+=\ Line\ %l/%L\ (%P),\             "cursor line/total lines (Percent)
-set statusline+=Column\ %c\ \                     "cursor column
+set statusline+=\ \ Line\ %l/%L\ (%P),\           "cursor line/total lines (Percent)
+set statusline+=Col\ %c\ \                        "cursor column
 set statusline+=%=                                "left/right separator
 set statusline+=\ \ %{strlen(&fenc)?&fenc:'none'} "file encoding
-set statusline+=\ \ \|\ \ %{&ff}\ \ \|\ \         "file format
+set statusline+=\ \·\ %{&ff}\ \·\                 "file format
 set statusline+=%h                                "help file flag
 set statusline+=%r                                "read only flag
 set statusline+=%y                                "filetype
@@ -205,6 +218,7 @@ endfunc
 " Plugin settings
 " ----------------------------------------------------------------------
 
-if filereadable(expand("~/.dotfiles/config.symlink/nvim/settings.vim"))
-  source ~/.dotfiles/config.symlink/nvim/settings.vim
+let g:vim_settings_file = g:rc_dir.'/settings.vim'
+if filereadable(expand(g:vim_settings_file))
+  exec 'source '.g:vim_settings_file
 endif
