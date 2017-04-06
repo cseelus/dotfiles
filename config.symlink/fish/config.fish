@@ -30,6 +30,9 @@ alias start_postgres="postgres -D /usr/local/var/postgres"
 alias stop_postgres="pg_ctl -D /usr/local/var/postgres stop"
 # alias vim="nvim"
 
+# Respecting .gitignore, .hgignore, and svn:ignore (ag will do the filtering)
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+
 
 # Functions
 # alias generate_random='env LC_CTYPE=C tr -dc "a-zA-Z0-9-_\$\?" < /dev/urandom | head -c 10'
