@@ -30,17 +30,18 @@ function! VimrcLoadPlugins()
   Plug 'tomtom/tcomment_vim'
   " Adds . (repeat command) support for complex commands like surround.vim
   Plug 'tpope/vim-repeat'
+  " Full path fuzzy file, buffer, mru, tag, ... finder for Vim
+  Plug 'kien/ctrlp.vim'
+  " Close buffers
+  " Plug 'd11wtq/ctrlp_bdelete.vim'
   " 🌸 A command-line fuzzy finder written in Go
-  Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+  " Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
   " Rename a buffer on within VIM and on disk (:rename[!] {newname})
   Plug 'danro/rename.vim'
   " Show 'Match X of X' for searched term
   Plug 'IndexedSearch'
-  " yankring: effortless sanity for pasting. every time you yank something
-  " it goes into a buffer. after hitting p to paste, use ctrl-p or ctrl-n
-  " to cycle through the paste options. great for when you accidentally
-  " overwrite your yank with a delete.
-  Plug 'skwp/YankRing.vim'
+  " Copy/past history; killring-alike plugin for neovim with no default mappings
+  Plug 'bfredl/nvim-miniyank'
   Plug 'scrooloose/nerdtree'
   Plug 'mhinz/vim-startify'
   Plug 'airblade/vim-gitgutter'
@@ -74,6 +75,8 @@ function! VimrcLoadPlugins()
   Plug 'takac/vim-hardtime'
   " Highlight color hex codes and color names
   Plug 'chrisbra/Colorizer'
+  " Syntax checking hacks
+  " Plug 'vim-syntastic/syntastic'
 
   " Optimizations for specific languages/tools
   " ------------------------------------------
@@ -108,10 +111,19 @@ function! VimrcLoadPlugins()
   " Vastly improved Javascript indentation and syntax support
   Plug 'pangloss/vim-javascript'
   Plug 'mxw/vim-jsx'
+  " JSON Formatter
+  Plug 'XadillaX/json-formatter.vim'
   " Vim filetype and tools support for Crystal language
   Plug 'rhysd/vim-crystal'
   " Mustache and handlebars mode
   Plug 'mustache/vim-mustache-handlebars'
+  " A Vim plugin that always highlights the enclosing html/xml tags
+  Plug 'Valloric/MatchTagAlways'
+  " Lean & mean status/tabline for vim that's light as air
+  " Plug 'vim-airline/vim-airline'
+  " Plug 'vim-airline/vim-airline-themes'
+  " Light and configurable statusline/tabline for Vim
+  " Plug 'itchyny/lightline.vim'
 
   " Colorschemes
   " ------------
@@ -122,7 +134,10 @@ function! VimrcLoadPlugins()
   Plug '~/Code/misc/vim-colors-lucid'
   Plug 'cseelus/vim-colors-icicle'
   Plug 'chriskempson/base16-vim'
+  Plug 'colepeters/spacemacs-theme.vim'
+  Plug 'liuchengxu/space-vim-dark'
   Plug 'flazz/vim-colorschemes'
+  Plug 'idlua/badcat.vim'
 
   call plug#end()
 endfunction

@@ -39,6 +39,8 @@ set clipboard+=unnamed          " Use System Clipboard"
 
 set timeoutlen=500              " Timeout for leader key
 
+set showmode                    " Show/Hide mode like -- INSER --, useful with vim-airline
+
 set nostartofline               " Dont jump to start of line e.g. when switching buffers
 " Return to last edit position when opening files (see :help restore-cursor)
 autocmd BufReadPost *
@@ -70,14 +72,14 @@ set smartindent
 " show ↪ and display the next line if the line exceeds the width of the window
 if has("multi_byte")
   set listchars=nbsp:░,tab:▸\ ,eol:¬,extends:>,precedes:<,trail:·
-  let &sbr = nr2char(8618).' '
+  " let &sbr = nr2char(8618).' '
 else
   set listchars=nbsp:+,=tab:>\ ,extends:>,precedes:<,trail:-
   let &sbr = '+++ '
 endif
 
 " Remove trailing white space for certain file types on save
-autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.py,*.rb,*.sass,*.scss,*.slim,*.swift,*.tex,*.vim,*.xml,*.yml} :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.jsx,*.py,*.rb,*.sass,*.scss,*.slim,*.swift,*.tex,*.vim,*.xml,*.yml} :call <SID>StripTrailingWhitespaces()
 
 
 " Text wrapping
@@ -112,6 +114,7 @@ set linespace=5
 " Some nice colorschemes
 " - dark
 " colorscheme 256-grayvim
+" colorscheme badcat
 " colorscheme base16-default
 " colorscheme busybee
 " colorscheme clearance
@@ -126,6 +129,8 @@ colorscheme lucid
 " colorscheme onedark
 " colorscheme pencil
 " colorscheme solstice
+" colorscheme space-vim-dark
+" colorscheme sierra
 " - light
 " colorscheme flatui
 " colorscheme lanai-light
@@ -159,10 +164,11 @@ nmap . .`[
 
 let mapleader=","
 
-nmap <leader>e :e.<cr>                    " Show netrw
+" Show netrw
+nmap <leader>e :e.<cr>
 nmap <silent> <leader>w :w<cr>
-imap <leader>t <C-X>/                     " Close tag
-:tnoremap <Esc> <C-\><C-n>                " Escape the Terminal
+" Close tag
+imap <leader>t <C-X><cr>
 " Edit/Source VIMRC
 nmap <silent> <leader>ve :e $MYVIMRC<cr>
 nmap <silent> <leader>vr :so $MYVIMRC<cr>
