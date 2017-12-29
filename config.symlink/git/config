@@ -15,6 +15,7 @@
   # add
   a = add                           # add
   authors = shortlog -s -n --all    # number of commits per author (all branches)
+  authors-loc = ls-files | while read i; do git blame $i | sed -e 's/^[^(]*(//' -e 's/^\([^[:digit:]]*\)[[:space:]]\+[[:digit:]].*/\1/'; done | sort | uniq -ic | sort -nr
   chunkyadd = add --patch           # stage commits chunk by chunk
   # via http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/
   snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
