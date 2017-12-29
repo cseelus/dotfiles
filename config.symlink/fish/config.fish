@@ -7,8 +7,12 @@ set homebrew /usr/local/bin /usr/local/sbin
 # set latex "/usr/texbin"
 set brew_rbenv /usr/local/var/rbenv/shims
 set yarn ~/.config/yarn/global/node_modules/.bin
+set genymotion_tools /Applications/Genymotion.app/Contents/MacOS/tools
+set android_tools /Users/chris/Library/Android/sdk/platform-tools
+set android_sdk_root /usr/local/share/android-sdk
+set java_home "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin"
 # PATH ($default should be last)
-set -gx PATH $homebrew $brew_rbenv $yarn $default_path
+set -gx PATH $homebrew $brew_rbenv $yarn $genymotion_tools $android_tools $java_home $android_sdk_root $default_path
 # No more bundle exec
 # set -gx  RUBYGEMS_GEMDEPS -
 
@@ -18,6 +22,7 @@ set -gx RBENV_ROOT /usr/local/var/rbenv
 # Aliases
 alias bex="bundle exec"
 alias cpwd="pwd | tr -d '\n' | pbcopy"
+alias ccat="cat"
 alias folder_size='du -hd1'
 alias hostsconfig="sudo nvim /etc/hosts"
 alias vhostsconfig="sudo nvim /etc/apache2/extra/httpd-vhosts.conf"
@@ -28,6 +33,7 @@ alias preview_markdown="markdown-preview"
 alias start_mongodb="mongod --config /usr/local/etc/mongod.conf"
 alias start_postgres="postgres -D /usr/local/var/postgres"
 alias stop_postgres="pg_ctl -D /usr/local/var/postgres stop"
+alias tmux="env TERM=xterm-256color tmux"
 # alias vim="nvim"
 
 # Respecting .gitignore, .hgignore, and svn:ignore (ag will do the filtering)
