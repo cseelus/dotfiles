@@ -139,8 +139,8 @@ set incsearch                   " Transfer the search term when writing
 " ---------------------------------------------------------------------------
 
 syntax enable
-" set t_Co=256                    " Set 256 colors in terminal mode
-set termguicolors               " Set true colors in terminal mode
+set t_Co=256                    " Set 256 colors in terminal mode
+set termguicolors
 set background=dark
 
 " Some nice colorschemes
@@ -191,8 +191,13 @@ nmap . .`[
 :let mapleader=","
 
 nmap <leader>e :e.<cr>                    " Show netrw
+nmap <silent> <leader>w :w<cr>
 nmap <silent> <leader>v :e $MYVIMRC<cr>
 nmap <leader>8 :call ToggleColorschemeBackground()<cr>
+
+" Show syntax highlighting groups for word under cursor
+nmap <leader>i :call <SID>SynStack()<cr>
+ 
 function! ToggleColorschemeBackground()
   if &background == 'light'
     set background=dark
@@ -205,7 +210,7 @@ nmap <silent> <leader>vr :so $MYVIMRC<cr>
 nnoremap <leader><leader> <c-^>
 
 " Show syntax highlighting groups for word under cursor
-nmap <leader>w :call <SID>SynStack()<cr>
+nmap <leader>ii :call <SID>SynStack()<cr>
 function! <SID>SynStack()
   if !exists("*synstack")
     return
