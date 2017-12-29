@@ -32,27 +32,23 @@ function! VimrcLoadPlugins()
   Plug 'tpope/vim-repeat'
   " Full path fuzzy file, buffer, mru, tag, ... finder for Vim
   Plug 'kien/ctrlp.vim'
-  " Close buffers
-  " Plug 'd11wtq/ctrlp_bdelete.vim'
   " 🌸 A command-line fuzzy finder written in Go
   " Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
   " Rename a buffer on within VIM and on disk (:rename[!] {newname})
   Plug 'danro/rename.vim'
   " Show 'Match X of X' for searched term
-  Plug 'IndexedSearch'
+  Plug 'vim-scripts/IndexedSearch'
   " Copy/past history; killring-alike plugin for neovim with no default mappings
   Plug 'bfredl/nvim-miniyank'
-  Plug 'scrooloose/nerdtree'
+  Plug 'scrooloose/nerdtree'", { 'on':  'NERDTree, NERDTreeToggle' }
   Plug 'mhinz/vim-startify'
   Plug 'airblade/vim-gitgutter'
   " The missing motion for Vim
   Plug 'justinmk/vim-sneak'
-  " Make Vim play nicely with iTerm 2 and tmux
-  Plug 'sjl/vitality.vim'
+  " Enhanced terminal integration
+  Plug 'wincent/terminus'
   " Autocompletion
   Plug 'Shougo/deoplete.nvim'
-  " Run ruby test (including vanilla test, rspec, shoulda etc.) in vim¬
-  Plug 'janko-m/vim-test'
   " The Silver Searcher
   Plug 'rking/ag.vim'
   " snipMate: Offers textmate-like snippet expansion + scrooloose-snippets
@@ -62,28 +58,33 @@ function! VimrcLoadPlugins()
   Plug 'garbas/vim-snipmate'
   Plug 'honza/vim-snippets'
   " some rubymotion snippets
-  Plug 'rcyrus/snipmate-snippets-rubymotion'
+  Plug 'rcyrus/snipmate-snippets-rubymotion', { 'for': 'ruby' }
+  " Run ruby test (including vanilla test, rspec, shoulda etc.) in vim¬
+  Plug 'janko-m/vim-test', { 'for': 'ruby' }
   " 'end' certain keywords (like 'do', 'if') in some languages automatically
   Plug 'tpope/vim-endwise'
   " Wrapper of some neovim's :terminal functions
   Plug 'kassio/neoterm'
   " Distraction-free writing in Vim.
-  Plug 'junegunn/goyo.vim'
+  Plug 'junegunn/goyo.vim', { 'ony': 'Goyo' }
   " Adds file type glyphs/icons to many popular Vim plugins such as: NERDTree, vim-airline, unite, vim-startify and many more
   " Plug 'ryanoasis/vim-devicons'
   " Plugin to help you stop repeating the basic movement keys
   Plug 'takac/vim-hardtime'
   " Highlight color hex codes and color names
   Plug 'chrisbra/Colorizer'
-  " Syntax checking hacks
-  " Plug 'vim-syntastic/syntastic'
+  " Asynchronous Lint Engine
+  Plug 'w0rp/ale', { 'for':  ['javascript.jsx', 'javascript', 'jsx', 'ruby'] }
+  Plug 'johngrib/vim-game-code-break', { 'on': 'VimGameCodeBreak' }
 
   " Optimizations for specific languages/tools
   " ------------------------------------------
   " Vim syntax highlighting for C, Bison, Flex
   Plug 'justinmk/vim-syntax-extra'
+  " Better CSS syntax
+  Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
   " Ships with VIM already, but most recent version here
-  Plug 'vim-ruby/vim-ruby'
+  Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
   " A set of mappings for HTML, XML, PHP, ASP, eRuby, JSP, and more
   Plug 'tpope/vim-ragtag'
   " ,he and ,hu to escape and unescape html
@@ -92,33 +93,35 @@ function! VimrcLoadPlugins()
   Plug 'othree/html5.vim'
   " Easy navigation of the Rails directory structure, interface to rake +
   " rails, much much more: https://github.com/tpope/vim-rails
-  Plug 'tpope/vim-rails'
-  Plug 'tpope/vim-liquid'
-  Plug 'depuracao/vim-rdoc'
-  Plug 'tpope/vim-haml'
-  Plug 'slim-template/vim-slim'
-  Plug 'kchmck/vim-coffee-script'
-  Plug 'plasticboy/vim-markdown'
-  Plug 'LaTeX-Box-Team/LaTeX-Box'
+  Plug 'tpope/vim-rails', { 'for': 'ruby' }
+  Plug 'tpope/vim-liquid', { 'for': 'liquid' }
+  Plug 'tpope/vim-haml', { 'for': 'haml' }
+  Plug 'slim-template/vim-slim', { 'for': 'slim' }
+  Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+  Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+  Plug 'LaTeX-Box-Team/LaTeX-Box', { 'for': 'tex' }
   " Vim support for editing fish scripts
-  Plug 'dag/vim-fish'
-  Plug 'n3.vim'
-  Plug 'elentok/plaintasks.vim'
-  Plug 'toyamarinyon/vim-swift'
-  Plug 'digitaltoad/vim-pug'
+  Plug 'dag/vim-fish', { 'for': 'fish' }
+  Plug 'elentok/plaintasks.vim', { 'for': 'plaintasks' }
+  Plug 'toyamarinyon/vim-swift', { 'for': 'swift' }
+  Plug 'digitaltoad/vim-pug', { 'for': 'jade, pug' }
   " Emblem.js (Ember)
-  Plug 'yalesov/vim-emblem'
   " Vastly improved Javascript indentation and syntax support
-  Plug 'pangloss/vim-javascript'
-  Plug 'mxw/vim-jsx'
+  Plug 'pangloss/vim-javascript', { 'for':  ['javascript.jsx', 'javascript', 'jsx'] }
+  Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript', 'jsx'] }
+  " GraphQL
+  Plug 'jparise/vim-graphql', { 'for':  ['javascript.jsx', 'javascript', 'jsx'] }
   " JSON Formatter
-  Plug 'XadillaX/json-formatter.vim'
+  Plug 'XadillaX/json-formatter.vim', { 'for': 'json' }
   " Vim filetype and tools support for Crystal language
-  Plug 'rhysd/vim-crystal'
+  Plug 'rhysd/vim-crystal', { 'for': 'crystal' }
   " Mustache and handlebars mode
-  Plug 'mustache/vim-mustache-handlebars'
+  Plug 'mustache/vim-mustache-handlebars', { 'for': 'handlebars' }
+  Plug 'hhsnopek/vim-sugarss', { 'for': 'sugarss' }
   " A Vim plugin that always highlights the enclosing html/xml tags
   Plug 'Valloric/MatchTagAlways'
+  " EditorConfig plugin
+  Plug 'editorconfig/editorconfig-vim'
   " Lean & mean status/tabline for vim that's light as air
   " Plug 'vim-airline/vim-airline'
   " Plug 'vim-airline/vim-airline-themes'
@@ -137,7 +140,6 @@ function! VimrcLoadPlugins()
   Plug 'colepeters/spacemacs-theme.vim'
   Plug 'liuchengxu/space-vim-dark'
   Plug 'flazz/vim-colorschemes'
-  Plug 'idlua/badcat.vim'
 
   call plug#end()
 endfunction
