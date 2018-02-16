@@ -5,6 +5,7 @@ function! Multiple_cursors_before()
     exe 'NeoCompleteLock'
   endif
 endfunction
+
 " Called once only when the multiple selection is canceled (default <Esc>)
 function! Multiple_cursors_after()
   if exists(':NeoCompleteUnlock')==2

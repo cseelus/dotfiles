@@ -31,7 +31,9 @@ let g:startify_bookmarks = [
             \ '~/.dotfiles/config.symlink/nvim/settings/startify.vim',
             \ '~/Code/misc/vim-colors-lanai/colors/lanai.vim',
             \ '~/Code/misc/vim-colors-lucid/colors/lucid.vim',
-            \ '~/Code/misc/vim-colors-kauai/colors/kauai.vim',
+            \ '~/Code/misc/vim-colors-ornate/colors/ornate.vim',
+            \ '~/Code/misc/vim-colors-reactjs/colors/reactjs.vim',
+            \ '~/Code/misc/vim-colors-tone/colors/tone.vim',
             \ '~/Code/misc/vim-colors-clearance/colors/clearance.vim',
             \ '~/Code/ruby/syntax-highlight-example.rb',
             \ ]

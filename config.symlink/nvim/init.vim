@@ -20,7 +20,7 @@ call VimrcLoadPlugins()
 
 set hidden                      " Keep unsaved files open in buffers w/o the need to write
 
-set cmdheight=2                 " Number of lines for command prompt
+set cmdheight=1                 " Number of lines for command prompt
 " set relativenumber              " Set relative line number
 set number                      " Show line number
 set numberwidth=5               " Line numbers width (leading whitespace)
@@ -32,7 +32,7 @@ set splitbelow                  " Split horizontal windows below
 
 set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
 
-set scroll=9                    " Set # lines CTRL-D and CTRL-U jumps
+set scroll=5                    " Set # lines CTRL-D and CTRL-U jumps
 set scrolloff=5                 " Start scrolling X lines above/below cursor
 
 set clipboard+=unnamed          " Use System Clipboard"
@@ -51,11 +51,20 @@ autocmd BufReadPost *
 " Disable line numbers for certain filetypes
 autocmd FileType text :set nonumber
 
+" Create folder(s) when :edit(ing) if needed
+" autocmd BufNewFile * :exe ': !mkdir -p ' . escape(fnamemodify(bufname('%'),':p:h'),'#% \\')
+
 set shortmess+=c                " Hide the 'Back at original' and 'Match X of Y' when autocompleting
+
+set lazyredraw "                  When this option is set, the screen will not be redrawn while executing macros, registers and other commands that have not been typed.
 
 if $SHELL =~ 'bin/fish'
   set shell=/bin/sh
 endif
+
+" Treat _ and - as word separators
+" set iskeyword-=_
+" set iskeyword-=-
 
 
 " Indentation settings
@@ -72,7 +81,7 @@ set smartindent
 " show ↪ and display the next line if the line exceeds the width of the window
 if has("multi_byte")
   set listchars=nbsp:░,tab:▸\ ,eol:¬,extends:>,precedes:<,trail:·
-  " let &sbr = nr2char(8618).' '
+  let &sbr = nr2char(8618).' '
 else
   set listchars=nbsp:+,=tab:>\ ,extends:>,precedes:<,trail:-
   let &sbr = '+++ '
@@ -122,7 +131,7 @@ set linespace=5
 " colorscheme icicle
 " colorscheme jellybeans
 " colorscheme lanai
-colorscheme lucid
+" colorscheme lucid
 " colorscheme kauai
 " colorscheme spacemanspiff
 " colorscheme oceanblack
@@ -131,6 +140,7 @@ colorscheme lucid
 " colorscheme solstice
 " colorscheme space-vim-dark
 " colorscheme sierra
+colorscheme tone
 " - light
 " colorscheme flatui
 " colorscheme lanai-light
