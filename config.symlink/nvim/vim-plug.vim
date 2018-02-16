@@ -2,16 +2,11 @@
 let g:plug_window = 'botright new'
 
 function! VimrcLoadPlugins()
-  let g:plugins_dir = g:rc_dir.'/plugged'
-  let g:vim_plug_dir = g:plugins_dir.'/vim-plug'
-
   " Install vim-plug if not available {{{
-  if !isdirectory(g:vim_plug_dir)
-    call mkdir(g:vim_plug_dir, 'p')
-  endif
-  if !isdirectory(g:vim_plug_dir.'/autoload')
-    execute '!git clone git://github.com/junegunn/vim-plug '
-          \ shellescape(g:vim_plug_dir.'/autoload', 1)
+  if empty(glob('~/.config/nvim/autoload/plug.vim'))
+    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
   endif
   " }}}
 
