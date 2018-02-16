@@ -3,3 +3,9 @@ atom.symlink/.storage
 atom.symlink/packages
 atom.symlink/storage
 atom.symlink/themes
+config.symlink/fish/fishd*
+config.symlink/fish/functions/
+config.symlink/nvim-undo/
+config.symlink/nvim/.netrwhist
+config.symlink/nvim/autoload/
+config.symlink/nvim/plugged/
