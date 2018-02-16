@@ -1,5 +1,3 @@
-call ctrlp_bdelete#init()
-
 " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
 " Remap CtrlP as it clashes with YankRing
 let g:ctrlp_map = '<leader>t'
