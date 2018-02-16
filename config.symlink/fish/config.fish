@@ -9,10 +9,9 @@ set brew_rbenv /usr/local/var/rbenv/shims
 set yarn ~/.config/yarn/global/node_modules/.bin
 set genymotion_tools /Applications/Genymotion.app/Contents/MacOS/tools
 set android_tools /Users/chris/Library/Android/sdk/platform-tools
-set android_sdk_root /usr/local/share/android-sdk
 set java_home "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin"
 # PATH ($default should be last)
-set -gx PATH $homebrew $brew_rbenv $yarn $genymotion_tools $android_tools $java_home $android_sdk_root $default_path
+set -gx PATH $homebrew $brew_rbenv $yarn $genymotion_tools $android_tools $java_home $default_path
 # No more bundle exec
 # set -gx  RUBYGEMS_GEMDEPS -
 
@@ -37,7 +36,7 @@ alias tmux="env TERM=xterm-256color tmux"
 # alias vim="nvim"
 
 # Respecting .gitignore, .hgignore, and svn:ignore (ag will do the filtering)
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+# export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
 
 # Functions
