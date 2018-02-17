@@ -1,11 +1,17 @@
+# Atom
 atom.symlink/.node-gyp
 atom.symlink/.storage
 atom.symlink/packages
 atom.symlink/storage
 atom.symlink/themes
+# Fish
 config.symlink/fish/fishd*
 config.symlink/fish/functions/
+# NeoVim
 config.symlink/nvim-undo/
 config.symlink/nvim/.netrwhist
 config.symlink/nvim/autoload/
 config.symlink/nvim/plugged/
+# Yarn
+config.symlink/yarn/global/node_modules
+config.symlink/yarn/global/yarn.lock
