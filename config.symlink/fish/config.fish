@@ -3,13 +3,13 @@ set -U EDITOR nvim
 
 # PATHs
 set default_path /usr/bin /usr/sbin /bin /sbin
-set homebrew /usr/local/bin /usr/local/sbin
+set homebrew /usr/local/bin
 # set latex "/usr/texbin"
 set brew_rbenv /usr/local/var/rbenv/shims
 set yarn ~/.config/yarn/global/node_modules/.bin
 set genymotion_tools /Applications/Genymotion.app/Contents/MacOS/tools
-set android_tools /Users/chris/Library/Android/sdk/platform-tools
-set java_home "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin"
+# set android_tools /Users/chris/Library/Android/sdk/platform-tools
+# set java_home "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin"
 # PATH ($default should be last)
 set -gx PATH $homebrew $brew_rbenv $yarn $genymotion_tools $android_tools $java_home $default_path
 # No more bundle exec
