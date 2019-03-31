@@ -50,6 +50,12 @@ set scrolloff=5                 " Start scrolling X lines above/below window end
 set history=10000               " A long long time ago …
 
 " set clipboard+=unnamed          " Use System Clipboard"
+if v:version > 703 || v:version == 703 && has('patch597')
+    set clipboard^=autoselectplus
+else
+    set clipboard^=autoselect
+endif
+
 
 set timeoutlen=1500              " Timeout for leader key
 
@@ -147,11 +153,11 @@ set background=dark
 " - dark
 " colorscheme base16-default  " base16- all work in dark and light
 " colorscheme base16-ocean
-" colorscheme clearance
+colorscheme clearance
 " colorscheme flatcolor
 " colorscheme icicle
 " colorscheme lanai
-colorscheme lucid
+" colorscheme lucid
 " colorscheme muon
 " colorscheme pencil
 " colorscheme solstice
