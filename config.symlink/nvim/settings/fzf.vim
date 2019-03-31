@@ -1,6 +1,6 @@
 " Mapping selecting mappings
-nmap <leader>t :FZF<cr>
-nmap <leader>b :Buffers<cr>
+nmap <silent> <leader>t :FZF<cr>
+nmap <silent> <leader>b :Buffers<cr>
 
 " respect .gitignore
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
@@ -27,7 +27,7 @@ let g:fzf_colors =
   \ 'hl':      ['fg', 'String'],
   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
   \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
+  \ 'hl+':     ['fg', 'String'],
   \ 'info':    ['fg', 'PreProc'],
   \ 'border':  ['fg', 'Ignore'],
   \ 'prompt':  ['fg', 'Conditional'],

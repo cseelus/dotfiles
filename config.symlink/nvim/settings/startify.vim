@@ -26,16 +26,13 @@ let g:startify_skiplist = [
 let g:startify_bookmarks = [
             \ '~/Documents/Misc/ToDo.todo',
             \ '~/Documents/Misc/Journal.yml',
+            \ '~/.dotfiles/config.symlink/nvim/settings/startify.vim',
             \ '~/.dotfiles/config.symlink/nvim/init.vim',
             \ '~/.dotfiles/config.symlink/nvim/vim-plug.vim',
-            \ '~/.dotfiles/config.symlink/nvim/settings/startify.vim',
-            \ '~/Code/misc/vim-colors-lanai/colors/lanai.vim',
             \ '~/Code/misc/vim-colors-lucid/colors/lucid.vim',
             \ '~/Code/misc/vim-colors-ornate/colors/ornate.vim',
-            \ '~/Code/misc/vim-colors-reactjs/colors/reactjs.vim',
             \ '~/Code/misc/vim-colors-tone/colors/tone.vim',
-            \ '~/Code/misc/vim-colors-clearance/colors/clearance.vim',
-            \ '~/Code/ruby/syntax-highlight-example.rb',
+            \ '~/Code/ruby/ruby-syntax-highlight-code-example.rb',
             \ ]
 
 " hi link StartifyNumber  Statement
