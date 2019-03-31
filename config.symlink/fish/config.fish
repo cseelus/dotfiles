@@ -1,5 +1,7 @@
 # Universal variables
 set -U EDITOR nvim
+# Enable Fish VI mode
+fish_vi_key_bindings
 
 # PATHs
 set default_path /usr/bin /usr/sbin /bin /sbin
