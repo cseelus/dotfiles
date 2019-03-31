@@ -1,5 +1,5 @@
 set mainfont {{Helvetica Neue} 17}
-set textfont {{Office Code Pro} 15}
+set textfont {Menlo 13}
 set uifont {{Lucida Grande} 9 bold}
 set tabstop 8
 set findmergefiles 0
@@ -51,8 +51,8 @@ set indexcirclecolor green
 set circlecolors {white blue gray blue blue}
 set linkfgcolor blue
 set circleoutlinecolor black
-set geometry(main) 1440x855+0+23
-set geometry(state) zoomed
+set geometry(main) 1440x855+5+28
+set geometry(state) normal
 set geometry(topwidth) 1440
 set geometry(topheight) 452
 set geometry(pwsash0) "817 1"
