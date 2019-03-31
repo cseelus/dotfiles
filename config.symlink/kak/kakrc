@@ -1,6 +1,8 @@
-add-highlighter global number_lines
+source "%val{config}/plugins/plug.kak/rc/plug.kak"
+plug "andreyorst/plug.kak" noload
+plug "Delapouite/kakoune-colors"
+plug "andreyorst/fzf.kak"
 
-#colorscheme lucid
+colorscheme desertex
 
-# Show line numbers globally
-#hook global WinCreate .* %{addhl number_lines}
+add-highlighter global/ number-lines
