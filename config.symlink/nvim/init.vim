@@ -35,7 +35,7 @@ set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
 set scroll=5                    " Set # lines CTRL-D and CTRL-U jumps
 set scrolloff=5                 " Start scrolling X lines above/below cursor
 
-set clipboard+=unnamed          " Use System Clipboard"
+set clipboard+=unnamedplus      " Use System Clipboard"
 
 set timeoutlen=500              " Timeout for leader key
 
@@ -51,12 +51,18 @@ autocmd BufReadPost *
 " Disable line numbers for certain filetypes
 autocmd FileType text :set nonumber
 
+lang en_US.UTF-8
+
 " Create folder(s) when :edit(ing) if needed
 " autocmd BufNewFile * :exe ': !mkdir -p ' . escape(fnamemodify(bufname('%'),':p:h'),'#% \\')
 
 set shortmess+=c                " Hide the 'Back at original' and 'Match X of Y' when autocompleting
 
 set lazyredraw "                  When this option is set, the screen will not be redrawn while executing macros, registers and other commands that have not been typed.
+
+set virtualedit=block "move around the screen freely while in visual block mode to define your selections
+
+set wildmode=longest,list "first Tab press (or whatever your wildchar is set to) will expand a filename or command in command mode to the longest common string it can, and a second press will display a list of all possible completions above the command line.
 
 if $SHELL =~ 'bin/fish'
   set shell=/bin/sh
@@ -80,7 +86,8 @@ set smartindent
 " Display tabs and trailing spaces visually
 " show ↪ and display the next line if the line exceeds the width of the window
 if has("multi_byte")
-  set listchars=nbsp:░,tab:▸\ ,eol:¬,extends:>,precedes:<,trail:·
+  " ▒ ▩ ▨ ▢ ▞ ╳
+  set listchars=nbsp:▒,tab:▸\ ,eol:¬,extends:>,precedes:<,trail:·
   let &sbr = nr2char(8618).' '
 else
   set listchars=nbsp:+,=tab:>\ ,extends:>,precedes:<,trail:-
@@ -88,7 +95,7 @@ else
 endif
 
 " Remove trailing white space for certain file types on save
-autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.jsx,*.py,*.rb,*.sass,*.scss,*.slim,*.swift,*.tex,*.vim,*.xml,*.yml} :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.jsx,*.php,*.py,*.rb,*.sass,*.scss,*.slim,*.swift,*.tex,*.ts,*.tsx,*.vim,*.xml,*.yml} :call <SID>StripTrailingWhitespaces()
 
 
 " Text wrapping
@@ -109,15 +116,17 @@ set foldcolumn=0
 set ignorecase
 set smartcase
 set gdefault                   " Use 'g' flag by default with :s/foo/bar/.
+set inccommand=split           " Show search/replace in split window
 " Enter cleans the search highlight
-:nnoremap <CR> :nohlsearch<cr>
+:nnoremap <ESC> :nohlsearch<cr>
 
 
 " Theming
 " ----------------------------------------------------------------------
 
 set termguicolors " Enable true colors
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1 " Hand down VIM cursor shape to terminal
+" Hand down VIM cursor shape to terminal
+set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
 set background=dark
 set linespace=5
 " Some nice colorschemes
@@ -128,6 +137,7 @@ set linespace=5
 " colorscheme busybee
 " colorscheme clearance
 " colorscheme flatcolor
+" colorscheme hydrangea
 " colorscheme icicle
 " colorscheme jellybeans
 " colorscheme lanai
@@ -138,7 +148,6 @@ set linespace=5
 " colorscheme onedark
 " colorscheme pencil
 " colorscheme solstice
-" colorscheme space-vim-dark
 " colorscheme sierra
 colorscheme tone
 " - light
@@ -238,3 +247,7 @@ let g:vim_settings_file = g:rc_dir.'/settings.vim'
 if filereadable(expand(g:vim_settings_file))
   exec 'source '.g:vim_settings_file
 endif
+
+" TODO remove when that crap works like it should
+au BufRead,BufNewFile *.ts   setfiletype typescript
+au BufRead,BufNewFile *.tsx   setfiletype typescript
