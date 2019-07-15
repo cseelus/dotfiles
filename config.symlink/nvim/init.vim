@@ -86,8 +86,9 @@ set smartindent
 " Display tabs and trailing spaces visually
 " show ↪ and display the next line if the line exceeds the width of the window
 if has("multi_byte")
-  " ▒ ▩ ▨ ▢ ▞ ╳
-  set listchars=nbsp:▒,tab:▸\ ,eol:¬,extends:>,precedes:<,trail:·
+  " nbsp:▒ ▩ ▨ ▢ ▞ ╳
+  " eol:¬,
+  set listchars=nbsp:▒,tab:▸\ ,extends:>,precedes:<,trail:·
   let &sbr = nr2char(8618).' '
 else
   set listchars=nbsp:+,=tab:>\ ,extends:>,precedes:<,trail:-
@@ -95,7 +96,7 @@ else
 endif
 
 " Remove trailing white space for certain file types on save
-autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.jsx,*.php,*.py,*.rb,*.sass,*.scss,*.slim,*.swift,*.tex,*.ts,*.tsx,*.vim,*.xml,*.yml} :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.jsx,*.php,*.py,*.rb,*.sass,*.scss,*.slim,*.svelte,*.swift,*.tex,*.ts,*.tsx,*.vim,*.xml,*.yml} :call <SID>StripTrailingWhitespaces()
 
 
 " Text wrapping
@@ -151,7 +152,6 @@ set linespace=5
 " colorscheme sierra
 colorscheme tone
 " - light
-" colorscheme flatui
 " colorscheme lanai-light
 " colorscheme github
 " colorscheme google

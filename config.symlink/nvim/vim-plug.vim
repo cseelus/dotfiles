@@ -13,7 +13,7 @@ function! VimrcLoadPlugins()
   call plug#begin()
 
   " General NeoVIM improvements
-  " ------------------------
+  " ---------------------------
   " Change the working directory to the project root when you open
   " a file
   Plug 'airblade/vim-rooter'
@@ -37,8 +37,6 @@ function! VimrcLoadPlugins()
   Plug 'airblade/vim-gitgutter'
   " Enhanced terminal integration
   Plug 'wincent/terminus'
-  " Autocompletion
-  Plug 'Shougo/deoplete.nvim'
   " Wrapper of some neovim's :terminal functions
   Plug 'kassio/neoterm'
   " Distraction-free writing in Vim.
@@ -56,14 +54,19 @@ function! VimrcLoadPlugins()
   Plug 'dkprice/vim-easygrep'
   " Move lines and selections up and down
   Plug 'matze/vim-move'
+  " Intellisense engine for vim8 & neovim, full language server
+  " protocol support
+  Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+  " Brings physics-based smooth scrolling to the Vim world!
+  Plug 'yuttie/comfortable-motion.vim'
 
   " Neosnippet
-  " ------------------------
+  " ----------
   Plug 'Shougo/neosnippet'
   Plug 'Shougo/neosnippet-snippets'
 
   " Editing
-  " ------------------------
+  " -------
   " 'end' certain keywords (like 'do', 'if') in some languages automatically
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-commentary'
@@ -81,9 +84,11 @@ function! VimrcLoadPlugins()
   Plug 'terryma/vim-multiple-cursors'
   " Insert or delete brackets, parens, quotes in pairs
   Plug 'jiangmiao/auto-pairs'
+  " Asynchronous Lint Engine
+  Plug 'w0rp/ale'
 
-  " Optimizations for specific languages/tools
-  " ------------------------------------------
+  " Syntax & optimizations for specific languages
+  " ---------------------------------------------
   " Vim syntax highlighting for C, Bison, Flex
   Plug 'justinmk/vim-syntax-extra'
   " Better CSS syntax
@@ -98,7 +103,6 @@ function! VimrcLoadPlugins()
   " rake + rails, much much more: https://github.com/tpope/vim-rails
   Plug 'tpope/vim-rails', { 'for': 'ruby' }
   " Run ruby test (including vanilla test, rspec, shoulda etc.) in vim¬
-  Plug 'janko-m/vim-test', { 'for': 'ruby' }
   Plug 'tpope/vim-liquid', { 'for': 'liquid' }
   Plug 'tpope/vim-haml', { 'for': 'haml' }
   Plug 'slim-template/vim-slim', { 'for': 'slim' }
@@ -115,12 +119,18 @@ function! VimrcLoadPlugins()
   " Vastly improved Javascript indentation and syntax support
   Plug 'pangloss/vim-javascript', { 'for':  ['javascript.jsx', 'javascript', 'jsx'] }
   Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript', 'jsx'] }
+  " Bundle for http://styled-components.com based javascript files
+  Plug 'styled-components/vim-styled-components', { 'for':  ['javascript.jsx', 'jsx'] }
+  " Bundle for https://github.com/zeit/styled-jsx
+  Plug 'alampros/vim-styled-jsx', { 'for':  ['javascript.jsx', 'jsx'] }
+  " Svelte JavaScript syntax highlighting
+  Plug 'evanleck/vim-svelte'
   " Typescript syntax files
   Plug 'HerringtonDarkholme/yats.vim', { 'for': ['typescript.tsx', 'typescript', 'tsx'] }
+  " A Vim plugin for TypeScript
   Plug 'Quramy/tsuquyomi', { 'for': ['typescript.tsx', 'typescript', 'tsx'] }
   " GraphQL
   Plug 'jparise/vim-graphql', { 'for':  ['javascript.jsx', 'javascript', 'jsx'] }
-  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
   " JSON Formatter
   Plug 'XadillaX/json-formatter.vim', { 'for': 'json' }
   " Vim filetype and tools support for Crystal language
@@ -128,12 +138,6 @@ function! VimrcLoadPlugins()
   " Mustache and handlebars mode
   Plug 'mustache/vim-mustache-handlebars', { 'for': 'handlebars' }
   Plug 'hhsnopek/vim-sugarss', { 'for': 'sugarss' }
-  " Asynchronous Lint Engine
-  Plug 'w0rp/ale', { 'for':  ['javascript.jsx', 'javascript', 'jsx', 'ruby', 'typescript.tsx', 'typescript'] }
-  " Bundle for http://styled-components.com based javascript files
-  Plug 'styled-components/vim-styled-components', { 'for':  ['javascript.jsx', 'jsx'] }
-  " Bundle for https://github.com/zeit/styled-jsx
-  Plug 'alampros/vim-styled-jsx', { 'for':  ['javascript.jsx', 'jsx'] }
 
   " Colorschemes
   " ------------

@@ -5,7 +5,7 @@
 " Configure linters
 let g:ale_linters = {
 \   'javascript': ['eslint'],
-\   'ruby': ['rails_best_practices'],
+\   'ruby': ['rubocop'],
 \}
 
 " Signs ALE uses
@@ -27,3 +27,14 @@ let g:ale_list_window_size = 5
 hi link ALEErrorSign           Delimiter
 hi link ALEWarningSign         Userdef
 " highlight clear ALEWarningSign
+
+au BufNewFile,BufRead,BufReadPost *.svelte set syntax=html
+let g:ale_linter_aliases = {
+\   'svelte': ['javascript']
+\}
+let g:ale_linters = {
+\   'svelte': ['eslint']
+\}
+let g:ale_fixers = {
+\   'svelte': ['eslint']
+\}
