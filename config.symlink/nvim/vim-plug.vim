@@ -20,6 +20,15 @@ function! VimrcLoadPlugins()
   " 🌸 A command-line fuzzy finder written in Go
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
+  " Fast and Easy Find and Replace Across Multiple Files
+  Plug 'dkprice/vim-easygrep'
+  " Tame the quickfix window
+  Plug 'romainl/vim-qf'
+  " Adds file type glyphs/icons to many popular Vim plugins such as:
+  " NERDTree, vim-airline, unite, vim-startify and many more
+  Plug 'ryanoasis/vim-devicons'
+  " Highlight color hex codes and color names
+  Plug 'chrisbra/Colorizer'
   " Helpers for UNIX like :Rename, :Delete, :Chmod, :SudoWrite
   Plug 'tpope/vim-eunuch'
   " Allows you to save files into directories that do not exist yet.
@@ -30,7 +39,7 @@ function! VimrcLoadPlugins()
   " mappings
   Plug 'bfredl/nvim-miniyank'
   " A tree explorer plugin for vim.
-  Plug 'scrooloose/nerdtree'", { 'on':  'NERDTree, NERDTreeToggle' }
+  Plug 'scrooloose/nerdtree'
   " The fancy start screen for Vim
   Plug 'mhinz/vim-startify'
   " Shows a git diff in the gutter (sign column) and stages/undoes hunks
@@ -39,24 +48,9 @@ function! VimrcLoadPlugins()
   Plug 'wincent/terminus'
   " Wrapper of some neovim's :terminal functions
   Plug 'kassio/neoterm'
-  " Distraction-free writing in Vim.
-  Plug 'junegunn/goyo.vim', { 'ony': 'Goyo' }
-  " Adds file type glyphs/icons to many popular Vim plugins such as:
-  " NERDTree, vim-airline, unite, vim-startify and many more
-  Plug 'ryanoasis/vim-devicons'
-  " Plugin to help you stop repeating the basic movement keys
-  Plug 'takac/vim-hardtime'
-  " Highlight color hex codes and color names
-  Plug 'chrisbra/Colorizer'
-  " Tame the quickfix window
-  Plug 'romainl/vim-qf'
-  " Fast and Easy Find and Replace Across Multiple Files
-  Plug 'dkprice/vim-easygrep'
-  " Move lines and selections up and down
-  Plug 'matze/vim-move'
   " Intellisense engine for vim8 & neovim, full language server
   " protocol support
-  Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+  Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-solargraph coc-tsserver coc-eslint coc-json coc-css coc-snippets'}
   " Brings physics-based smooth scrolling to the Vim world!
   Plug 'yuttie/comfortable-motion.vim'
 
@@ -84,8 +78,6 @@ function! VimrcLoadPlugins()
   Plug 'terryma/vim-multiple-cursors'
   " Insert or delete brackets, parens, quotes in pairs
   Plug 'jiangmiao/auto-pairs'
-  " Asynchronous Lint Engine
-  Plug 'w0rp/ale'
 
   " Syntax & optimizations for specific languages
   " ---------------------------------------------
