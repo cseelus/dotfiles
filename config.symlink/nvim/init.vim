@@ -1,6 +1,18 @@
 " Neovim configuration
 " ======================================================================
-
+"
+" Contents
+"   - Load plugins
+"   - General
+"   - Indentation settings
+"   - Text wrapping
+"   - Searching
+"   - Theming
+"   - Persistent undo
+"   - Custom key mappings/shortcuts
+"   - Statusline
+"   - Functions
+"   - Plugin settings
 
 " Extract the Neovim config directory from $MYVIMRC
 let g:rc_dir = strpart($MYVIMRC, 0, strridx($MYVIMRC, '/'))
@@ -18,51 +30,72 @@ call VimrcLoadPlugins()
 " General
 " ----------------------------------------------------------------------
 
-set hidden                      " Keep unsaved files open in buffers w/o the need to write
+" Keep unsaved files open in buffers w/o the need to write
+set hidden
 
-set cmdheight=1                 " Number of lines for command prompt
-" set relativenumber              " Set relative line number
-set number                      " Show line number
-set numberwidth=5               " Line numbers width (leading whitespace)
+" Number of lines for command prompt
+set cmdheight=1
 
-set noswapfile                  " Dont use swapfile
+" Show line number (alternatively use `relativenumber`)
+set number
+" Line numbers width (leading whitespace)
+set numberwidth=5
 
-set splitright                  " Split vertical windows to the right
-set splitbelow                  " Split horizontal windows below
+" Dont use swapfile
+set noswapfile
 
-set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
+" Split vertical windows to the right
+set splitright
+" Split horizontal windows below
+set splitbelow
 
-set scroll=5                    " Set # lines CTRL-D and CTRL-U jumps
-set scrolloff=5                 " Start scrolling X lines above/below cursor
+" Prefer Unix over Windows over OS 9 formats
+set fileformats=unix,dos,mac
 
-set clipboard+=unnamedplus      " Use System Clipboard"
+" Set # lines CTRL-D and CTRL-U jumps
+set scroll=5
+" Start scrolling X lines above/below cursor
+set scrolloff=7
 
-set timeoutlen=500              " Timeout for leader key
+" Use System Clipboard"
+set clipboard+=unnamedplus
 
-set showmode                    " Show/Hide mode like -- INSER --, useful with vim-airline
+" Timeout for leader key
+set timeoutlen=500
 
-set nostartofline               " Dont jump to start of line e.g. when switching buffers
+" Show/Hide mode like -- INSER --, useful with vim-airline
+set showmode
+
+" Dont jump to start of line e.g. when switching buffers
+set nostartofline
 " Return to last edit position when opening files (see :help restore-cursor)
 autocmd BufReadPost *
-     \ if line("'\"") > 0 && line("'\"") <= line("$") |
-     \   exe "normal! g`\"" |
-     \ endif
+   \ if line("'\"") > 0 && line("'\"") <= line("$") |
+   \   exe "normal! g`\"" |
+   \ endif
 
 " Disable line numbers for certain filetypes
 autocmd FileType text :set nonumber
 
-lang en_US.UTF-8
-
 " Create folder(s) when :edit(ing) if needed
 " autocmd BufNewFile * :exe ': !mkdir -p ' . escape(fnamemodify(bufname('%'),':p:h'),'#% \\')
 
-set shortmess+=c                " Hide the 'Back at original' and 'Match X of Y' when autocompleting
+" Hide the 'Back at original' and 'Match X of Y' when autocompleting
+set shortmess+=c
 
-set lazyredraw "                  When this option is set, the screen will not be redrawn while executing macros, registers and other commands that have not been typed.
+" When this option is set, the screen will not be redrawn while
+" executing macros, registers and other commands that have not been
+" typed.
+set lazyredraw
 
-set virtualedit=block "move around the screen freely while in visual block mode to define your selections
+" Move around the screen freely while in visual block mode to define your selections
+set virtualedit=block
 
-set wildmode=longest,list "first Tab press (or whatever your wildchar is set to) will expand a filename or command in command mode to the longest common string it can, and a second press will display a list of all possible completions above the command line.
+" First Tab press (or whatever your wildchar is set to) will expand a
+" filename or command in command mode to the longest common string it
+" can, and a second press will display a list of all possible
+" completions above the command line.
+set wildmode=longest,list
 
 if $SHELL =~ 'bin/fish'
   set shell=/bin/sh
@@ -76,16 +109,28 @@ endif
 " Indentation settings
 " ----------------------------------------------------------------------
 
+" Use spaces instead of tabs
+set expandtab
+
+" Be smart when using tabs
+set smarttab
+
+" 1 tab == 4 spaces
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-set expandtab
-set copyindent
+
+" Do smart autoindenting when starting a new line.
 set smartindent
+
+
+" Display whitespace
+set list
 
 " Display tabs and trailing spaces visually
 " show ↪ and display the next line if the line exceeds the width of the window
 if has("multi_byte")
+  " Selection of nice special characters
   " nbsp:▒ ▩ ▨ ▢ ▞ ╳
   " eol:¬,
   set listchars=nbsp:▒,tab:▸\ ,extends:>,precedes:<,trail:·
@@ -102,13 +147,17 @@ autocmd BufWritePre {*.c,*.bib,*.coffee,*.css,*.erb,*.haml,*.html,*.js,*.jsx,*.p
 " Text wrapping
 " ----------------------------------------------------------------------
 
+" Every wrapped line will continue visually indented
 set breakindent
-set list
 "set columns=89                 " window width
 set linebreak
+" Max width of text that is being inserted, zero value disables this
 set textwidth=0
+" Number of chars from the right window border where wrapping starts
 set wrapmargin=0
-set foldcolumn=0
+
+" Add a bit extra margin to the left
+set foldcolumn=1
 
 
 " Searching
@@ -185,7 +234,8 @@ let mapleader=","
 
 " Show netrw
 nmap <leader>e :e.<cr>
-nmap <silent> <leader>w :w<cr>
+" Fast saving
+nmap <leader>w :w!<cr>
 " Close tag
 imap <leader>t <C-X><cr>
 " Edit/Source VIMRC
@@ -220,15 +270,11 @@ set statusline+=%m\                               "modified flag
 
 " http://vimcasts.org/episodes/tidying-whitespace/
 function! <SID>StripTrailingWhitespaces()
-  " Preparation: save last search, and cursor position.
-  let _s=@/
-  let l = line(".")
-  let c = col(".")
-  " Do the business:
-  %s/\s\+$//e
-  " Clean up: restore previous search history, and cursor position
-  let @/=_s
-  call cursor(l, c)
+  let save_cursor = getpos(".")
+  let old_query = getreg('/')
+  silent! %s/\s\+$//e
+  call setpos('.', save_cursor)
+  call setreg('/', old_query)
 endfunction
 
 " Show syntax highlighting groups
@@ -237,7 +283,7 @@ function! <SID>SynStack()
     return
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
+endfunction
 
 
 " Plugin settings
@@ -251,3 +297,5 @@ endif
 " TODO remove when that crap works like it should
 au BufRead,BufNewFile *.ts   setfiletype typescript
 au BufRead,BufNewFile *.tsx   setfiletype typescript
+
+let g:goyo_height=100
