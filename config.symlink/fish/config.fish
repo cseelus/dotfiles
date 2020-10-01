@@ -34,6 +34,8 @@ alias preview_markdown="markdown-preview"
 alias start_mongodb="mongod --config /usr/local/etc/mongod.conf"
 alias start_postgres="postgres -D /usr/local/var/postgres"
 alias stop_postgres="pg_ctl -D /usr/local/var/postgres stop"
+alias start_mysql="mysql.server start"
+alias stop_mysql="mysql.server stop"
 alias tmux="env TERM=xterm-256color tmux"
 # alias vim="nvim"
 
@@ -53,3 +55,7 @@ end
 
 # iTerm integration
 # test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+
+# Locale
+set -x LC_ALL en_US.UTF-8
+set -x LANG en_US.UTF-8
