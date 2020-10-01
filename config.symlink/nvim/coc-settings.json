@@ -1,8 +1,15 @@
 {
-  "suggest.echodocSupport": true,
-  "suggest.maxCompleteItemCount": 20,
-  "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact", "svelte"],
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
-  "diagnostic.infoSign": "•"
+  "diagnostic.infoSign": "•",
+  "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact", "svelte"],
+  "snippets.ultisnips.usePythonx": false,
+  "solargraph.autoformat": true,
+  "solargraph.completion": true,
+  "solargraph.diagnostics": true,
+  "solargraph.formatting": true,
+  "solargraph.hover": true,
+  "solargraph.trace.server": "verbose",
+  "suggest.echodocSupport": true,
+  "suggest.maxCompleteItemCount": 20
 }

@@ -97,6 +97,9 @@ set virtualedit=block
 " completions above the command line.
 set wildmode=longest,list
 
+" Pseudo-transparency for floating windows
+set winblend=10
+
 if $SHELL =~ 'bin/fish'
   set shell=/bin/sh
 endif

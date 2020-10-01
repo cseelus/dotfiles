@@ -40,6 +40,8 @@ function! VimrcLoadPlugins()
   Plug 'bfredl/nvim-miniyank'
   " A tree explorer plugin for vim.
   Plug 'scrooloose/nerdtree'
+  " Display tags in a window, ordered by scope
+  Plug 'majutsushi/tagbar'
   " The fancy start screen for Vim
   Plug 'mhinz/vim-startify'
   " Shows a git diff in the gutter (sign column) and stages/undoes hunks
@@ -50,14 +52,11 @@ function! VimrcLoadPlugins()
   Plug 'kassio/neoterm'
   " Intellisense engine for vim8 & neovim, full language server
   " protocol support
-  Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-solargraph coc-tsserver coc-eslint coc-json coc-css coc-snippets'}
+  Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-solargraph coc-tsserver coc-eslint coc-json coc-css'}
   " Brings physics-based smooth scrolling to the Vim world!
-  Plug 'yuttie/comfortable-motion.vim'
-
-  " Neosnippet
-  " ----------
-  Plug 'Shougo/neosnippet'
-  Plug 'Shougo/neosnippet-snippets'
+  " Plug 'yuttie/comfortable-motion.vim'
+  " Zen mode
+  Plug 'junegunn/goyo.vim'
 
   " Editing
   " -------
@@ -78,6 +77,8 @@ function! VimrcLoadPlugins()
   Plug 'terryma/vim-multiple-cursors'
   " Insert or delete brackets, parens, quotes in pairs
   Plug 'jiangmiao/auto-pairs'
+  " Hardtime helps you break that annoying habit vimmers have of scrolling up and down the page using jjjjj and kkkkk but without compromising the rest of our vim experience.
+  Plug 'takac/vim-hardtime'
 
   " Syntax & optimizations for specific languages
   " ---------------------------------------------
@@ -99,8 +100,8 @@ function! VimrcLoadPlugins()
   Plug 'tpope/vim-haml', { 'for': 'haml' }
   Plug 'slim-template/vim-slim', { 'for': 'slim' }
   Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
-  Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-  Plug 'JamshedVesuna/vim-markdown-preview', { 'for': 'markdown' }
+  Plug 'gabrielelana/vim-markdown', { 'for': 'markdown' }
+  " Plug 'JamshedVesuna/vim-markdown-preview', { 'for': 'markdown' }
   Plug 'LaTeX-Box-Team/LaTeX-Box', { 'for': 'tex' }
   " Vim support for editing fish scripts
   Plug 'dag/vim-fish', { 'for': 'fish' }
@@ -110,9 +111,7 @@ function! VimrcLoadPlugins()
   " Emblem.js (Ember)
   " Vastly improved Javascript indentation and syntax support
   Plug 'pangloss/vim-javascript', { 'for':  ['javascript.jsx', 'javascript', 'jsx'] }
-  Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript', 'jsx'] }
-  " Bundle for http://styled-components.com based javascript files
-  Plug 'styled-components/vim-styled-components', { 'for':  ['javascript.jsx', 'jsx'] }
+  Plug 'MaxMEllon/vim-jsx-pretty', { 'for': ['javascript.jsx', 'javascript', 'jsx'] }
   " Bundle for https://github.com/zeit/styled-jsx
   Plug 'alampros/vim-styled-jsx', { 'for':  ['javascript.jsx', 'jsx'] }
   " Svelte JavaScript syntax highlighting
@@ -130,6 +129,7 @@ function! VimrcLoadPlugins()
   " Mustache and handlebars mode
   Plug 'mustache/vim-mustache-handlebars', { 'for': 'handlebars' }
   Plug 'hhsnopek/vim-sugarss', { 'for': 'sugarss' }
+  Plug 'pantharshit00/vim-prisma', { 'for': 'prisma' }
 
   " Colorschemes
   " ------------
