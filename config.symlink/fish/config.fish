@@ -21,7 +21,7 @@ set -gx PATH $homebrew $brew_rbenv $yarn $genymotion_tools $android_tools $java_
 set -gx RBENV_ROOT /usr/local/var/rbenv
 
 # Aliases
-alias bex="bundle exec"
+abbr bex "bundle exec"
 alias cpwd="pwd | tr -d '\n' | pbcopy"
 alias ccat="cat"
 alias folder_size='du -hd1'
