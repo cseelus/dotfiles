@@ -62,6 +62,7 @@ Session.vim
 # ----------------------------------------------------------------------
 yarn-error.log
 *.cache
+node_modules
 
 
 # Ruby, Rails, Middleman

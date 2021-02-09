@@ -6,6 +6,8 @@ atom.symlink/storage
 atom.symlink/themes
 # Coc
 config.symlink/coc
+# iTerm
+config.symlink/iterm2/AppSupport
 # Fish
 config.symlink/fish/fishd*
 config.symlink/fish/functions/

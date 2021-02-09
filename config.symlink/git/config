@@ -99,7 +99,7 @@
 [core]
   autocrlf = false
   editor = nvim
-  excludesfile = /Users/chris/.gitignore_global
+  excludesfile = /Users/chris/.config/git/ignore
 [advice]
   statusHints = false
 [diff]
@@ -136,3 +136,10 @@
   trustExitCode = true
 [commit]
   template = /Users/chris/.stCommitMsg
+[gui]
+	recentrepo = /Users/chris/Sites/cgx
+[init]
+	defaultBranch = main
+[pull]
+	ff = only
+	rebase = true
