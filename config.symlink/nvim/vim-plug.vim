@@ -76,7 +76,7 @@ function! VimrcLoadPlugins()
   " http://editorconfig.org support
   Plug 'sgur/vim-editorconfig'
   " True Sublime Text style multiple selections for Vim
-  Plug 'terryma/vim-multiple-cursors'
+  Plug 'mg979/vim-visual-multi'
   " Insert or delete brackets, parens, quotes in pairs
   Plug 'jiangmiao/auto-pairs'
   " Hardtime helps you break that annoying habit vimmers have of scrolling up and down the page using jjjjj and kkkkk but without compromising the rest of our vim experience.
@@ -143,6 +143,7 @@ function! VimrcLoadPlugins()
   Plug '~/Code/misc/vim-colors-lucid'
   Plug '~/Code/misc/vim-colors-reactjs'
   Plug '~/Code/misc/vim-colors-tone'
+  " Plug 'cseelus/vim-colors-tone'
   Plug 'cseelus/vim-colors-icicle'
   Plug 'yuttie/hydrangea-vim'
   Plug 'atelierbram/Base2Tone-vim'

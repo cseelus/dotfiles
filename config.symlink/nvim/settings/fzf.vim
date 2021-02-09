@@ -43,3 +43,6 @@ let g:fzf_buffers_jump = 1
 autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
+
+" Empty value to disable preview window altogether
+let g:fzf_preview_window = []
