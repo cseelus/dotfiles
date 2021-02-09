@@ -14,6 +14,8 @@ function! VimrcLoadPlugins()
 
   " General NeoVIM improvements
   " ---------------------------
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
   " Change the working directory to the project root when you open
   " a file
   Plug 'airblade/vim-rooter'
@@ -78,7 +80,7 @@ function! VimrcLoadPlugins()
   " Insert or delete brackets, parens, quotes in pairs
   Plug 'jiangmiao/auto-pairs'
   " Hardtime helps you break that annoying habit vimmers have of scrolling up and down the page using jjjjj and kkkkk but without compromising the rest of our vim experience.
-  Plug 'takac/vim-hardtime'
+  " Plug 'takac/vim-hardtime'
 
   " Syntax & optimizations for specific languages
   " ---------------------------------------------

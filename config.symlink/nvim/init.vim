@@ -63,8 +63,8 @@ set clipboard+=unnamedplus
 " Timeout for leader key
 set timeoutlen=500
 
-" Show/Hide mode like -- INSER --, useful with vim-airline
-set showmode
+" Show/Hide mode like -- INSERT --, useful with vim-airline
+set noshowmode
 
 " Dont jump to start of line e.g. when switching buffers
 set nostartofline
