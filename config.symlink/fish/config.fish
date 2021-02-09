@@ -5,23 +5,24 @@ fish_vi_key_bindings
 
 # PATHs
 set default_path /usr/bin /usr/sbin /bin /sbin
-set homebrew /usr/local/bin
+set homebrew /opt/homebrew/bin
 # set latex "/usr/texbin"
-set brew_rbenv /usr/local/var/rbenv/shims
+set brew_rbenv /opt/rbenv/shims
 set yarn ~/.config/yarn/global/node_modules/.bin
-set genymotion_tools /Applications/Genymotion.app/Contents/MacOS/tools
+# set genymotion_tools /Applications/Genymotion.app/Contents/MacOS/tools
 # set android_tools /Users/chris/Library/Android/sdk/platform-tools
 # set java_home "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin"
 # PATH ($default should be last)
-set -gx PATH $homebrew $brew_rbenv $yarn $genymotion_tools $android_tools $java_home $default_path
+set -gx PATH $homebrew $brew_rbenv $default_path
 # No more bundle exec
 # set -gx  RUBYGEMS_GEMDEPS -
 
 # Change rbenv root path
-set -gx RBENV_ROOT /usr/local/var/rbenv
+set -gx RBENV_ROOT /opt/rbenv
 
 # Aliases
 abbr bex "bundle exec"
+# alias nvim="/Applications/nvim-osx64/bin/nvim"
 alias cpwd="pwd | tr -d '\n' | pbcopy"
 alias ccat="cat"
 alias folder_size='du -hd1'
@@ -32,8 +33,8 @@ alias fisherconfig="nvim ~/.config/fish/fishfile"
 # www.npmjs.com/package/markdown-preview
 alias preview_markdown="markdown-preview" 
 alias start_mongodb="mongod --config /usr/local/etc/mongod.conf"
-alias start_postgres="postgres -D /usr/local/var/postgres"
-alias stop_postgres="pg_ctl -D /usr/local/var/postgres stop"
+alias start_postgres="postgres -D /opt/homebrew/var/postgres"
+alias stop_postgres="pg_ctl -D /opt/homebrew/var/postgres stop"
 alias start_mysql="mysql.server start"
 alias stop_mysql="mysql.server stop"
 alias tmux="env TERM=xterm-256color tmux"
