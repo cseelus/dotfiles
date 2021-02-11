@@ -50,8 +50,6 @@ function! VimrcLoadPlugins()
   Plug 'airblade/vim-gitgutter'
   " Enhanced terminal integration
   Plug 'wincent/terminus'
-  " Wrapper of some neovim's :terminal functions
-  Plug 'kassio/neoterm'
   " Intellisense engine for vim8 & neovim, full language server
   " protocol support
   Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-solargraph coc-tsserver coc-eslint coc-json coc-css'}

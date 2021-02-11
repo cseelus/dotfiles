@@ -7,5 +7,10 @@ nmap <silent> <leader>f :NERDTreeToggle<cr>
 
 " let g:NERDTreeWinPos = "right"
 
-autocmd FileType nerdtree setlocal nolist       " suppress whitespace highlighting
-autocmd FileType nerdtree setlocal nofoldenable " suppress folding
+" suppress whitespace highlighting
+autocmd FileType nerdtree setlocal nolist
+" suppress folding
+autocmd FileType nerdtree setlocal nofoldenable
+
+" Never open files inside NERDTree buffer, works also when using fzf etc.
+au BufEnter * if bufname('#') =~ 'NERD_tree' && bufname('%') !~ 'NERD_tree' && winnr('$') > 1 | b# | exe "normal! \<c-w>\<c-w>" | :blast | endif

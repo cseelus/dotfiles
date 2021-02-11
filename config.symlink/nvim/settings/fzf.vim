@@ -1,5 +1,5 @@
 " Mapping selecting mappings
-nmap <silent> <leader>t :FZF<cr>
+nmap <silent> <leader>t :FZF <cr>
 nmap <silent> <leader>b :Buffers<cr>
 
 " respect .gitignore
@@ -13,12 +13,7 @@ let g:fzf_action = {
 
 " Default fzf layout
 " - down / up / left / right
-let g:fzf_layout = { 'down': '~40%' }
-
-" In Neovim, you can set up fzf window using a Vim command
-let g:fzf_layout = { 'window': 'enew' }
-let g:fzf_layout = { 'window': '-tabnew' }
-let g:fzf_layout = { 'window': '10split enew' }
+let g:fzf_layout = { 'window': { 'width': 1.0, 'height': 0.4 } }
 
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
@@ -38,11 +33,6 @@ let g:fzf_colors =
 
 " [Buffers] Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
-
-" Hide statusline
-autocmd! FileType fzf
-autocmd  FileType fzf set laststatus=0 noshowmode noruler
-  \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 
 " Empty value to disable preview window altogether
 let g:fzf_preview_window = []

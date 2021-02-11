@@ -12,13 +12,6 @@ endfunction
 " Get rid of empty sections (orange warning section triangle to the right)
 let g:airline_skip_empty_sections = 1
 
-" Custom Sections
-function! AirlineColors(...)
-  call a:1.add_section('bla', '')
-endfunction
-
-call airline#add_statusline_func('AirlineColors')
-
 let g:airline_theme = 'tone'
 
 " Show/Hide mode like -- INSERT --, useful with vim-airline
