@@ -30,7 +30,7 @@ function! VimrcLoadPlugins()
   " NERDTree, vim-airline, unite, vim-startify and many more
   Plug 'ryanoasis/vim-devicons'
   " Highlight color hex codes and color names
-  Plug 'chrisbra/Colorizer'
+  Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
   " Helpers for UNIX like :Rename, :Delete, :Chmod, :SudoWrite
   Plug 'tpope/vim-eunuch'
   " Allows you to save files into directories that do not exist yet.
@@ -41,7 +41,7 @@ function! VimrcLoadPlugins()
   " mappings
   Plug 'bfredl/nvim-miniyank'
   " A tree explorer plugin for vim.
-  Plug 'scrooloose/nerdtree'
+  Plug 'preservim/nerdtree'
   " Display tags in a window, ordered by scope
   Plug 'majutsushi/tagbar'
   " The fancy start screen for Vim

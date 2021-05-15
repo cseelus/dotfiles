@@ -221,7 +221,7 @@ colorscheme tone
 
 " Keep undo history across sessions
 set undofile
-set undodir=$HOME/.config/nvim-undo
+set undodir=$HOME/.nvim-undo
 
 
 " Custom key mappings/shortcuts
