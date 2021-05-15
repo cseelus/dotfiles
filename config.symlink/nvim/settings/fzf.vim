@@ -13,7 +13,7 @@ let g:fzf_action = {
 
 " Default fzf layout
 " - down / up / left / right
-let g:fzf_layout = { 'window': { 'width': 1.0, 'height': 0.4 } }
+let g:fzf_layout = { 'window': { 'width': 1.0, 'height': 0.4, 'yoffset': 0 } }
 
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =

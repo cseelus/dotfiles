@@ -108,6 +108,10 @@ endif
 " set iskeyword-=_
 " set iskeyword-=-
 
+" file encoding
+set encoding=utf-8
+set fileencoding=utf-8
+
 
 " Indentation settings
 " ----------------------------------------------------------------------
