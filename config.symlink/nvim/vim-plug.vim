@@ -52,7 +52,7 @@ function! VimrcLoadPlugins()
   Plug 'wincent/terminus'
   " Intellisense engine for vim8 & neovim, full language server
   " protocol support
-  Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-solargraph coc-tsserver coc-eslint coc-json coc-css'}
+  Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-eslint coc-solargraph coc-tsserver coc-eslint coc-json coc-css'}
   " Brings physics-based smooth scrolling to the Vim world!
   " Plug 'yuttie/comfortable-motion.vim'
   " Zen mode

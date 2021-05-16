@@ -2,8 +2,6 @@
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
-  "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact", "svelte"],
-  "snippets.ultisnips.usePythonx": false,
   "solargraph.autoformat": true,
   "solargraph.completion": true,
   "solargraph.diagnostics": true,
