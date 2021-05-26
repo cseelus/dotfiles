@@ -16,9 +16,10 @@ function! VimrcLoadPlugins()
   " ---------------------------
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-  " Change the working directory to the project root when you open
-  " a file
+  " Change the working directory to the project root when you open a file
   Plug 'airblade/vim-rooter'
+  " Improved syntax highlighting
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
   " 🌸 A command-line fuzzy finder written in Go
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
