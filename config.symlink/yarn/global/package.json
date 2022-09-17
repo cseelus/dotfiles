@@ -1,6 +1,13 @@
 {
   "dependencies": {
-    "expo-cli": "^4.1.6",
-    "neovim": "^4.9.0"
+    "blitz": "2.0.0-beta.4",
+    "count-lines-of-code": "^1.0.6",
+    "diagnostic-languageserver": "^1.9.0",
+    "eas-cli": "^0.47.0",
+    "expo-cli": "^6.0.5",
+    "lua-fmt": "^2.6.0",
+    "nativefier": "^43.1.2",
+    "neovim": "^4.10.1",
+    "prettier": "^2.3.2"
   }
 }
