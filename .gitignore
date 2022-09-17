@@ -6,11 +6,16 @@ atom.symlink/storage
 atom.symlink/themes
 # Coc
 config.symlink/coc
+# Expo
+config.symlink/.expo
 # iTerm
 config.symlink/iterm2/AppSupport
 # Fish
 config.symlink/fish/fishd*
-config.symlink/fish/functions/
+config.symlink/fish/functions
+config.symlink/fish/fish_variables
+# Github Copilot
+config.symlink/github-copilot
 # NeoVim
 config.symlink/nvim-undo/
 config.symlink/nvim/.netrwhist
