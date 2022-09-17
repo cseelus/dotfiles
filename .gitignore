@@ -16,6 +16,7 @@ config.symlink/nvim-undo/
 config.symlink/nvim/.netrwhist
 config.symlink/nvim/autoload/
 config.symlink/nvim/plugged/
+config.symlink/nvim/plugin/packer_compiled.lua
 # Yarn
 config.symlink/yarn/global/node_modules
 config.symlink/yarn/global/yarn.lock
