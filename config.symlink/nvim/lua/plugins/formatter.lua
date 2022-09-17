@@ -19,13 +19,11 @@ require("formatter").setup {
       -- You can also define your own configuration
       function()
         return {
-          exe = "prettier",
+          exe = "erb-format",
           args = {
-            "--stdin-filepath",
             util.escape_path(util.get_current_buffer_file_path()),
-            "--parser html"
           },
-          stdin = true
+          stdin = true,
         }
       end
     },
@@ -40,8 +38,6 @@ require("formatter").setup {
             "--stdin-filepath",
             util.escape_path(util.get_current_buffer_file_path()),
             "--no-semi",
-            "--single-quote",
-            "--jsx-single-quote"
           },
           stdin = true,
           try_node_modules = true
