@@ -23,7 +23,7 @@ set fgcolor #e6e7e7
 set uifgcolor black
 set uifgdisabledcolor #999
 set colors {green red blue magenta darkgrey brown orange}
-set diffcolors {{#a84d70} #9bfda6 #7a99ff}
+set diffcolors {{#a84d70} #5fe9ab #7a99ff}
 set mergecolors {red blue green purple brown "#009090" magenta "#808000" "#009000" "#ff0080" cyan "#b07070" "#70b0f0" "#70f0b0" "#f0b070" "#ff70b0"}
 set markbgcolor #7f7f90
 set diffcontext 3
@@ -51,13 +51,14 @@ set indexcirclecolor green
 set circlecolors {white blue gray blue blue}
 set linkfgcolor blue
 set circleoutlinecolor black
+set diffbgcolors {{#3a1526} #183129}
 set web_browser open
-set geometry(main) 1440x855+0+23
+set geometry(main) 2560x1387+5+30
 set geometry(state) zoomed
-set geometry(topwidth) 1440
+set geometry(topwidth) 2560
 set geometry(topheight) 452
-set geometry(pwsash0) "817 1"
-set geometry(pwsash1) "1220 1"
-set geometry(botwidth) 964
-set geometry(botheight) 398
+set geometry(pwsash0) "762 1"
+set geometry(pwsash1) "1158 1"
+set geometry(botwidth) 923
+set geometry(botheight) 930
 set permviews {}
