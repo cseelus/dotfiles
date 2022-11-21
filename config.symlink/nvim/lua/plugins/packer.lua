@@ -37,7 +37,7 @@ return require('packer').startup({function(use)
   use 'mhinz/vim-grepper'
   -- Powerful autopairs
   use 'windwp/nvim-autopairs'
-  --Highlight color hex codes and color names
+  -- Highlight color hex codes and color names
   -- use 'norcalli/nvim-colorizer.lua'
   use 'DarwinSenior/nvim-colorizer.lua'
   --Helpers for UNIX like :Rename, :Delete, :Chmod, :SudoWrite
@@ -58,8 +58,9 @@ return require('packer').startup({function(use)
   use 'lukas-reineke/indent-blankline.nvim'
   --Microsoft LSP protocol support
   use {
-    'neovim/nvim-lspconfig',
-    'williamboman/nvim-lsp-installer',
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
   }
   --Autocompletion
   use 'hrsh7th/nvim-cmp'
@@ -74,6 +75,8 @@ return require('packer').startup({function(use)
     'will/bgwinch.nvim',
     config = function() require('bgwinch').setup() end
   }
+  -- Github Copilot
+  use 'github/copilot.vim'
 
   -- Editing
   ----------
@@ -97,8 +100,6 @@ return require('packer').startup({function(use)
   use 'mhartington/formatter.nvim'
   -- Strip trailing whitespace
   use 'axelf4/vim-strip-trailing-whitespace'
-  -- Github Copilot
-  use 'github/copilot.vim'
 
   --Syntax & optimizations for specific languages
   -----------------------------------------------

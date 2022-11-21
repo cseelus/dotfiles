@@ -33,6 +33,7 @@ require'nvim-tree'.setup {
         },
         special_files = {
             --  List of filenames that gets highlighted with NvimTreeSpecialFile
-            'README.md', 'Makefile', 'MAKEFILE'  }
+            'README.md', 'Makefile', 'MAKEFILE'
         }
     }
+}

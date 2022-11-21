@@ -21,9 +21,9 @@ require("formatter").setup {
         return {
           exe = "erb-format",
           args = {
-            util.escape_path(util.get_current_buffer_file_path()),
+            util.escape_path(util.get_current_buffer_file_path())
           },
-          stdin = true,
+          stdin = true
         }
       end
     },
@@ -38,6 +38,8 @@ require("formatter").setup {
             "--stdin-filepath",
             util.escape_path(util.get_current_buffer_file_path()),
             "--no-semi",
+            "--single-quote",
+            "--jsx-single-quote",
           },
           stdin = true,
           try_node_modules = true
@@ -53,6 +55,21 @@ require("formatter").setup {
             "--indent-count 2"
           },
           stdin = true
+        }
+      end
+    },
+    ruby = {
+      function()
+        return {
+          exe = "rubocop",
+          args = {
+            "--autocorrect",
+            "--stdin",
+            util.escape_path(util.get_current_buffer_file_name()),
+            "--format files",
+            "| awk 'f; /^====================$/{f=1}'",
+          },
+          stdin = true,
         }
       end
     },
