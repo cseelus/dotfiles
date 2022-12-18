@@ -182,7 +182,7 @@ c [[colorscheme tone]]
 
 require('plugins/packer')
 
-require('plugins/colorizer')
+require('plugins/nvim-colorizer')
 require('plugins/formatter')
 require('plugins/gitsigns')
 require('plugins/indent-blankline')

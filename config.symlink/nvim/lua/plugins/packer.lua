@@ -38,8 +38,7 @@ return require('packer').startup({function(use)
   -- Powerful autopairs
   use 'windwp/nvim-autopairs'
   -- Highlight color hex codes and color names
-  -- use 'norcalli/nvim-colorizer.lua'
-  use 'DarwinSenior/nvim-colorizer.lua'
+  use 'NvChad/nvim-colorizer.lua'
   --Helpers for UNIX like :Rename, :Delete, :Chmod, :SudoWrite
   use 'tpope/vim-eunuch'
   --A tree explorer plugin
