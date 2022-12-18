@@ -26,6 +26,8 @@ abbr bex "bundle exec"
 # alias nvim="/Applications/nvim-osx64/bin/nvim"
 alias cpwd="pwd | tr -d '\n' | pbcopy"
 alias ccat="cat"
+alias exa="exa --icons --group-directories-first --no-permissions --no-user --header"
+alias ls="exa"
 alias folder_size='du -hd1'
 alias hostsconfig="sudo nvim /etc/hosts"
 alias vhostsconfig="sudo nvim /etc/apache2/extra/httpd-vhosts.conf"
