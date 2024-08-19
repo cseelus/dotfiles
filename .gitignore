@@ -28,3 +28,8 @@ config.symlink/yarn/global/yarn.lock
 # Yarn/NPM packages
 config.symlink/configstore
 config.symlink/gatsby
+# Zed
+config.symlink/zed/conversations
+config.symlink/zed/embeddings
+config.symlink/zed/prompts
+config.symlink/zed/.tmp*
