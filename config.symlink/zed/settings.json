@@ -7,13 +7,26 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "buffer_font_size": 13,
+  "agent": {
+    "play_sound_when_agent_done": true,
+    "always_allow_tool_actions": true,
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4"
+    }
+  },
+  "buffer_font_size": 12,
   "buffer_font_family": "SFMono Nerd Font",
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
   "git": {
     "inline_blame": {
       "enabled": false
     }
   },
+  "hard_tabs": false,
+  "icon_theme": "Catppuccin Frappé",
   "languages": {
     "JavaScript": {
       "code_actions_on_format": {
@@ -34,10 +47,42 @@
       }
     },
     "Ruby": {
-      "language_servers": ["ruby-lsp", "rubocop"]
+      "format_on_save": "on",
+      // not needed, the Rubocop LSP server includes formatting capabilities
+      // "formatter": {
+      //   "external": {
+      //     "command": "./bin/rubocop",
+      //     "arguments": [
+      //       "--server",
+      //       "--autocorrect",
+      //       "--fail-level",
+      //       "error",
+      //       "--stdin",
+      //       "corrected.rb",
+      //       "--stderr"
+      //     ]
+      //   }
+      // },
+      "language_servers": ["rubocop", "!ruby-lsp", "!solargraph"]
+    }
+  },
+  "lsp": {
+    "rubocop": {
+      "binary": {
+        "path": "./bin/bundle",
+        "arguments": ["exec", "rubocop", "--lsp"]
+      }
     }
   },
   "soft_wrap": "editor_width",
+  "show_wrap_guides": true,
+  "tab_bar": {
+    "show": false
+  },
+  "tab_size": 2,
+  "terminal": {
+    "line_height": "standard"
+  },
   "theme": {
     "light": "Rosé Pine Dawn",
     "dark": "Rosé Pine"
